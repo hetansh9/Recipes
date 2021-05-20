@@ -2,7 +2,7 @@
 //  FoodsModel.swift
 //  Recipes
 //
-//  Created by Hetansh on 5/20/21.
+//  Created by Het Prajapati on 5/20/21.
 //
 
 import SwiftUI
