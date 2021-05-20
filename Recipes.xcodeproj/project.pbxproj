@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
+		58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */; };
+		58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */; };
+		58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */; };
+		58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */; };
+		58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */; };
+		58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */; };
 		714C70EE2656336600989406 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70ED2656336600989406 /* Tests_iOS.swift */; };
 		714C70F92656336600989406 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70F82656336600989406 /* Tests_macOS.swift */; };
 		714C70FD2656336600989406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70D32656336500989406 /* ContentView.swift */; };
@@ -46,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		714C70D32656336500989406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		714C70D42656336600989406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		714C70D92656336600989406 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +190,8 @@
 			children = (
 				714C7120265635A800989406 /* FoodCardView.swift */,
 				5874162126563E83003A3880 /* StartButtonView.swift */,
+				58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */,
+				58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				714C70D32656336500989406 /* ContentView.swift */,
 				714C712E265637C700989406 /* OnboardingView.swift */,
 				714C7131265638B400989406 /* FoodApp.swift */,
+				58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -363,7 +375,10 @@
 				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
+				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
+				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
@@ -377,7 +392,10 @@
 				5874162326563E83003A3880 /* StartButtonView.swift in Sources */,
 				714C711E2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7133265638B400989406 /* FoodApp.swift in Sources */,
+				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
+				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7122265635A800989406 /* FoodCardView.swift in Sources */,
 				714C7130265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7126265635E300989406 /* FoodsData.swift in Sources */,
