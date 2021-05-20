@@ -15,6 +15,8 @@
 		714C70FE2656336600989406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70D32656336500989406 /* ContentView.swift */; };
 		714C70FF2656336600989406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714C70D42656336600989406 /* Assets.xcassets */; };
 		714C71002656336600989406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714C70D42656336600989406 /* Assets.xcassets */; };
+		714C711D2656353900989406 /* FoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C711C2656353900989406 /* FoodsModel.swift */; };
+		714C711E2656353900989406 /* FoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C711C2656353900989406 /* FoodsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		714C70F42656336600989406 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		714C70F82656336600989406 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		714C70FA2656336600989406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		714C711C2656353900989406 /* FoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 		714C70D12656336500989406 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				714C711F2656354200989406 /* View */,
+				714C711B2656351C00989406 /* Model */,
 				714C70D22656336500989406 /* RecipesApp.swift */,
 				714C70D32656336500989406 /* ContentView.swift */,
 				714C70D42656336600989406 /* Assets.xcassets */,
@@ -149,6 +154,21 @@
 				714C70FA2656336600989406 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		714C711B2656351C00989406 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				714C711C2656353900989406 /* FoodsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		714C711F2656354200989406 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
 				714C70FB2656336600989406 /* RecipesApp.swift in Sources */,
 			);
@@ -317,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714C711E2656353900989406 /* FoodsModel.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
 				714C70FC2656336600989406 /* RecipesApp.swift in Sources */,
 			);
