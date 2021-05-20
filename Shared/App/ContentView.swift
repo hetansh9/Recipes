@@ -16,7 +16,9 @@ struct ContentView: View {
     var foods: [Food] = foodsData
     
     var body: some View {
+        // Need to add a scrollview containing the vstack with the custom card view
         NavigationView{
+            // Might change to VStack depending on the layout
             List{
                 
             }//: LIST
@@ -34,6 +36,10 @@ struct ContentView: View {
             )
         }//: NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
+        
+        // Temporary Method to add the TabView
+        // Will probably change it later!
+        
     }
 }
 
