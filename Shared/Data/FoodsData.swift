@@ -14,15 +14,15 @@ let foodsData: [Food] = [
     
     // Het
 
-    Food(title: "Explore", headline: "Foods", image: "breakfast", gradientColors: [Color("ColorBlueberryLight"), Color("ColorBlueberryDark")], description: "This is a test description", nutrition: ["akjcs"]),
+    Food(title: "Breakfast", headline: "Foods", image: "breakfast", gradientColors: [Color("ColorBlueberryDark"), Color("ColorBlueberryLight")], description: "Breakfast Recipes", nutrition: ["akjcs"]),
 
-    Food(title: "Explore", headline: "Foods", image: "cooking", gradientColors: [Color("ColorBlueberryLight"), Color("ColorBlueberryDark")], description: "This is a test description", nutrition: ["kjasbckjbc"]),
+    Food(title: "Cooking", headline: "Foods", image: "cooking", gradientColors: [Color("ColorLimeLight"), Color("ColorLimeDark")], description: "This App is for cooking freaks", nutrition: ["kjasbckjbc"]),
     
     // Hetansh
     
-    Food(title: "Explore", headline: "Foods", image: "diet", gradientColors: [Color("ColorBlueberryLight"), Color("ColorBlueberryDark")], description: "Healthy Recipes", nutrition: ["test version"]),
+    Food(title: "Diet", headline: "Foods", image: "diet", gradientColors: [Color("ColorStrawberryLight"), Color("ColorStrawberryDark")], description: "Healthy Recipes", nutrition: ["test version"]),
     
-    Food(title: "Explore", headline: "Foods", image: "hamburger", gradientColors: [Color("ColorBlueberryLight"), Color("ColorBlueberryDark")], description: "Tasty Dinner", nutrition: ["test version"]),
+    Food(title: "Hamburger", headline: "Foods", image: "hamburger", gradientColors: [Color("ColorLemonLight"), Color("ColorLimeDark")], description: "Tasty Hamburger", nutrition: ["test version"]),
 
 
 ]
