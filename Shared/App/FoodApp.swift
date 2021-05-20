@@ -17,7 +17,7 @@ struct FoodApp: App {
             if isOnboarding {
                 OnboardingView()
             }else{
-                ContentView()
+                MainView()
             }
         }
     }
