@@ -2,22 +2,24 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Hetansh on 5/20/21.
+//  Created by Het Prajapati on 5/20/21.
 //
+
+import SwiftUI
+
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Hello Praja")
-                .padding()
-                .font(.headline)
-            Text("Hello Patel")
-                .padding()
-                .font(.headline)
-        }
+        NavigationView{
+            List{
+                
+            }//: LIST
+            .navigationBarTitle("Recipes")
+        //.navigationBarItems()
+        }//: NAVIGATION
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
