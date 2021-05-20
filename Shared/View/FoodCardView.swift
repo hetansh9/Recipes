@@ -38,7 +38,7 @@ struct FoodCardView: View {
                     .padding(.horizontal, 16)
                     .frame(maxWidth: 480)
                // Start button view for later purposes
-                //StartButtonView()
+                StartButtonView()
             }//: VSTACK
         }//: ZSTACK
         .onAppear{
@@ -56,7 +56,7 @@ struct FoodCardView: View {
 
 struct FoodCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodCardView(food: foodsData[1])
+        FoodCardView(food: foodsData[0])
             .previewLayout(.fixed(width: 320, height: 640))
     }
 }

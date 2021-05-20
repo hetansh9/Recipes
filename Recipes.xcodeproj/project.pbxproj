@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
+		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		714C70EE2656336600989406 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70ED2656336600989406 /* Tests_iOS.swift */; };
 		714C70F92656336600989406 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70F82656336600989406 /* Tests_macOS.swift */; };
 		714C70FD2656336600989406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70D32656336500989406 /* ContentView.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		714C70D32656336500989406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		714C70D42656336600989406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		714C70D92656336600989406 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,10 +113,10 @@
 		714C70D12656336500989406 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				714C71272656363200989406 /* App */,
 				714C7123265635BC00989406 /* Data */,
-				714C711F2656354200989406 /* View */,
 				714C711B2656351C00989406 /* Model */,
+				714C711F2656354200989406 /* View */,
+				714C71272656363200989406 /* App */,
 				714C70D42656336600989406 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -177,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				714C7120265635A800989406 /* FoodCardView.swift */,
+				5874162126563E83003A3880 /* StartButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
@@ -369,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5874162326563E83003A3880 /* StartButtonView.swift in Sources */,
 				714C711E2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7133265638B400989406 /* FoodApp.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
