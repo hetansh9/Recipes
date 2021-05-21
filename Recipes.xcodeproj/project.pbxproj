@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
+		5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */; };
@@ -59,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesStaticData.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				714C7124265635E300989406 /* FoodsData.swift */,
+				5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -396,6 +400,7 @@
 				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
 				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
@@ -417,6 +422,7 @@
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7122265635A800989406 /* FoodCardView.swift in Sources */,
 				714C7130265637C700989406 /* OnboardingView.swift in Sources */,
