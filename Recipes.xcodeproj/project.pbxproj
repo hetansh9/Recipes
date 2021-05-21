@@ -31,6 +31,8 @@
 		714C7130265637C700989406 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C712E265637C700989406 /* OnboardingView.swift */; };
 		714C7132265638B400989406 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7131265638B400989406 /* FoodApp.swift */; };
 		714C7133265638B400989406 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7131265638B400989406 /* FoodApp.swift */; };
+		714C71382657484600989406 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C71372657484600989406 /* ServerModel.swift */; };
+		714C713C26574B9500989406 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C713B26574B9500989406 /* ServerRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		714C7124265635E300989406 /* FoodsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsData.swift; sourceTree = "<group>"; };
 		714C712E265637C700989406 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		714C7131265638B400989406 /* FoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodApp.swift; sourceTree = "<group>"; };
+		714C71372657484600989406 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		714C713B26574B9500989406 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		714C70D12656336500989406 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				714C71342657415900989406 /* Server */,
 				714C7123265635BC00989406 /* Data */,
 				714C711B2656351C00989406 /* Model */,
 				714C711F2656354200989406 /* View */,
@@ -213,6 +218,15 @@
 				58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		714C71342657415900989406 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				714C71372657484600989406 /* ServerModel.swift */,
+				714C713B26574B9500989406 /* ServerRequest.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,11 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714C71382657484600989406 /* ServerModel.swift in Sources */,
 				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
 				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
+				714C713C26574B9500989406 /* ServerRequest.swift in Sources */,
 				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
