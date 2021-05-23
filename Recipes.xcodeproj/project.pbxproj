@@ -43,6 +43,8 @@
 		714C7133265638B400989406 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7131265638B400989406 /* FoodApp.swift */; };
 		714C71382657484600989406 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C71372657484600989406 /* ServerModel.swift */; };
 		714C713C26574B9500989406 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C713B26574B9500989406 /* ServerRequest.swift */; };
+		714C7141265B0D1E00989406 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7140265B0D1E00989406 /* SearchViewController.swift */; };
+		714C7142265B0D1E00989406 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7140265B0D1E00989406 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,7 @@
 		714C7131265638B400989406 /* FoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodApp.swift; sourceTree = "<group>"; };
 		714C71372657484600989406 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		714C713B26574B9500989406 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		714C7140265B0D1E00989406 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,7 @@
 				58B4E9DD2656F160001D3EE6 /* BookmarksView.swift */,
 				58B4E9E02656F18C001D3EE6 /* ProfileView.swift */,
 				58B4E9E32656F33A001D3EE6 /* MainView.swift */,
+				714C7140265B0D1E00989406 /* SearchViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
+				714C7141265B0D1E00989406 /* SearchViewController.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
@@ -440,6 +445,7 @@
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
+				714C7142265B0D1E00989406 /* SearchViewController.swift in Sources */,
 				714C7122265635A800989406 /* FoodCardView.swift in Sources */,
 				714C7130265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7126265635E300989406 /* FoodsData.swift in Sources */,
