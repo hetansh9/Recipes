@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         
+        
         let headers = [
             "x-rapidapi-key": "8f1a562dfe5446dfa12c9df74680245a",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
                 
                 do {
                     let items = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
-                    print(items)
+                    
                 }catch {
                     print("Error")
                 }
