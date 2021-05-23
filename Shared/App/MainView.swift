@@ -21,7 +21,6 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
-                        .padding(.top, -30)
                 }
                 
                 
