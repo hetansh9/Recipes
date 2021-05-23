@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsRowView: View {
   // MARK: - PROPERTIES
   
-  var name: String
+  var name: String 
   var content: String? = nil
   var linkLabel: String? = nil
   var linkDestination: String? = nil
