@@ -47,8 +47,10 @@ struct CardView: View {
     // MARK: - PROPERTIES
     
     @State private var isShowingSettings: Bool = false
+    @State private var showModal: Bool = false
     
     var recipe: RecipesData = recipesData[0]
+    var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4){
@@ -84,5 +86,12 @@ struct CardView: View {
         .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         .shadow(color: recipe.color.opacity(0.3), radius: 20, x: 0, y: 10)
         .padding()
+        .onTapGesture {
+            self.hapticImpact.impactOccurred()
+            self.showModal = true
+        }
+        .sheet(isPresented: self.$showModal) {
+            RecipesDetailedView()
+        }
     }
 }
