@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
+		5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
 		5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
@@ -63,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5832E786265A68D400799249 /* RecipesDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailedView.swift; sourceTree = "<group>"; };
 		5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesStaticData.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 				58B4E9DD2656F160001D3EE6 /* BookmarksView.swift */,
 				58B4E9E02656F18C001D3EE6 /* ProfileView.swift */,
 				58B4E9E32656F33A001D3EE6 /* MainView.swift */,
+				5832E786265A68D400799249 /* RecipesDetailedView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -420,6 +424,7 @@
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
+				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
 				58B4E9DB2656F128001D3EE6 /* SearchView.swift in Sources */,
@@ -436,6 +441,7 @@
 				714C711E2656353900989406 /* FoodsModel.swift in Sources */,
 				714C7133265638B400989406 /* FoodApp.swift in Sources */,
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
+				5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
