@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     @State private var searchText = ""
+    
+    
     var body: some View {
         TabView{
             ContentView()
@@ -23,8 +25,6 @@ struct MainView: View {
                     Text("Search")
                 }
                 
-                
-            
             BookmarksView()
                 .tabItem {
                     Image(systemName: "bookmark")
