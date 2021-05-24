@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var searchText = ""
+    
+    
     var body: some View {
         TabView{
             ContentView()
@@ -16,12 +19,12 @@ struct MainView: View {
                     Text("Featured")
                 }
             
-            SearchView()
+            SearchView(text: $searchText)
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            
+                
             BookmarksView()
                 .tabItem {
                     Image(systemName: "bookmark")
@@ -42,3 +45,5 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+
+

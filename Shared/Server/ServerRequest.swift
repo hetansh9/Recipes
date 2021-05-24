@@ -54,15 +54,15 @@ class ViewController: UIViewController {
         
         let datatask = session.dataTask(with: request) { (data, response, error) in
                 
-            if error == nil && data != nil {
-                
-                do {
-                    let items = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
-                    
-                }catch {
-                    print("Error")
-                }
-            }
+//            if error == nil && data != nil {
+//                
+//                do {
+//                    let items = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
+//                    
+//                }catch {
+//                    print("Error")
+//                }
+//            }
         }
         datatask.resume()
     }
