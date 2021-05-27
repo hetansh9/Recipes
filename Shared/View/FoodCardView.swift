@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FoodCardView: View {
-  
-    
+
     var food: Food
     
     @State private var isAnimating: Bool = false
@@ -23,6 +22,7 @@ struct FoodCardView: View {
                     .scaledToFit()
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
                     .scaleEffect(isAnimating ? 1.0 : 0.6)
+                    .padding()
                 
                 // Food tittle
                 Text(food.title)
@@ -42,7 +42,8 @@ struct FoodCardView: View {
             }//: VSTACK
         }//: ZSTACK
         .onAppear{
-            withAnimation(.easeOut(duration: 0.5)){
+            isAnimating = false
+            withAnimation(.easeOut(duration: 0.6)){
                 isAnimating = true
             }
         }
