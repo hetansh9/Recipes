@@ -21,6 +21,7 @@ struct OnboardingView: View {
             }//: - LOOP
         } //: TAB
         .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .padding(.vertical, 20)
     }
