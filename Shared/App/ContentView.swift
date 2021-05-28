@@ -22,7 +22,7 @@ struct ContentView: View {
 
                 ForEach(recipesData) { item in
                     CardView(recipe: item)
-                        .frame(width: 425, height: 310)
+//                        .frame(width: 425, height: 310)
                 }
             
             }
@@ -53,7 +53,7 @@ struct CardView: View {
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4){
+        VStack(alignment: .leading, spacing: 0){
             Spacer()
             HStack {
                 Spacer()
