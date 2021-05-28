@@ -19,7 +19,7 @@ struct MainView: View {
                     Text("Featured")
                 }
             
-            SearchView(text: $searchText)
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
