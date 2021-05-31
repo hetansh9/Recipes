@@ -31,6 +31,8 @@
 		58B4E9E22656F18C001D3EE6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E02656F18C001D3EE6 /* ProfileView.swift */; };
 		58B4E9E42656F33A001D3EE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E32656F33A001D3EE6 /* MainView.swift */; };
 		58B4E9E52656F33B001D3EE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E32656F33A001D3EE6 /* MainView.swift */; };
+		58F862D826654E5400257342 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D626654E5400257342 /* ImagePicker.swift */; };
+		58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D726654E5400257342 /* VisualEffectBlur.swift */; };
 		714C70EE2656336600989406 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70ED2656336600989406 /* Tests_iOS.swift */; };
 		714C70F92656336600989406 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70F82656336600989406 /* Tests_macOS.swift */; };
 		714C70FD2656336600989406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70D32656336500989406 /* ContentView.swift */; };
@@ -81,6 +83,8 @@
 		58B4E9DD2656F160001D3EE6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		58B4E9E02656F18C001D3EE6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		58B4E9E32656F33A001D3EE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		58F862D626654E5400257342 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		58F862D726654E5400257342 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		714C70D32656336500989406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		714C70D42656336600989406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		714C70D92656336600989406 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F862D126654DF500257342 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				58F862D626654E5400257342 /* ImagePicker.swift */,
+				58F862D726654E5400257342 /* VisualEffectBlur.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		714C70CC2656336500989406 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 		714C70D12656336500989406 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				58F862D126654DF500257342 /* Helpers */,
 				714C71342657415900989406 /* Server */,
 				714C7123265635BC00989406 /* Data */,
 				714C711B2656351C00989406 /* Model */,
@@ -420,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */,
 				714C71382657484600989406 /* ServerModel.swift in Sources */,
 				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				58B4E9E42656F33A001D3EE6 /* MainView.swift in Sources */,
@@ -437,6 +452,7 @@
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
+				58F862D826654E5400257342 /* ImagePicker.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
 				58B4E9DB2656F128001D3EE6 /* SearchView.swift in Sources */,
 			);

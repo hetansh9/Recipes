@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var searchText = ""
-    
+//    @State private var searchText = ""
     
     var body: some View {
         TabView{
