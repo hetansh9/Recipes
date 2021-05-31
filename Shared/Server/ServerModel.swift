@@ -24,3 +24,11 @@ import Foundation
 //        case calories, t
 //    }
 //}
+
+struct ServerModal: Codable {
+    let id : Int
+    let title: String
+    let image: String
+    let imageType: String
+    
+}
