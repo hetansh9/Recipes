@@ -15,7 +15,6 @@ struct ContentView: View {
     
     // MARK: - BODY
     var body: some View {
-        // Need to add a scrollview containing the vstack with the custom card view
         NavigationView{
             // Might change to VStack depending on the layout
             ScrollView(.vertical, showsIndicators: false) {
@@ -28,10 +27,6 @@ struct ContentView: View {
             }
         }//: NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
-        
-        // Temporary Method to add the TabView
-        // Will probably change it later!
-        
     }
 }
 
@@ -85,7 +80,7 @@ struct CardView: View {
         .background(recipe.color)
         .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         .shadow(color: recipe.color.opacity(0.3), radius: 20, x: 0, y: 10)
-        .padding()
+        .padding(15)
         .onTapGesture {
             self.hapticImpact.impactOccurred()
             self.showModal = true
