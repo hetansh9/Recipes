@@ -1,6 +1,6 @@
 //
-//  Planet_ExplorerApp.swift
-//  Planet Explorer
+//  FoodApp.swift
+//  Recipes
 //
 //  Created by Het Prajapati on 4/9/21.
 //
