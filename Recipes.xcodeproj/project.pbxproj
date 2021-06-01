@@ -31,6 +31,12 @@
 		58B4E9E22656F18C001D3EE6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E02656F18C001D3EE6 /* ProfileView.swift */; };
 		58B4E9E42656F33A001D3EE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E32656F33A001D3EE6 /* MainView.swift */; };
 		58B4E9E52656F33B001D3EE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9E32656F33A001D3EE6 /* MainView.swift */; };
+		58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7002666AADC00DB34C4 /* GradientText.swift */; };
+		58BED7022666AADC00DB34C4 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7002666AADC00DB34C4 /* GradientText.swift */; };
+		58BED7042666AB2B00DB34C4 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7032666AB2B00DB34C4 /* GradientButton.swift */; };
+		58BED7052666AB2B00DB34C4 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7032666AB2B00DB34C4 /* GradientButton.swift */; };
+		58BED7072666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */; };
+		58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */; };
 		58F862D826654E5400257342 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D626654E5400257342 /* ImagePicker.swift */; };
 		58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D726654E5400257342 /* VisualEffectBlur.swift */; };
 		714C70EE2656336600989406 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C70ED2656336600989406 /* Tests_iOS.swift */; };
@@ -83,6 +89,9 @@
 		58B4E9DD2656F160001D3EE6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		58B4E9E02656F18C001D3EE6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		58B4E9E32656F33A001D3EE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		58BED7002666AADC00DB34C4 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
+		58BED7032666AB2B00DB34C4 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldIcon.swift; sourceTree = "<group>"; };
 		58F862D626654E5400257342 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		58F862D726654E5400257342 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		714C70D32656336500989406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -235,6 +244,9 @@
 				5874162126563E83003A3880 /* StartButtonView.swift */,
 				58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */,
 				58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */,
+				58BED7002666AADC00DB34C4 /* GradientText.swift */,
+				58BED7032666AB2B00DB34C4 /* GradientButton.swift */,
+				58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,12 +446,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58BED7072666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
 				58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */,
 				714C71382657484600989406 /* ServerModel.swift in Sources */,
 				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				58B4E9E42656F33A001D3EE6 /* MainView.swift in Sources */,
 				58B4E9E12656F18C001D3EE6 /* ProfileView.swift in Sources */,
 				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
+				58BED7042666AB2B00DB34C4 /* GradientButton.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
 				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
@@ -454,6 +468,7 @@
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
 				58F862D826654E5400257342 /* ImagePicker.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
+				58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */,
 				58B4E9DB2656F128001D3EE6 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +485,8 @@
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
+				58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
+				58BED7022666AADC00DB34C4 /* GradientText.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
@@ -479,6 +496,7 @@
 				58B4E9DF2656F160001D3EE6 /* BookmarksView.swift in Sources */,
 				58262B532660EA3300F4F773 /* SearchBar.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
+				58BED7052666AB2B00DB34C4 /* GradientButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
