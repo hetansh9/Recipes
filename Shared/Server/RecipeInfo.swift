@@ -11,7 +11,7 @@ struct RecipeInfo {
     
     var title : String?
     var imageURL : String?
-    var timeRequired : String?
+    var timeRequired : Int?
     var sourceURL  : String?
     var ingredients : [String]?
     var instructions : [String]?

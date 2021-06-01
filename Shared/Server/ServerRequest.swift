@@ -16,7 +16,64 @@ class ServerRequest {
     // configure the recipes such as the tittle and image and everything else
     
     private class func configureRecipe(info: [String: Any]) -> RecipeInfo{
-        let recipe = RecipeInfo()
+        var recipe = RecipeInfo()
+        
+        if let title = info["title"] as? String {
+            recipe.title = title
+        }
+        
+        if let servings = info["servings"] as? Int {
+            recipe.servings = servings
+        }
+        
+        if let imageURL = info["image"] as? String {
+            recipe.imageURL = imageURL
+        }
+        if let sourceURL = info["sourceURL"] as? String {
+            recipe.sourceURL = sourceURL
+        }
+        
+        if let ingredientsArray = info["extendedIngredients"] as? [[String: Any]] {
+            if ingredientsArray.count == 0 {
+                recipe.ingredients = []
+            }else {
+                var ingredients = [String]()
+                for i in ingredientsArray{
+                    if let i = i["originalString"] as? String {
+                        ingredients.append(i)
+                    }
+                }
+                recipe.ingredients = ingredients
+            }
+        }else {
+            recipe.ingredients = []
+            
+        }
+        
+        if let time = info["readyInMinutes"] as? Int {
+            recipe.timeRequired = time
+        }
+        
+        if let instructions = info["analyzedInstructions"] as? [[String:Any]] {
+            if instructions.count == 0 {
+                recipe.instructions = []
+            }else {
+                var instructionsArray = [String]()
+                for j in instructions {
+                    if let j = j["Steps"] as? [[String:Any]] {
+                        for k in j {
+                            if let j = k["step"] as? String {
+                                instructionsArray.append(j)
+                            }
+                        }
+                    }
+                }
+                recipe.instructions = instructionsArray
+            }
+            
+        }else {
+            recipe.instructions = []
+        }
         return recipe
         
     }
