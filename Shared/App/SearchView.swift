@@ -13,6 +13,8 @@ struct SearchView: View {
     
     // MARK: - PROPERTIES
     @State var text = ""
+    var currentTask : URLSessionTask?
+    var recipeSuggestions = [AutoComplete]()
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     
     // MARK: - VIEW
@@ -37,7 +39,25 @@ struct SearchView: View {
             .navigationBarTitle("Search")
         }
     }
-}
+//    func search(_ SearchBar : UISearchBar, textDidChange searchText : String){
+//        currentTask?.cancel()
+//        currentTask = ServerRequest.autoComplete(query: searchText) { (recipeSuggestions, error) in
+//            self.recipeSuggestions = recipeSuggestions
+//            DispatchQueue.main.async {
+//                <#code#>
+//            }
+//
+//        }
+//
+//    }
+
+
+
+//extension SearchView {
+//    func search() {
+//
+//    }
+//}
 
     
     struct SearchView_Previews: PreviewProvider {
@@ -66,4 +86,4 @@ var mData = [
 
 ]
     
-    
+}

@@ -113,10 +113,34 @@ class ServerRequest {
         task.resume()
     }
     
-    
-    
-    
-    
-    
-    
+    class func autoComplete(query: String, completion: @escaping ([AutoComplete], Error?) -> Void ) -> URLSessionTask{
+        var result: URL{
+            var components = URLComponents()
+            components.host = host
+            components.path = "/recipes/autocomplete"
+            components.scheme = scheme
+            
+            components.queryItems = [URLQueryItem]()
+            components.queryItems?.append(URLQueryItem(name: "apiKey", value: ServerRequest.apiKey))
+            components.queryItems?.append(URLQueryItem(name: "number", value: "8"))
+            components.queryItems?.append(URLQueryItem(name: "return", value: query))
+            
+            return components.url!
+            
+        }
+        let task = URLSession.shared.dataTask(with: result) { (data,response, error) in
+            guard let data =  data else {
+                completion([], error)
+                return
+            }
+            do {
+                let responseObject = try JSONDecoder().decode([AutoComplete].self, from: data)
+                completion(responseObject, nil)
+            }catch {
+                completion([],error)
+            }
+        }
+        return task
+    }
+     
 }
