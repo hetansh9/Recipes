@@ -19,6 +19,7 @@ struct ProfileView: View {
     @State private var editingPasswordTextField: Bool = false
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
+    @State private var signupToggle: Bool = true
     
     private let generator = UISelectionFeedbackGenerator()
     
@@ -27,7 +28,7 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             
-            Image("background-1")
+            Image(signupToggle ? "background-1" : "background-3")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -36,7 +37,7 @@ struct ProfileView: View {
                 
                 VStack(alignment: .leading, spacing: 16) {
                     
-                    Text("Sign Up")
+                    Text(signupToggle ? "Sign Up" : "Sign In")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
                     Text("Access all the amazing recipes by signing up")
@@ -130,22 +131,27 @@ struct ProfileView: View {
                     
                     GradientButton()
                     
+                    if signupToggle{
                     Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
                         .font(.footnote)
                         .foregroundColor(Color.white.opacity(0.7))
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(Color.white.opacity(0.1))
+                    }
                     
                     VStack(alignment: .leading, spacing: 16, content: {
                         Button(action: {
-                            print("Switch to Sign in")
+                            withAnimation(
+                                .easeInOut(duration: 0.7)){
+                                signupToggle.toggle()
+                            }
                         }, label: {
                             HStack(spacing: 4){
-                                Text("Already have an account?")
+                                Text(signupToggle ? "Already have an account?" : "Don't have an account?")
                                     .font(.footnote)
                                     .foregroundColor(Color.white.opacity(0.7))
-                                GradientText(text: "Sign In")
+                                GradientText(text: signupToggle ? "Sign in" : "Sign up")
                                     .font(Font.footnote.bold())
                                     
                             }
