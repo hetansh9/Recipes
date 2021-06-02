@@ -13,8 +13,10 @@ struct SearchView: View {
     
     // MARK: - PROPERTIES
     @State var text = ""
-    var currentTask : URLSessionTask?
-    var recipeSuggestions = [AutoComplete]()
+    let searchBar = UISearchBar()
+    let tableview = UITableView()
+    @State var currentTask : URLSessionTask?
+    @State var recipeSuggestions = [AutoComplete]()
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     
     // MARK: - VIEW
@@ -39,17 +41,17 @@ struct SearchView: View {
             .navigationBarTitle("Search")
         }
     }
-//    func search(_ SearchBar : UISearchBar, textDidChange searchText : String){
-//        currentTask?.cancel()
-//        currentTask = ServerRequest.autoComplete(query: searchText) { (recipeSuggestions, error) in
-//            self.recipeSuggestions = recipeSuggestions
-//            DispatchQueue.main.async {
-//                <#code#>
-//            }
-//
-//        }
-//
-//    }
+    func search(_ SearchBar : UISearchBar, textDidChange searchText : String){
+        currentTask?.cancel()
+        currentTask = ServerRequest.autoComplete(query: searchText) { (recipeSuggestions, error) in
+            self.recipeSuggestions = recipeSuggestions
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
+
+        }
+
+    }
 
 
 
