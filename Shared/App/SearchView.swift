@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-// need to add the tittle and change the alingment for the search bar 
+// need to add the tittle and change the alingment for the search bar
 
 struct SearchView: View {
     
     // MARK: - PROPERTIES
     @State var text = ""
+    let searchBar = UISearchBar()
+    let tableview = UITableView()
+    @State var currentTask : URLSessionTask?
+    @State var recipeSuggestions = [AutoComplete]()
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     
     // MARK: - VIEW
@@ -37,7 +41,25 @@ struct SearchView: View {
             .navigationBarTitle("Search")
         }
     }
-}
+    func search(_ SearchBar : UISearchBar, textDidChange searchText : String){
+        currentTask?.cancel()
+        currentTask = ServerRequest.autoComplete(query: searchText) { (recipeSuggestions, error) in
+            self.recipeSuggestions = recipeSuggestions
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
+
+        }
+
+    }
+
+
+
+//extension SearchView {
+//    func search() {
+//
+//    }
+//}
 
     
     struct SearchView_Previews: PreviewProvider {
@@ -66,4 +88,4 @@ var mData = [
 
 ]
     
-    
+}
