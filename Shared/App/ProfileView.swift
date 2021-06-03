@@ -20,6 +20,9 @@ struct ProfileView: View {
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
     @State private var signupToggle: Bool = true
+    @State private var showProfileView: Bool = false
+    @State private var rotationAngle = 0.0
+    @State private var fadeToggle: Bool = true
     
     private let generator = UISelectionFeedbackGenerator()
     
@@ -28,10 +31,15 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             
-            Image(signupToggle ? "background-1" : "background-3")
+            Image(signupToggle ? "background-2" : "background-1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
+                .opacity(fadeToggle ? 1.0 : 0.0)
+            
+            Color("secondaryBackground")
+                .edgesIgnoringSafeArea(.all)
+                .opacity(fadeToggle ? 0.0 : 1.0)
             
             VStack {
                 
@@ -67,10 +75,10 @@ struct ProfileView: View {
                                 }
                             }
                         }
-                            .colorScheme(.dark)
-                            .foregroundColor(Color.white.opacity(0.7))
-                            .autocapitalization(.none)
-                            .textContentType(.emailAddress)
+                        .colorScheme(.dark)
+                        .foregroundColor(Color.white.opacity(0.7))
+                        .autocapitalization(.none)
+                        .textContentType(.emailAddress)
                     }
                     .frame(height: 52)
                     .overlay(
@@ -103,8 +111,8 @@ struct ProfileView: View {
                     )
                     .background(
                         Color("secondaryBackground")
-                                    .cornerRadius(16.0)
-                                    .opacity(0.8)
+                            .cornerRadius(16.0)
+                            .opacity(0.8)
                     )
                     .onTapGesture {
                         editingPasswordTextField = true
@@ -127,24 +135,38 @@ struct ProfileView: View {
                     /*
                      Past the text fields
                      Sign Up Button
-                    */
+                     */
                     
-                    GradientButton()
+                    GradientButton(buttonTitle: signupToggle ? "Create Account" : "Sign in") {
+                        generator.selectionChanged()
+                    }
                     
-                    if signupToggle{
-                    Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
-                        .font(.footnote)
-                        .foregroundColor(Color.white.opacity(0.7))
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color.white.opacity(0.1))
+                    // Only Show Disclaimer if signupToggle = true
+                    if signupToggle {
+                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
+                            .font(.footnote)
+                            .foregroundColor(Color.white.opacity(0.7))
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color.white.opacity(0.1))
                     }
                     
                     VStack(alignment: .leading, spacing: 16, content: {
                         Button(action: {
+                            
+                            withAnimation(.easeInOut(duration: 0.35)) {
+                                fadeToggle.toggle()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                                    withAnimation(.easeInOut(duration: 0.35)) {
+                                        self.fadeToggle.toggle()
+                                    }
+                                }
+                            }
+                            
                             withAnimation(
                                 .easeInOut(duration: 0.7)){
                                 signupToggle.toggle()
+                                self.rotationAngle += 180
                             }
                         }, label: {
                             HStack(spacing: 4){
@@ -153,13 +175,33 @@ struct ProfileView: View {
                                     .foregroundColor(Color.white.opacity(0.7))
                                 GradientText(text: signupToggle ? "Sign in" : "Sign up")
                                     .font(Font.footnote.bold())
-                                    
+                                
                             }
                         })
+                        
+                        // Forgot Password Button
+                        if !signupToggle {
+                            Button(action: {
+                                print("Send Reset password email")
+                            }, label: {
+                                HStack(spacing: 4){
+                                    Text("Forgot Password?")
+                                        .font(.footnote)
+                                        .foregroundColor(.white.opacity(0.7))
+                                    
+                                    GradientText(text: "Reset password")
+                                        .font(.footnote.bold())
+                                }
+                            })
+                        }
                     })
                 }
                 .padding(20)
             }
+            .rotation3DEffect(
+                Angle(degrees: self.rotationAngle),
+                axis: (x: 0.0, y: 1.0, z: 0.0)
+            )
             .background(RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.white.opacity(0.2))
                             .background(Color("secondaryBackground").opacity(0.5))
@@ -168,8 +210,15 @@ struct ProfileView: View {
             )
             .cornerRadius(30.0)
             .padding(.horizontal)
-            
+            .rotation3DEffect(
+                Angle(degrees: self.rotationAngle),
+                axis: (x: 0.0, y: 1.0, z: 0.0)
+            )
         }
+        // if userSinged up then present profileView
+        //        .fullScreenCover(isPresented: $showProfileView){
+        //
+        //        }
     }
 }
 
