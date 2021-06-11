@@ -18,12 +18,9 @@ struct ContentView: View {
         NavigationView{
             // Might change to VStack depending on the layout
             ScrollView(.vertical, showsIndicators: false) {
-
                 ForEach(recipesData) { item in
                     CardView(recipe: item)
-//                        .frame(width: 425, height: 310)
                 }
-            
             }
         }//: NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
@@ -48,23 +45,40 @@ struct CardView: View {
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0){
-            Spacer()
-            HStack {
-                Spacer()
-                Image(recipe.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Spacer()
+        // Container containing the Card
+        VStack {
+            // CARD ITSELF
+            VStack(spacing: 0) {
+                Text(recipe.title.uppercased()).font(.largeTitle).bold()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                    .padding()
+                // Lower Banner
+                HStack {
+                    VStack(alignment: .leading, spacing: 4){
+                        Text(recipe.subtitle)
+                            .font(.body).bold()
+                            .offset(x: 5)
+                    }
+                    .foregroundColor(Color.white)
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding(12)
+                .background(
+                    VisualEffectBlur(blurStyle: .systemMaterialDark)
+                )
             }
-            Text(recipe.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
-            Text(recipe.subtitle)
-                .font(.footnote)
-                .foregroundColor(Color.white)
+            .frame(maxWidth: .infinity, minHeight: 300)
+            .background(
+                Image(uiImage: #imageLiteral(resourceName: "background-1"))
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            
         }//: VStack
-        .padding(.all)
+        .padding(20)
         .navigationBarTitle("Featured")
         .navigationBarItems(
             trailing:
@@ -77,16 +91,12 @@ struct CardView: View {
                     SettingsView()
                 }
         )
-        .background(recipe.color)
-        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .shadow(color: recipe.color.opacity(0.3), radius: 20, x: 0, y: 10)
-        .padding(15)
         .onTapGesture {
             self.hapticImpact.impactOccurred()
             self.showModal = true
         }
         .sheet(isPresented: self.$showModal) {
-            RecipesDetailedView()
+            RecipesDetailedView(recipe: recipe)
         }
     }
 }
