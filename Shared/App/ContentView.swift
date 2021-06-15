@@ -11,10 +11,9 @@ struct ContentView: View {
     
     // MARK: - PROPERTIES
     
-    var foods: [Food] = foodsData
     @State private var showModal: Bool = false
-//    @Environment(\.presentationMode) var presentationMode
-
+    var recipe: RecipesData = recipesData[0]
+    
     
     // MARK: - BODY
     var body: some View {
@@ -24,10 +23,12 @@ struct ContentView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(recipesData) { item in
                         GeometryReader { geometry in
-                            CardView(recipe: item)
+                            NavigationLink(destination: RecipesDetailedView(recipe: recipe)){
+                                CardView(recipe: item)
+                            }
                         }
                         .frame(maxWidth: .infinity)
-                        .frame(height: 355)
+                        .frame(height: 320)
                     }
                 }
             }//: NAVIGATION

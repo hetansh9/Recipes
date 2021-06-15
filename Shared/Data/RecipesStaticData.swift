@@ -15,7 +15,7 @@ struct RecipesData: Identifiable {
     var color: Color
 }
 
-var recipesData = [
+let recipesData = [
     
     RecipesData(title: "Lasagna", subtitle: "Italian", image: "breakfast", color: Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))),
     

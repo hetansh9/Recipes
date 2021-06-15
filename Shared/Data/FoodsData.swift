@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-// MARK: - FOOD DATA
+// MARK: - FOOD DATA (Onboarding)
 
 let foodsData: [Food] = [
     
