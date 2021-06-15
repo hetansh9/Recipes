@@ -11,7 +11,7 @@ struct ContentView: View {
     
     // MARK: - PROPERTIES
     
-    @State private var showModal: Bool = false
+    @State var showModal: Bool = false
     var recipe: RecipesData = recipesData[0]
     
     
