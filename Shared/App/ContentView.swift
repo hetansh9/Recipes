@@ -12,18 +12,28 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     
     var foods: [Food] = foodsData
+    @State private var showModal: Bool = false
+//    @Environment(\.presentationMode) var presentationMode
+
     
     // MARK: - BODY
     var body: some View {
-        NavigationView{
-            // Might change to VStack depending on the layout
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(recipesData) { item in
-                    CardView(recipe: item)
+        ZStack {
+            NavigationView{
+                // Might change to VStack depending on the layout
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(recipesData) { item in
+                        GeometryReader { geometry in
+                            CardView(recipe: item)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 355)
+                    }
                 }
-            }
-        }//: NAVIGATION
-        .navigationViewStyle(StackNavigationViewStyle())
+            }//: NAVIGATION
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+        
     }
 }
 
@@ -68,15 +78,13 @@ struct CardView: View {
                     VisualEffectBlur(blurStyle: .systemMaterialDark)
                 )
             }
-            .frame(maxWidth: .infinity, minHeight: 300)
             .background(
-                Image(uiImage: #imageLiteral(resourceName: "background-1"))
+                Image(uiImage: #imageLiteral(resourceName: "background-3"))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             )
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
-            
         }//: VStack
         .padding(20)
         .navigationBarTitle("Featured")
@@ -92,11 +100,13 @@ struct CardView: View {
                 }
         )
         .onTapGesture {
-            self.hapticImpact.impactOccurred()
-            self.showModal = true
+            withAnimation(.spring()){
+                self.hapticImpact.impactOccurred()
+                self.showModal.toggle()
+            }
         }
-        .sheet(isPresented: self.$showModal) {
+        .fullScreenCover(isPresented: $showModal, content: {
             RecipesDetailedView(recipe: recipe)
-        }
+        })
     }
 }
