@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipeNutrientsView: View {
     //MARK: - PROPERTIES
     
-    var recipe: RecipesData
+    var recipe: Recipe
     let nutrients: [String] = ["Energy", "Sugar", "Fat", "Protein", "Vitamins", "Minerals"]
     
     //MARK: - VIEW
@@ -30,8 +30,8 @@ struct RecipeNutrientsView: View {
                 
                 Spacer(minLength: 25)
                 
-                Text(recipe.nutrition[item])
-                  .multilineTextAlignment(.trailing)
+//                Text(recipe.nutrition[item])
+//                  .multilineTextAlignment(.trailing)
               }
             }
           }

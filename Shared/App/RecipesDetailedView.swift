@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipesDetailedView: View {
     //MARK: - PROPERTIES
     @SwiftUI.Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var recipe: RecipesData = recipesData[0]
+    var recipe: Recipe = recipesData[0]
     
     var body: some View {
         // Container containing the Card

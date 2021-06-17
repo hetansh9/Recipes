@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		58262B532660EA3300F4F773 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58262B512660EA3300F4F773 /* SearchBar.swift */; };
 		5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
 		5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
+		583B6084267B19A50065D082 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B6083267B19A50065D082 /* RecipeStore.swift */; };
+		583B6085267B19A50065D082 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B6083267B19A50065D082 /* RecipeStore.swift */; };
+		583B6088267B1A170065D082 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 583B6087267B1A170065D082 /* Contentful */; };
 		5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
@@ -84,6 +87,7 @@
 		580185D22660B32900C66811 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58262B512660EA3300F4F773 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5832E786265A68D400799249 /* RecipesDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailedView.swift; sourceTree = "<group>"; };
+		583B6083267B19A50065D082 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
 		5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesStaticData.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNutrientsView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583B6088267B1A170065D082 /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +269,7 @@
 			children = (
 				714C7124265635E300989406 /* FoodsData.swift */,
 				5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */,
+				583B6083267B19A50065D082 /* RecipeStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -313,6 +319,9 @@
 			dependencies = (
 			);
 			name = "Recipes (iOS)";
+			packageProductDependencies = (
+				583B6087267B1A170065D082 /* Contentful */,
+			);
 			productName = "Recipes (iOS)";
 			productReference = 714C70D92656336600989406 /* Recipes.app */;
 			productType = "com.apple.product-type.application";
@@ -404,6 +413,9 @@
 				Base,
 			);
 			mainGroup = 714C70CC2656336500989406;
+			packageReferences = (
+				583B6086267B1A170065D082 /* XCRemoteSwiftPackageReference "contentful.swift" */,
+			);
 			productRefGroup = 714C70DA2656336600989406 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,6 +493,7 @@
 				58F862D826654E5400257342 /* ImagePicker.swift in Sources */,
 				710524B7266830FE00DAC35A /* RecipeInfo.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
+				583B6084267B19A50065D082 /* RecipeStore.swift in Sources */,
 				58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */,
 				58B4E9DB2656F128001D3EE6 /* SearchView.swift in Sources */,
 			);
@@ -507,6 +520,7 @@
 				714C7122265635A800989406 /* FoodCardView.swift in Sources */,
 				714C7130265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7126265635E300989406 /* FoodsData.swift in Sources */,
+				583B6085267B19A50065D082 /* RecipeStore.swift in Sources */,
 				58B4E9DF2656F160001D3EE6 /* BookmarksView.swift in Sources */,
 				58262B532660EA3300F4F773 /* SearchBar.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
@@ -888,6 +902,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		583B6086267B1A170065D082 /* XCRemoteSwiftPackageReference "contentful.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/contentful/contentful.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		583B6087267B1A170065D082 /* Contentful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 583B6086267B1A170065D082 /* XCRemoteSwiftPackageReference "contentful.swift" */;
+			productName = Contentful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 714C70CD2656336500989406 /* Project object */;
 }
