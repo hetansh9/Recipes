@@ -40,7 +40,7 @@ class RecipeStore: ObservableObject {
                         title: item.fields["title"] as! String,
                         headline: item.fields["headline"] as! String,
                         subtitle: item.fields["subtitle"] as! String,
-                        image: URL(string: "https://dl.dropbox.com/s/pmggyp7j64nvvg8/Certificate%402x.png?dl=0")!,
+                        image: item.fields.linkedAsset(at: "image")?.url ?? URL(string: "")!,
                         color: Color(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)),
                    //   nutrition: item.fields["nutrition"] as! [String],
                         description: item.fields["description"] as! String

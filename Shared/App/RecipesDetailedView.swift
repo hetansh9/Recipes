@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct RecipesDetailedView: View {
     //MARK: - PROPERTIES
@@ -58,7 +59,7 @@ struct RecipesDetailedView: View {
                 .frame(height: 455)
                 .background(
                     GeometryReader { g in
-                        Image(uiImage: #imageLiteral(resourceName: "background-1"))
+                        WebImage(url: recipe.image)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .offset(y: g.frame(in: .global).minY > 0 ? -g.frame(in: .global).minY : 0)
