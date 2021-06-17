@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ContentView: View {
     
@@ -78,7 +79,7 @@ struct CardView: View {
                 )
             }
             .background(
-                Image(uiImage: #imageLiteral(resourceName: "background-3"))
+                WebImage(url: recipe.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             )
