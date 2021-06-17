@@ -10,10 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - PROPERTIES
-    
     @State var showModal: Bool = false
-    var recipe: RecipesData = recipesData[0]
-    
+    @ObservedObject var store = RecipeStore()    
     
     // MARK: - BODY
     var body: some View {
@@ -21,10 +19,10 @@ struct ContentView: View {
             NavigationView{
                 // Might change to VStack depending on the layout
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(recipesData) { item in
+                    ForEach(store.recipes.indices, id: \.self) { index in
                         GeometryReader { geometry in
-                            NavigationLink(destination: RecipesDetailedView(recipe: recipe)){
-                                CardView(recipe: item)
+                            NavigationLink(destination: RecipesDetailedView()){
+                                CardView(recipe: self.store.recipes[index], index: index)
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -51,8 +49,8 @@ struct CardView: View {
     
     @State private var isShowingSettings: Bool = false
     @State private var showModal: Bool = false
-    
-    var recipe: RecipesData = recipesData[0]
+    var recipe: Recipe
+    var index: Int
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
     
     var body: some View {
@@ -60,7 +58,7 @@ struct CardView: View {
         VStack {
             // CARD ITSELF
             VStack(spacing: 0) {
-                Text(recipe.title.uppercased()).font(.largeTitle).bold()
+                Text(recipe.title).font(.largeTitle).bold()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                     .padding()
                 // Lower Banner
