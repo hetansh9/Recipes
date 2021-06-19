@@ -43,6 +43,7 @@ class RecipeStore: ObservableObject {
                         image: item.fields.linkedAsset(at: "image")?.url ?? URL(string: "")!,
                         color: Color(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)),
                    //   nutrition: item.fields["nutrition"] as! [String],
+                        recipe: item.fields["recipe"] as! String,
                         description: item.fields["description"] as! String
                     )
                 )

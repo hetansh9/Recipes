@@ -59,13 +59,14 @@ struct CardView: View {
         VStack {
             // CARD ITSELF
             VStack(spacing: 0) {
-                Text(recipe.title).font(.largeTitle).bold()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                    .padding()
+                // Previously Implemented Title
+//                Text(recipe.title).font(.largeTitle).bold()
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+//                    .padding()
                 // Lower Banner
                 HStack {
                     VStack(alignment: .leading, spacing: 4){
-                        Text(recipe.subtitle)
+                        Text(recipe.title)
                             .font(.body).bold()
                             .offset(x: 5)
                     }
@@ -75,9 +76,10 @@ struct CardView: View {
                 .frame(maxWidth: .infinity)
                 .padding(12)
                 .background(
-                    VisualEffectBlur(blurStyle: .systemMaterialDark)
+                    VisualEffectBlur(blurStyle: .systemThinMaterialDark)
                 )
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
             .background(
                 WebImage(url: recipe.image)
                     .resizable()
@@ -85,6 +87,7 @@ struct CardView: View {
             )
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            
         }//: VStack
         .padding(20)
         .navigationBarTitle("Featured")

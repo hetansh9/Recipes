@@ -36,15 +36,15 @@ struct RecipesDetailedView: View {
                     //Fixed Position for now with no constraints
                     .position(x: 388, y: 70)
                     
-                    // Title Text and Subtitle banner
-                    Text(recipe.title.uppercased()).font(.largeTitle).bold()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                        .padding()
+//                    // Title Text and Subtitle banner
+//                    Text(recipe.title.uppercased()).font(.largeTitle).bold()
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+//                        .padding()
                     // Lower Banner
                     HStack {
                         VStack(alignment: .leading, spacing: 4){
-                            Text(recipe.subtitle)
-                                .font(.body).bold()
+                            Text(recipe.title.uppercased())
+                                .font(.title).bold()
                                 .offset(x: 5)
                         }
                         .foregroundColor(Color.white)
@@ -80,12 +80,24 @@ struct RecipesDetailedView: View {
 //                    .fontWeight(.heavy)
 //                    .multilineTextAlignment(.leading)
 //                    .padding(.top)
+               
+                // SUBHEADLINE
+                Text("Recipe".uppercased())
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(recipe.color)
                 
+                // DESCRIPTION
+                Text(recipe.recipe)
+                    .multilineTextAlignment(.leading)
+                    .padding(.trailing)
+                 
                 // NUTRIENTS
                 RecipeNutrientsView(recipe: recipe)
                 
                 // SUBHEADLINE
                 Text("Learn more about \(recipe.title)".uppercased())
+                    .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(recipe.color)
                 
