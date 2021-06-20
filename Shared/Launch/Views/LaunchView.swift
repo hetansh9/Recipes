@@ -12,17 +12,36 @@ struct LaunchView: View {
     //MARK: - PROPERTIES
     @State private var loadingText: [String] = "Loading the App...".map {String ($0) }
     @State private var showLoadingText: Bool = false
-    private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State private var counter: Int = 0
     @State private var loops: Int = 0
+    @State private var start = UnitPoint(x: 0, y: -2)
+    @State private var end = UnitPoint(x: 4, y: 0)
     @Binding var showLaunchView: Bool
+    
+    private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    private let gradientTimer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
     
     //MARK: - VIEW
     var body: some View {
+        
         ZStack{
-            
-            Color.launch.background
-                .ignoresSafeArea()
+                LinearGradient(gradient: Gradient(colors: [
+                                                    Color.hexStringToColor(hex: "#FDEFF9"),
+                                                    Color.hexStringToColor(hex: "#EC38BC"),
+                                                    Color.hexStringToColor(hex: "#7303C0"),
+                                                    Color.hexStringToColor(hex: "#03001E")]),
+                               startPoint: start,
+                               endPoint: end)
+                    .animation(Animation.easeInOut(duration: 4))
+                    .onReceive(gradientTimer, perform: { _ in
+                        self.end = UnitPoint(x: 5, y: 0)
+                        self.start = UnitPoint(x: 0, y: 5)
+    //                    self.start = UnitPoint(x: -4, y: 20)
+    //                    self.start = UnitPoint(x: 4, y: 0)
+                    })
+                    .ignoresSafeArea()
+                    .blur(radius: 20).scaleEffect(2.0)
+             
             
             Image("launchLogo")
                 .resizable()
@@ -38,7 +57,7 @@ struct LaunchView: View {
                                 .fontWeight(.heavy)
                                 .foregroundColor(Color.launch.accent)
                                 .offset(y: counter == index ? -5 : 0)
-                                
+                            
                         }
                     }
                     .transition(AnyTransition.scale.animation(.easeIn))
@@ -72,12 +91,32 @@ struct LaunchView_Previews: PreviewProvider {
     }
 }
 
-extension Color {
-    
-    static let launch = LaunchTheme()
-}
-
 struct LaunchTheme {
     let accent = Color("LaunchAccentColor")
     let background = Color("LaunchBackgroundColor")
+}
+
+//
+
+extension Color {
+    
+    static let launch = LaunchTheme()
+    
+    static func hexStringToColor (hex:String, opacity: Double = 1.0) -> Color {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        if ((cString.count) != 6) {
+            return Color.gray
+        }
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+        return Color(
+            red: Double((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: Double((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: Double(rgbValue & 0x0000FF) / 255.0,
+            opacity: Double(opacity)
+        )
+    }
 }
