@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,20 +22,34 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipesLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0JB-NL-tmM">
-                                <rect key="frame" x="-70" y="190" width="554" height="516"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9i-dJ-cLs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ga0-rw-LdP">
+                                        <rect key="frame" x="157" y="359" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="EFY-ZB-mtO"/>
+                                            <constraint firstAttribute="height" constant="100" id="HWW-7l-OvL"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ga0-rw-LdP" firstAttribute="centerX" secondItem="w9i-dJ-cLs" secondAttribute="centerX" id="EgS-8s-He8"/>
+                                    <constraint firstItem="ga0-rw-LdP" firstAttribute="centerY" secondItem="w9i-dJ-cLs" secondAttribute="centerY" id="hPa-Ym-CsY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="0.07363208383" green="0.079231493180000001" blue="0.2509957552" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="LaunchBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="0JB-NL-tmM" secondAttribute="bottom" constant="156" id="0eb-aT-qpG"/>
-                            <constraint firstItem="0JB-NL-tmM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-70" id="2Lv-ar-A7k"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="w9i-dJ-cLs" secondAttribute="bottom" id="37b-2p-GRo"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstAttribute="trailing" secondItem="0JB-NL-tmM" secondAttribute="trailing" constant="-70" id="8I5-Hr-BUE"/>
+                            <constraint firstItem="w9i-dJ-cLs" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="Isp-bD-MWC"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstItem="w9i-dJ-cLs" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" id="UzN-MR-Bv8"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="0JB-NL-tmM" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="146" id="uro-Dc-Qg7"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="w9i-dJ-cLs" secondAttribute="trailing" id="uUH-91-bpR"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,6 +59,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="recipesLogo" width="1500" height="1500"/>
+        <image name="launchLogo" width="419" height="448"/>
+        <namedColor name="LaunchBackgroundColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

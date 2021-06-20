@@ -11,13 +11,24 @@ import SwiftUI
 struct FoodApp: App {
     
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @State private var showLaunchView: Bool = true
     
     var body: some Scene {
         WindowGroup {
-            if isOnboarding {
-                OnboardingView()
-            }else{
-                MainView()
+            ZStack{
+                if isOnboarding {
+                    OnboardingView()
+                }else{
+                    MainView()
+                    
+                    ZStack{
+                        if showLaunchView {
+                            LaunchView(showLaunchView: $showLaunchView)
+                                .transition(.move(edge: .bottom))
+                        }
+                    }
+                    .zIndex(2.0)
+                }
             }
         }
     }

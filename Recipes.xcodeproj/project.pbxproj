@@ -21,6 +21,8 @@
 		5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
+		588BB7B9267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
+		588BB7BA267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
 		58AF020C267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
 		58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */; };
@@ -91,6 +93,7 @@
 		583B6083267B19A50065D082 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
 		5865E8A526578EDC00DFC683 /* RecipesStaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesStaticData.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		588BB7B8267F580D0035090E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNutrientsView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
@@ -162,6 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5810132A267F4F3A0095BF85 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				5810132B267F4F460095BF85 /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		5810132B267F4F460095BF85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				580185D22660B32900C66811 /* LaunchScreen.storyboard */,
+				588BB7B8267F580D0035090E /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		58F862D126654DF500257342 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +206,7 @@
 		714C70D12656336500989406 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5810132A267F4F3A0095BF85 /* Launch */,
 				58F862D126654DF500257342 /* Helpers */,
 				714C71342657415900989406 /* Server */,
 				714C7123265635BC00989406 /* Data */,
@@ -288,7 +309,6 @@
 				58B4E9E02656F18C001D3EE6 /* ProfileView.swift */,
 				58B4E9E32656F33A001D3EE6 /* MainView.swift */,
 				5832E786265A68D400799249 /* RecipesDetailedView.swift */,
-				580185D22660B32900C66811 /* LaunchScreen.storyboard */,
 				58262B512660EA3300F4F773 /* SearchBar.swift */,
 			);
 			path = App;
@@ -486,6 +506,7 @@
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
 				714C713C26574B9500989406 /* ServerRequest.swift in Sources */,
 				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				588BB7B9267F580D0035090E /* LaunchView.swift in Sources */,
 				5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
@@ -518,6 +539,7 @@
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
 				58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
 				58BED7022666AADC00DB34C4 /* GradientText.swift in Sources */,
+				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
