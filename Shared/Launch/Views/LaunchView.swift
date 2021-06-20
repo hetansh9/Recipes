@@ -10,13 +10,14 @@ import SwiftUI
 
 struct LaunchView: View {
     //MARK: - PROPERTIES
-    @State private var loadingText: [String] = "Loading the App...".map {String ($0) }
+    @State private var loadingText: [String] = "Loading the app..".map {String ($0) }
     @State private var showLoadingText: Bool = false
     @State private var counter: Int = 0
     @State private var loops: Int = 0
     @State private var start = UnitPoint(x: 0, y: -2)
     @State private var end = UnitPoint(x: 4, y: 0)
     @Binding var showLaunchView: Bool
+//    @Binding var showGradientView: Bool
     
     private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     private let gradientTimer = Timer.publish(every: 0.01, on: .main, in: .default).autoconnect()
@@ -32,7 +33,7 @@ struct LaunchView: View {
                                                     Color.hexStringToColor(hex: "#03001E")]),
                                startPoint: start,
                                endPoint: end)
-                    .animation(Animation.easeInOut(duration: 4))
+                    .animation(Animation.easeOut(duration: 3.4))
                     .onReceive(gradientTimer, perform: { _ in
                         self.end = UnitPoint(x: 5, y: 0)
                         self.start = UnitPoint(x: 0, y: 5)
@@ -41,7 +42,7 @@ struct LaunchView: View {
                     })
                     .ignoresSafeArea()
                     .blur(radius: 20).scaleEffect(2.0)
-             
+            
             
             Image("launchLogo")
                 .resizable()
@@ -69,7 +70,7 @@ struct LaunchView: View {
             showLoadingText.toggle()
         }
         .onReceive(timer, perform: { _ in
-            withAnimation(.spring()){
+            withAnimation(.linear(duration: 0.5)){
                 let lastIndex = loadingText.count - 1
                 if counter == lastIndex {
                     counter = 0
