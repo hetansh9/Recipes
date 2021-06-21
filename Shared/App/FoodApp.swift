@@ -24,7 +24,7 @@ struct FoodApp: App {
                     ZStack{
                         if showLaunchView {
                             LaunchView(showLaunchView: $showLaunchView)
-                                .transition(.move(edge: .bottom))
+                                .transition(.move(edge: .leading))
                         }
                     }
                     .zIndex(2.0)
