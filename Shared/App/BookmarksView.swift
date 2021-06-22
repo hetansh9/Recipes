@@ -8,11 +8,50 @@
 import SwiftUI
 
 struct BookmarksView: View {
+    
+    @State var variety: [String] = ["Italian" , "Indian", "Mexican" , "Chinese", "American" , "Greek", "Thai"]
     var body: some View {
-        Text("Bookmarks!")
-            .font(.title)
-            .fontWeight(.bold)
+        NavigationView {
+        
+            VStack {
+                
+                HStack {
+                    
+                    
+                    List {
+                        // uncomment , if we decide on putting in sections
+    //                    Section (
+    //                        header: Text("Saved Items"))
+    //                    {
+                        
+                        ForEach(variety, id:\.self) { i in
+                            Text(i.capitalized)
+                                .padding(10)
+                        }
+                        
+                        .onDelete(perform: delete)
+                        .onMove(perform: move)
+                            
+                        
+                   // }
+                }
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarTitle("Bookmarks 🔖 ")
+                .navigationBarItems(leading: EditButton())
+                    }
+            }
+       
     }
+        .accentColor(.blue)
+}
+    func delete(indexSet: IndexSet) {
+        variety.remove(atOffsets: indexSet)
+    }
+    
+    func move(indices: IndexSet, newOffset: Int) {
+        variety.move(fromOffsets: indices, toOffset: newOffset)
+    }
+    
 }
 
 struct BookmarksView_Previews: PreviewProvider {
@@ -20,3 +59,4 @@ struct BookmarksView_Previews: PreviewProvider {
         BookmarksView()
     }
 }
+
