@@ -67,7 +67,7 @@ struct ProfileView: View {
                 divider
                 
                 Link(destination: URL(string: "https://github.com/hetansh9/Recipes")!, label: {
-                    MenuRow(title: "Github", leftIcon: "person.icloud.fill", rightIcon: "link")
+                    MenuRow(title: "Github", leftIcon: "github", rightIcon: "link")
                 })
                 
             }
