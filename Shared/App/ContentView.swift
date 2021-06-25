@@ -50,6 +50,7 @@ struct CardView: View {
     
     @State private var isShowingSettings: Bool = false
     @State private var showModal: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     var recipe: Recipe
     var index: Int
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -86,7 +87,7 @@ struct CardView: View {
                     .aspectRatio(contentMode: .fill)
             )
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            .shadow(color: colorScheme == .dark ? Color.white.opacity(0.3) : Color.black.opacity(0.3), radius: 20,x: 0,y: 10)
             
         }//: VStack
         .padding(20)

@@ -13,6 +13,7 @@ struct ProfileView: View {
     
     //MARK: - PROPERTIES
     
+    @Environment(\.colorScheme) var colorScheme
     @State private var contentOffset = CGFloat(0)
     
     //MARK: - VIEW
@@ -35,7 +36,7 @@ struct ProfileView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .background(
-                Image("background-1")
+                Image(colorScheme == .dark ? "bg_dark" : "bg_light")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
@@ -69,7 +70,6 @@ struct ProfileView: View {
                 
             }
             .padding(16)
-            .background(Color("Background 1"))
             .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialDark))
             .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.white, lineWidth: 1).blendMode(.overlay))
             .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
