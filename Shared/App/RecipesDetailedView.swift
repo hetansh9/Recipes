@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct RecipesDetailedView: View {
     //MARK: - PROPERTIES
     @SwiftUI.Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.colorScheme) var colorScheme
     var recipe: Recipe = recipesData[0]
     
     var body: some View {
@@ -19,27 +20,29 @@ struct RecipesDetailedView: View {
             // CARD ITSELF
             ZStack {
                 VStack(spacing: 0) {
-                    // Dismiss Button
-                    // Have to Add CONSTRAINTS TO FIX POSITION ON SCROLL
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                        print("Dismissed!")
-                    }, label: {
-                        Circle()
-                            .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
-                            .background(
-                                Image(systemName: "xmark")
-                                    .foregroundColor(Color.black.opacity(1))
-                            )
-                    })
-                    .frame(width: 36, height: 36, alignment: .center)
-                    //Fixed Position for now with no constraints
-                    .position(x: 388, y: 70)
+                    Spacer()
                     
-//                    // Title Text and Subtitle banner
-//                    Text(recipe.title.uppercased()).font(.largeTitle).bold()
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-//                        .padding()
+                    /* Dismiss Button
+                     Have to Add CONSTRAINTS TO FIX POSITION ON SCROLL
+                     */
+                    //
+                    //                        Button(action: {
+                    //                            self.presentationMode.wrappedValue.dismiss()
+                    //                            print("Dismissed!")
+                    //                        }, label: {
+                    //                            Circle()
+                    //                                .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
+                    //                                .background(
+                    //                                    Image(systemName: "xmark")
+                    //                                        .foregroundColor(Color.black.opacity(1))
+                    //                                )
+                    //                        })
+                    //                        .frame(width: 36, height: 36, alignment: .center)
+                    //                        .background(Color.blue)
+                    //                        //Fixed Position for now with no constraints
+                    //                        .position(x: 388, y: 70)
+                    //
+                    
                     // Lower Banner
                     HStack {
                         VStack(alignment: .leading, spacing: 4){
@@ -68,19 +71,47 @@ struct RecipesDetailedView: View {
                     .frame(height: UIScreen.main.bounds.height / 2.2)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 0, style: .continuous))
-                .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+                .shadow(color: colorScheme == .dark ? recipe.color.opacity(0.3) : Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+                
+                // Custom Dismiss Button
+                VStack {
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                            print("Dismissed!")
+                        }, label: {
+                            Circle()
+                                .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
+                                .background(
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(Color.black.opacity(1))
+                                )
+                        })
+                        .frame(width: 36, height: 36, alignment: .center)
+                        .padding(.top, 52)
+                        .padding(.trailing, 22.5)
+                        //                            .background(Color.red)
+                    }
+                    Spacer()
+                }
+                
+                
             }
+            
             
             // Post the Image Part with Description and multiple views
             VStack(alignment: .leading, spacing: 20) {
                 
                 // HEADLINE
-//                Text(recipe.headline)
-//                    .font(.headline)
-//                    .fontWeight(.heavy)
-//                    .multilineTextAlignment(.leading)
-//                    .padding(.top)
-               
+                //                Text(recipe.headline)
+                //                    .font(.headline)
+                //                    .fontWeight(.heavy)
+                //                    .multilineTextAlignment(.leading)
+                //                    .padding(.top)
+                
                 // SUBHEADLINE
                 Text("Recipe".uppercased())
                     .font(.title2)
@@ -91,9 +122,9 @@ struct RecipesDetailedView: View {
                 Text(recipe.recipe)
                     .multilineTextAlignment(.leading)
                     .padding(.trailing)
-                 
+                
                 // NUTRIENTS
-                RecipeNutrientsView(recipe: recipe)
+                // RecipeNutrientsView(recipe: recipe)
                 
                 // SUBHEADLINE
                 Text("Learn more about \(recipe.title)".uppercased())
@@ -114,6 +145,7 @@ struct RecipesDetailedView: View {
             .navigationBarTitle(recipe.title, displayMode: .inline)
             .navigationBarHidden(true)
             .ignoresSafeArea()
+            
         }
         .edgesIgnoringSafeArea(.top)
     }
@@ -123,7 +155,8 @@ struct RecipesDetailedView: View {
 struct RecipesDetailedView_Previews: PreviewProvider {
     static var previews: some View {
         RecipesDetailedView()
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDevice("iPhone 12")
+        //                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }
 
