@@ -23,7 +23,7 @@ struct ProfileView: View {
                 TrackableScrollView(offsetChanged: {
                     offset in
                     contentOffset = offset.y
-                    //                    print("contentOffset", contentOffset)
+                    //print("contentOffset", contentOffset)
                 }) {
                     content
                 }
@@ -52,6 +52,11 @@ struct ProfileView: View {
     
     var content: some View {
         
+        
+//        VStack{
+//            Text("Hello")
+//        }
+        
         VStack {
             // More content
             VStack{
@@ -62,11 +67,8 @@ struct ProfileView: View {
                 divider
                 
                 Link(destination: URL(string: "https://github.com/hetansh9/Recipes")!, label: {
-                    MenuRow(title: "Github", leftIcon: "play.rectangle.fill", rightIcon: "link")
+                    MenuRow(title: "Github", leftIcon: "github", rightIcon: "link")
                 })
-                
-              
-                
                 
             }
             .padding(16)
@@ -89,7 +91,7 @@ struct ProfileView: View {
     }
     
     var divider: some View {
-        Divider().background(Color.white.blendMode(.overlay))
+        Divider().background(colorScheme == .dark ? Color.white.blendMode(.overlay):  Color.black.blendMode(.overlay))
     }
 }
 
