@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "question": "How many recipes are present?",
+        "answer": "There are hundreds of recipes in the app at the moment and we are working hard everyday to bring you more :)"
+    },
+    {
+        "id": 2,
+        "question": "How do I cancel my subscription?",
+        "answer": "You can easily cancel your subcscription anytime you may want to do so from the profile tab."
+    },
+    {
+        "id": 3,
+        "question": "Do you provide videos along with your recipes?",
+        "answer": "There are currently a few videos available but we were working on adding a lot more in the near future."
+    }
+]
