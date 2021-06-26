@@ -52,13 +52,8 @@ struct ProfileView: View {
     
     var content: some View {
         
-        
-//        VStack{
-//            Text("Hello")
-//        }
-        
         VStack {
-            // More content
+            ProfileRow()
             VStack{
                 NavigationLink(destination: FAQView()) {
                     MenuRow()
