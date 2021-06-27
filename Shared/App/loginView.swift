@@ -18,7 +18,7 @@ struct loginView: View {
     @State private var editingPasswordTextField: Bool = false
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
-    @State private var signupToggle: Bool = true
+//    @State private var signupToggle: Bool = true
     @State private var showProfileView: Bool = false
     @State private var rotationAngle = 0.0
     @State private var fadeToggle: Bool = true
@@ -30,7 +30,7 @@ struct loginView: View {
     var body: some View {
         ZStack {
             
-            Image(signupToggle ? "background-2" : "background-1")
+            Image("background-1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -44,7 +44,7 @@ struct loginView: View {
                 
                 VStack(alignment: .leading, spacing: 16) {
                     
-                    Text(signupToggle ? "Sign Up" : "Sign In")
+                    Text("Sign In")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
                     Text("Access all the amazing recipes by signing up")
@@ -136,50 +136,51 @@ struct loginView: View {
                      Sign Up Button
                      */
                     
-                    GradientButton(buttonTitle: signupToggle ? "Create Account" : "Sign in") {
+                    GradientButton(buttonTitle: "Sign in") {
                         generator.selectionChanged()
                     }
                     
                     // Only Show Disclaimer if signupToggle = true
-                    if signupToggle {
+//                    if signupToggle {
                         Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
                             .font(.footnote)
                             .foregroundColor(Color.white.opacity(0.7))
                         Rectangle()
                             .frame(height: 1)
                             .foregroundColor(Color.white.opacity(0.1))
-                    }
+//                    }
                     
+                    // Stack containing the last two buttons
                     VStack(alignment: .leading, spacing: 16, content: {
                         Button(action: {
                             
-                            withAnimation(.easeInOut(duration: 0.35)) {
-                                fadeToggle.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                                    withAnimation(.easeInOut(duration: 0.35)) {
-                                        self.fadeToggle.toggle()
-                                    }
-                                }
-                            }
-                            
-                            withAnimation(
-                                .easeInOut(duration: 0.7)){
-                                signupToggle.toggle()
-                                self.rotationAngle += 180
-                            }
+//                            withAnimation(.easeInOut(duration: 0.35)) {
+//                                fadeToggle.toggle()
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+//                                    withAnimation(.easeInOut(duration: 0.35)) {
+//                                        self.fadeToggle.toggle()
+//                                    }
+//                                }
+//                            }
+//
+//                            withAnimation(
+//                                .easeInOut(duration: 0.7)){
+//                                signupToggle.toggle()
+//                                self.rotationAngle += 180
+//                            }
                         }, label: {
                             HStack(spacing: 4){
-                                Text(signupToggle ? "Already have an account?" : "Don't have an account?")
+                                Text("Already have an account?")
                                     .font(.footnote)
                                     .foregroundColor(Color.white.opacity(0.7))
-                                GradientText(text: signupToggle ? "Sign in" : "Sign up")
+                                GradientText(text:"Sign up")
                                     .font(Font.footnote.bold())
                                 
                             }
                         })
                         
                         // Forgot Password Button
-                        if !signupToggle {
+//                        if !signupToggle {
                             Button(action: {
                                 print("Send Reset password email")
                             }, label: {
@@ -192,7 +193,7 @@ struct loginView: View {
                                         .font(.footnote.bold())
                                 }
                             })
-                        }
+//                        }
                     })
                 }
                 .padding(20)

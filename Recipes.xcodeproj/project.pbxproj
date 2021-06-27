@@ -43,6 +43,10 @@
 		5867383226826BB4008F69E3 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867383026826BB4008F69E3 /* FAQView.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
+		58892E402688955C004AE401 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E3F2688955C004AE401 /* FirebaseAuth */; };
+		58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E412688955C004AE401 /* FirebaseFirestore */; };
+		58892E44268895BC004AE401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58892E43268895BC004AE401 /* GoogleService-Info.plist */; };
+		58892E45268895BC004AE401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58892E43268895BC004AE401 /* GoogleService-Info.plist */; };
 		588BB7B9267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		588BB7BA267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
@@ -128,6 +132,7 @@
 		5867382D26825C08008F69E3 /* GradientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientIcon.swift; sourceTree = "<group>"; };
 		5867383026826BB4008F69E3 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		58892E43268895BC004AE401 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		588BB7B8267F580D0035090E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNutrientsView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -173,6 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				583B608B267B43000065D082 /* SDWebImageSwiftUI in Frameworks */,
+				58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */,
+				58892E402688955C004AE401 /* FirebaseAuth in Frameworks */,
 				583B6088267B1A170065D082 /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +266,7 @@
 				714C711F2656354200989406 /* View */,
 				714C71272656363200989406 /* App */,
 				714C70D42656336600989406 /* Assets.xcassets */,
+				58892E43268895BC004AE401 /* GoogleService-Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -400,6 +408,8 @@
 			packageProductDependencies = (
 				583B6087267B1A170065D082 /* Contentful */,
 				583B608A267B43000065D082 /* SDWebImageSwiftUI */,
+				58892E3F2688955C004AE401 /* FirebaseAuth */,
+				58892E412688955C004AE401 /* FirebaseFirestore */,
 			);
 			productName = "Recipes (iOS)";
 			productReference = 714C70D92656336600989406 /* Recipes.app */;
@@ -495,6 +505,7 @@
 			packageReferences = (
 				583B6086267B1A170065D082 /* XCRemoteSwiftPackageReference "contentful.swift" */,
 				583B6089267B43000065D082 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 714C70DA2656336600989406 /* Products */;
 			projectDirPath = "";
@@ -514,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				714C70FF2656336600989406 /* Assets.xcassets in Resources */,
+				58892E44268895BC004AE401 /* GoogleService-Info.plist in Resources */,
 				580185D32660B32900C66811 /* LaunchScreen.storyboard in Resources */,
 				5854C61A26875CCB0034103F /* faqData.json in Resources */,
 			);
@@ -524,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				714C71002656336600989406 /* Assets.xcassets in Resources */,
+				58892E45268895BC004AE401 /* GoogleService-Info.plist in Resources */,
 				580185D42660B32900C66811 /* LaunchScreen.storyboard in Resources */,
 				5854C61B26875CCB0034103F /* faqData.json in Resources */,
 			);
@@ -1026,6 +1039,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1038,6 +1059,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 583B6089267B43000065D082 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		58892E3F2688955C004AE401 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		58892E412688955C004AE401 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
