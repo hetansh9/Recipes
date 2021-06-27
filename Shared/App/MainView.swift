@@ -35,6 +35,12 @@ struct MainView: View {
                     Image(systemName: "person.crop.circle")
                     Text("Profile")
                 }
+            
+            loginView()
+                .tabItem {
+                    Image("github")
+                    Text("Login")
+                }
         }//: TAB
     }
 }

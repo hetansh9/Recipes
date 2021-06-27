@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import AudioToolbox
+import Firebase
 
 struct loginView: View {
     //MARK: - PROPERTIES
@@ -18,19 +19,46 @@ struct loginView: View {
     @State private var editingPasswordTextField: Bool = false
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
-//    @State private var signupToggle: Bool = true
+    //    @State private var signupToggle: Bool = true
     @State private var showProfileView: Bool = false
     @State private var rotationAngle = 0.0
     @State private var fadeToggle: Bool = true
+    @State private var showAlert = false
+    @State private var alertMessage = "Something Went Wrong!"
+    @State private var isLoading = false
+    @State private var isSuccessfull = false
     
     private let generator = UISelectionFeedbackGenerator()
-  
+    
+    
+    func login() {
+        self.isLoading = true
+        generator.selectionChanged()
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            self.isLoading = false
+            
+            if error != nil {
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+            } else {
+                
+                self.isSuccessfull = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.isSuccessfull = false
+                    self.email = ""
+                    self.password = ""
+                }
+            }
+        }
+    }
     
     //MARK: - VIEW
     var body: some View {
         ZStack {
             
-            Image("background-1")
+            Image("bg2")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -47,7 +75,7 @@ struct loginView: View {
                     Text("Sign In")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
-                    Text("Access all the amazing recipes by signing up")
+                    Text("Access all the amazing recipes by signing in")
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.7))
                     
@@ -133,44 +161,52 @@ struct loginView: View {
                     
                     /*
                      Past the text fields
-                     Sign Up Button
+                     Sign In Button
                      */
                     
                     GradientButton(buttonTitle: "Sign in") {
-                        generator.selectionChanged()
+                        self.login()
+                    }
+                    .alert(isPresented: $showAlert){
+                        Alert(title: Text("Error!"), message: Text(self.alertMessage), dismissButton: .default(Text("OK")))
                     }
                     
                     // Only Show Disclaimer if signupToggle = true
-//                    if signupToggle {
-                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
-                            .font(.footnote)
-                            .foregroundColor(Color.white.opacity(0.7))
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(Color.white.opacity(0.1))
-//                    }
+                    //                    if signupToggle {
+                    //                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
+                    //                            .font(.footnote)
+                    //                            .foregroundColor(Color.white.opacity(0.7))
+                    //                        Rectangle()
+                    //                            .frame(height: 1)
+                    //                            .foregroundColor(Color.white.opacity(0.1))
+                    //                    }
+                    
+                    //                    Divider()
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.white.opacity(0.1))
                     
                     // Stack containing the last two buttons
                     VStack(alignment: .leading, spacing: 16, content: {
                         Button(action: {
                             
-//                            withAnimation(.easeInOut(duration: 0.35)) {
-//                                fadeToggle.toggle()
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-//                                    withAnimation(.easeInOut(duration: 0.35)) {
-//                                        self.fadeToggle.toggle()
-//                                    }
-//                                }
-//                            }
-//
-//                            withAnimation(
-//                                .easeInOut(duration: 0.7)){
-//                                signupToggle.toggle()
-//                                self.rotationAngle += 180
-//                            }
+                            //                            withAnimation(.easeInOut(duration: 0.35)) {
+                            //                                fadeToggle.toggle()
+                            //                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                            //                                    withAnimation(.easeInOut(duration: 0.35)) {
+                            //                                        self.fadeToggle.toggle()
+                            //                                    }
+                            //                                }
+                            //                            }
+                            //
+                            //                            withAnimation(
+                            //                                .easeInOut(duration: 0.7)){
+                            //                                signupToggle.toggle()
+                            //                                self.rotationAngle += 180
+                            //                            }
                         }, label: {
                             HStack(spacing: 4){
-                                Text("Already have an account?")
+                                Text("Need an account?")
                                     .font(.footnote)
                                     .foregroundColor(Color.white.opacity(0.7))
                                 GradientText(text:"Sign up")
@@ -180,20 +216,20 @@ struct loginView: View {
                         })
                         
                         // Forgot Password Button
-//                        if !signupToggle {
-                            Button(action: {
-                                print("Send Reset password email")
-                            }, label: {
-                                HStack(spacing: 4){
-                                    Text("Forgot Password?")
-                                        .font(.footnote)
-                                        .foregroundColor(.white.opacity(0.7))
-                                    
-                                    GradientText(text: "Reset password")
-                                        .font(.footnote.bold())
-                                }
-                            })
-//                        }
+                        //                        if !signupToggle {
+                        Button(action: {
+                            print("Send Reset password email")
+                        }, label: {
+                            HStack(spacing: 4){
+                                Text("Forgot Password?")
+                                    .font(.footnote)
+                                    .foregroundColor(.white.opacity(0.7))
+                                
+                                GradientText(text: "Reset password")
+                                    .font(.footnote.bold())
+                            }
+                        })
+                        //                        }
                     })
                 }
                 .padding(20)
@@ -205,7 +241,7 @@ struct loginView: View {
             .background(RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.white.opacity(0.2))
                             .background(Color("secondaryBackground").opacity(0.5))
-                            .background(VisualEffectBlur(blurStyle: .systemThinMaterialDark))
+                            .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialDark))
                             .shadow(color: Color("shadowColor").opacity(0.5), radius: 60, x: 0, y: 30)
             )
             .cornerRadius(30.0)
@@ -214,11 +250,17 @@ struct loginView: View {
                 Angle(degrees: self.rotationAngle),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
+            
+            if isLoading {
+                LoadingView()
+            }
+            
+            if isSuccessfull {
+                SuccessView()
+            }
         }
-        // if userSinged up then present profileView
-        //        .fullScreenCover(isPresented: $showProfileView){
-        //
-        //        }
+        
+        
     }
 }
 
