@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct FoodApp: App {
     
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
     @State private var showLaunchView: Bool = true
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
@@ -32,4 +34,13 @@ struct FoodApp: App {
             }
         }
     }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    FirebaseApp.configure()
+    return true
+  }
 }
