@@ -45,6 +45,7 @@
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5887606326899E5800DFC246 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887606226899E5800DFC246 /* UserStore.swift */; };
 		5887606426899E5800DFC246 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887606226899E5800DFC246 /* UserStore.swift */; };
+		588760662689FBC000DFC246 /* EmailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588760652689FBC000DFC246 /* EmailAction.swift */; };
 		58892E402688955C004AE401 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E3F2688955C004AE401 /* FirebaseAuth */; };
 		58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E412688955C004AE401 /* FirebaseFirestore */; };
 		58892E44268895BC004AE401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58892E43268895BC004AE401 /* GoogleService-Info.plist */; };
@@ -146,6 +147,7 @@
 		5867383026826BB4008F69E3 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		5887606226899E5800DFC246 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		588760652689FBC000DFC246 /* EmailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAction.swift; sourceTree = "<group>"; };
 		58892E43268895BC004AE401 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		58892E4A2688A204004AE401 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		58892E4D2688A39D004AE401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				58F862D626654E5400257342 /* ImagePicker.swift */,
 				58F862D726654E5400257342 /* VisualEffectBlur.swift */,
+				588760652689FBC000DFC246 /* EmailAction.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
 				5854C61726875C570034103F /* FAQ.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
+				588760662689FBC000DFC246 /* EmailAction.swift in Sources */,
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
 				5867382B268259DD008F69E3 /* MenuRow.swift in Sources */,
