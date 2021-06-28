@@ -11,36 +11,37 @@ struct FAQView: View {
     //MARK: - PROPERTIES
     
     @State private var contentOffset = CGFloat(0)
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @Environment(\.colorScheme) var colorScheme
     
     //MARK: - VIEW
     var body: some View {
         
         NavigationView {
             ZStack(alignment: .top) {
+
                 TrackableScrollView(offsetChanged: {
                     offset in
                     contentOffset = offset.y
-                    //print("contentOffset", contentOffset)
                 }) {
                     content
                 }
                 
                 VisualEffectBlur(blurStyle: .systemMaterial)
-                    .opacity(contentOffset < -16 ? 1 : 0)
+                    .opacity(contentOffset < 16 ? 1 : 0)
                     .animation(.easeIn)
                     .ignoresSafeArea()
                     .frame(height: 0)
             }
             .frame(maxHeight: .infinity, alignment: .top)
+            .navigationBarTitle("FAQ").font(.largeTitle)
             .background(
                 Image(colorScheme == .dark ? "bg_dark" : "bg_light")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                    .opacity(1) 
+                    .opacity(1)
             )
-            .navigationTitle("FAQ")
+            
         }
         
     }

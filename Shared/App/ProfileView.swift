@@ -14,18 +14,54 @@ struct ProfileView: View {
     //MARK: - PROPERTIES
     
     @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var user: UserStore
     @State private var contentOffset = CGFloat(0)
     
     //MARK: - VIEW
     var body: some View{
         NavigationView {
             ZStack(alignment: .top) {
-                TrackableScrollView(offsetChanged: {
-                    offset in
-                    contentOffset = offset.y
-                    //print("contentOffset", contentOffset)
-                }) {
-                    content
+                
+                if user.showLogin {
+                    
+                    ZStack{
+                        loginView()
+                        
+                        // Custom Dismiss Button
+                        VStack {
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Button(action: {
+                                    self.user.showLogin = false
+                                    print("Dismissed!")
+                                }, label: {
+                                    Circle()
+                                        .strokeBorder(Color.white.opacity(0.3), lineWidth: 1)
+                                        .background(
+                                            Image(systemName: "xmark")
+                                                .foregroundColor(Color.white.opacity(1))
+                                        )
+                                })
+                                .frame(width: 36, height: 36, alignment: .center)
+                                .padding(.top, 70)
+                                .padding(.trailing, 22.5)
+                            }
+                            Spacer()
+                        }
+                    }
+                    
+                    
+                } else {
+                    TrackableScrollView(offsetChanged: {
+                        offset in
+                        contentOffset = offset.y
+                        //print("contentOffset", contentOffset)
+                    }) {
+                        content
+                        
+                    }
                 }
                 
                 VisualEffectBlur(blurStyle: .systemMaterial)

@@ -14,6 +14,7 @@ struct FoodApp: App {
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
     @State private var showLaunchView: Bool = true
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @EnvironmentObject var user: UserStore
     
     var body: some Scene {
         WindowGroup {
@@ -21,7 +22,7 @@ struct FoodApp: App {
                 if isOnboarding {
                     OnboardingView()
                 }else{
-                    MainView()
+                    MainView().environmentObject(UserStore())
                     
                     ZStack{
                         if showLaunchView {

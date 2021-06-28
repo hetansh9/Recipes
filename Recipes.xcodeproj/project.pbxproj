@@ -43,6 +43,8 @@
 		5867383226826BB4008F69E3 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867383026826BB4008F69E3 /* FAQView.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
+		5887606326899E5800DFC246 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887606226899E5800DFC246 /* UserStore.swift */; };
+		5887606426899E5800DFC246 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887606226899E5800DFC246 /* UserStore.swift */; };
 		58892E402688955C004AE401 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E3F2688955C004AE401 /* FirebaseAuth */; };
 		58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 58892E412688955C004AE401 /* FirebaseFirestore */; };
 		58892E44268895BC004AE401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58892E43268895BC004AE401 /* GoogleService-Info.plist */; };
@@ -143,6 +145,7 @@
 		5867382D26825C08008F69E3 /* GradientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientIcon.swift; sourceTree = "<group>"; };
 		5867383026826BB4008F69E3 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		5887606226899E5800DFC246 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		58892E43268895BC004AE401 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		58892E4A2688A204004AE401 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		58892E4D2688A39D004AE401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 				583B6083267B19A50065D082 /* RecipeStore.swift */,
 				5854C61C26875FF40034103F /* faqModelData.swift */,
 				5854C61926875CCB0034103F /* faqData.json */,
+				5887606226899E5800DFC246 /* UserStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -633,6 +637,7 @@
 				5867383126826BB4008F69E3 /* FAQView.swift in Sources */,
 				58DB04E32681B0000032B61A /* loginView.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
+				5887606326899E5800DFC246 /* UserStore.swift in Sources */,
 				58F862D826654E5400257342 /* ImagePicker.swift in Sources */,
 				710524B7266830FE00DAC35A /* RecipeInfo.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
@@ -669,6 +674,7 @@
 				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
 				58892E4F2688A39D004AE401 /* LoadingView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
+				5887606426899E5800DFC246 /* UserStore.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7122265635A800989406 /* FoodCardView.swift in Sources */,

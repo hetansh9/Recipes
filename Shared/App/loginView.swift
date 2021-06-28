@@ -27,6 +27,7 @@ struct loginView: View {
     @State private var alertMessage = "Something Went Wrong!"
     @State private var isLoading = false
     @State private var isSuccessfull = false
+    @EnvironmentObject var user: UserStore
     
     private let generator = UISelectionFeedbackGenerator()
     
@@ -44,21 +45,28 @@ struct loginView: View {
             } else {
                 
                 self.isSuccessfull = true
+                self.user.isLogged = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.isSuccessfull = false
                     self.email = ""
                     self.password = ""
+                    self.isSuccessfull = false
+                    self.user.showLogin = false
+                
                 }
             }
         }
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
     //MARK: - VIEW
     var body: some View {
         ZStack {
             
-            Image("bg2")
+            Image("background-1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -250,6 +258,9 @@ struct loginView: View {
                 Angle(degrees: self.rotationAngle),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
+            .onTapGesture {
+                self.hideKeyboard()
+            }
             
             if isLoading {
                 LoadingView()
