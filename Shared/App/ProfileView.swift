@@ -25,8 +25,9 @@ struct ProfileView: View {
                 if user.showLogin {
                     
                     ZStack{
-                        loginView()
-                        
+                            loginView()
+                                .transition(.move(edge: .top))
+                   
                         // Custom Dismiss Button
                         VStack {
                             
@@ -34,7 +35,9 @@ struct ProfileView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    self.user.showLogin = false
+                                    withAnimation(.easeOut) {
+                                        self.user.showLogin = false
+                                    }
                                     print("Dismissed!")
                                 }, label: {
                                     Circle()
@@ -90,6 +93,7 @@ struct ProfileView: View {
         
         VStack {
             ProfileRow()
+                .foregroundColor(.black)
             VStack{
                 NavigationLink(destination: FAQView()) {
                     MenuRow()
@@ -100,6 +104,28 @@ struct ProfileView: View {
                 Link(destination: URL(string: "https://github.com/hetansh9/Recipes")!, label: {
                     MenuRow(title: "Github", leftIcon: "github", rightIcon: "link")
                 })
+                
+                
+               
+                if user.isLogged {
+                    
+                    divider
+                    
+                    MenuRow(title: "Sign Out",leftIcon: "signout" ,rightIcon: "")
+                        .onTapGesture {
+                            UserDefaults.standard.set(false, forKey: "isLogged")
+                            withAnimation(.easeOut) {
+                                self.user.isLogged = false
+                            }
+                        }
+                } else {
+//                    MenuRow(title: "Sign Out",leftIcon: "signout" ,rightIcon: "")
+//                        .onTapGesture {
+//                            UserDefaults.standard.set(false, forKey: "isLogged")
+//                            self.user.isLogged = false
+//                        }
+                }
+               
                 
             }
             .padding(16)
@@ -128,6 +154,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView().environmentObject(UserStore())
     }
 }

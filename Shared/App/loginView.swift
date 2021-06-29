@@ -46,13 +46,15 @@ struct loginView: View {
                 
                 self.isSuccessfull = true
                 self.user.isLogged = true
+                UserDefaults.standard.set(true, forKey: "isLogged")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.email = ""
                     self.password = ""
                     self.isSuccessfull = false
-                    self.user.showLogin = false
-                
+                    withAnimation(.easeOut) {
+                        self.user.showLogin = false
+                    }
                 }
             }
         }
@@ -71,6 +73,7 @@ struct loginView: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 1.0 : 0.0)
+            
             
             Color("secondaryBackground")
                 .edgesIgnoringSafeArea(.all)
@@ -173,6 +176,7 @@ struct loginView: View {
                      */
                     
                     GradientButton(buttonTitle: "Sign in") {
+                        self.hideKeyboard()
                         self.login()
                     }
                     .alert(isPresented: $showAlert){
@@ -270,8 +274,10 @@ struct loginView: View {
                 SuccessView()
             }
         }
-        
-        
+        .onTapGesture {
+            self.hideKeyboard()
+        }
+         
     }
 }
 
