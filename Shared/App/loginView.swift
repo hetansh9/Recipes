@@ -52,8 +52,9 @@ struct loginView: View {
                     self.email = ""
                     self.password = ""
                     self.isSuccessfull = false
-                    self.user.showLogin = false
-                
+                    withAnimation(.easeOut) {
+                        self.user.showLogin = false
+                    }
                 }
             }
         }

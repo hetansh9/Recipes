@@ -26,6 +26,7 @@ struct ProfileView: View {
                     
                     ZStack{
                             loginView()
+                                .transition(.move(edge: .top))
                    
                         // Custom Dismiss Button
                         VStack {
@@ -34,7 +35,9 @@ struct ProfileView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    self.user.showLogin = false
+                                    withAnimation(.easeOut) {
+                                        self.user.showLogin = false
+                                    }
                                     print("Dismissed!")
                                 }, label: {
                                     Circle()
@@ -102,13 +105,27 @@ struct ProfileView: View {
                     MenuRow(title: "Github", leftIcon: "github", rightIcon: "link")
                 })
                 
-                divider
                 
-                MenuRow(title: "Sign Out",leftIcon: "signout" ,rightIcon: "")
-                    .onTapGesture {
-                        UserDefaults.standard.set(false, forKey: "isLogged")
-                        self.user.isLogged = false
-                    }
+               
+                if user.isLogged {
+                    
+                    divider
+                    
+                    MenuRow(title: "Sign Out",leftIcon: "signout" ,rightIcon: "")
+                        .onTapGesture {
+                            UserDefaults.standard.set(false, forKey: "isLogged")
+                            withAnimation(.easeOut) {
+                                self.user.isLogged = false
+                            }
+                        }
+                } else {
+//                    MenuRow(title: "Sign Out",leftIcon: "signout" ,rightIcon: "")
+//                        .onTapGesture {
+//                            UserDefaults.standard.set(false, forKey: "isLogged")
+//                            self.user.isLogged = false
+//                        }
+                }
+               
                 
             }
             .padding(16)

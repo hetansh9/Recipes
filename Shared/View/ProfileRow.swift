@@ -13,26 +13,66 @@ struct ProfileRow: View {
     
     //MARK - VIEW
     var body: some View {
-        HStack(alignment: .center, spacing: 16.0) {
-            profilePicture
+        
+        if user.isLogged {
             
-            VStack(alignment: .leading, spacing: 2){
-                Text("Het Prajapati")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .lineLimit(1)
-                    .foregroundColor(.white)
+            HStack(alignment: .center, spacing: 16.0) {
+                profilePicture
                 
-                Text("View Profile")
-                    .font(.footnote)
-                    .foregroundColor(Color.white.opacity(0.7))
+                VStack(alignment: .leading, spacing: 2){
+                    Text("Het Prajapati")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                        .foregroundColor(.white)
+                    
+                    Text("View Profile")
+                        .font(.footnote)
+                        .foregroundColor(Color.white.opacity(0.7))
+                }
+                
+                Spacer()
+                
+                glowIcon
             }
+            .blurBackground()
             
-            Spacer()
             
-            glowIcon
+        } else {
+            
+            HStack(alignment: .center, spacing: 16.0) {
+//                profilePicture
+                
+//                Spacer()
+                
+                VStack(alignment: .leading, spacing: 2){
+                    
+                    Button(action: {
+                        withAnimation(.easeIn){
+                            self.user.showLogin = true
+                        }
+                    }) {
+                        Text("Sign In")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 40)
+                    }
+                   
+//                    Text("")
+//                        .font(.footnote)
+//                        .foregroundColor(Color.white.opacity(0.7))
+                }
+                
+//                Spacer()
+                
+//                glowIcon
+            }
+            .blurBackground()
+            
         }
-        .blurBackground()
+        
         
     }
     
@@ -47,13 +87,17 @@ struct ProfileRow: View {
             
             VStack {
                 if user.isLogged {
-                    Image("bg2")
+                    Image("bg1")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 56, height: 56, alignment: .center)
                         .cornerRadius(50)
                 } else {
-                    Button(action: {self.user.showLogin.toggle()}) {
+                    Button(action: {
+                        withAnimation(.easeIn) {
+                            self.user.showLogin.toggle()
+                        }
+                    }) {
                         Image(systemName: "person.circle")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -87,7 +131,7 @@ struct ProfileRow: View {
                     .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
                     .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.white.opacity(0.7), lineWidth: 1).blendMode(.overlay))
             }
-           
+            
         }
     }
 }
