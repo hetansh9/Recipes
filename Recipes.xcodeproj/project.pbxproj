@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		580185D32660B32900C66811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580185D22660B32900C66811 /* LaunchScreen.storyboard */; };
 		580185D42660B32900C66811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580185D22660B32900C66811 /* LaunchScreen.storyboard */; };
+		5819FDCE268B98B700D3ADC7 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819FDCD268B98B700D3ADC7 /* SignInWithAppleButton.swift */; };
+		5819FDCF268B98B700D3ADC7 /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819FDCD268B98B700D3ADC7 /* SignInWithAppleButton.swift */; };
+		5819FDD2268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819FDD1268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift */; };
+		5819FDD3268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819FDD1268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift */; };
 		58262B522660EA3300F4F773 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58262B512660EA3300F4F773 /* SearchBar.swift */; };
 		58262B532660EA3300F4F773 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58262B512660EA3300F4F773 /* SearchBar.swift */; };
 		582C7A2E268B5D3F002C1267 /* 61237-website-design-lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */; };
@@ -130,6 +134,9 @@
 
 /* Begin PBXFileReference section */
 		580185D22660B32900C66811 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5819FDCD268B98B700D3ADC7 /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
+		5819FDD0268B9B7900D3ADC7 /* Recipes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recipes.entitlements; sourceTree = "<group>"; };
+		5819FDD1268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCoordinator.swift; sourceTree = "<group>"; };
 		58262B512660EA3300F4F773 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "61237-website-design-lottie-animation.json"; sourceTree = "<group>"; };
 		5832E786265A68D400799249 /* RecipesDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailedView.swift; sourceTree = "<group>"; };
@@ -273,6 +280,7 @@
 				58F862D626654E5400257342 /* ImagePicker.swift */,
 				58F862D726654E5400257342 /* VisualEffectBlur.swift */,
 				588760652689FBC000DFC246 /* EmailAction.swift */,
+				5819FDD1268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 		714C70CC2656336500989406 = {
 			isa = PBXGroup;
 			children = (
+				5819FDD0268B9B7900D3ADC7 /* Recipes.entitlements */,
 				714C70D12656336500989406 /* Shared */,
 				714C70DB2656336600989406 /* iOS */,
 				714C70E22656336600989406 /* macOS */,
@@ -379,6 +388,7 @@
 				5854C61F2687603B0034103F /* FAQRow.swift */,
 				5854C622268768E20034103F /* PrimaryButton.swift */,
 				5854C62526876FA30034103F /* ProfileRow.swift */,
+				5819FDCD268B98B700D3ADC7 /* SignInWithAppleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -630,7 +640,9 @@
 				5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
 				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
+				5819FDCE268B98B700D3ADC7 /* SignInWithAppleButton.swift in Sources */,
 				5854C61726875C570034103F /* FAQ.swift in Sources */,
+				5819FDD2268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
 				588760662689FBC000DFC246 /* EmailAction.swift in Sources */,
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
@@ -692,6 +704,8 @@
 				58262B532660EA3300F4F773 /* SearchBar.swift in Sources */,
 				58673829268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
+				5819FDCF268B98B700D3ADC7 /* SignInWithAppleButton.swift in Sources */,
+				5819FDD3268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				5854C62C268771AE0034103F /* Extensions.swift in Sources */,
 				58892E4C2688A204004AE401 /* LottieView.swift in Sources */,
 				58DB04E42681B0000032B61A /* loginView.swift in Sources */,
@@ -847,6 +861,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Recipes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 82DXKYN2F6;
@@ -870,6 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Recipes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 82DXKYN2F6;
