@@ -17,7 +17,7 @@ struct SuccessView: View {
                 .opacity(show ? 1 : 0)
                 .animation(Animation.linear(duration: 1).delay(0.2))
             
-            LottieView(fileName: "66392-infinity-loading")
+            LottieView(fileName: "61237-website-design-lottie-animation")
                 .frame(width: 300, height: 150, alignment: .center)
                 .opacity(show ? 1 : 0)
                 .animation(Animation.linear(duration: 1).delay(0.4))

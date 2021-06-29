@@ -11,6 +11,8 @@
 		580185D42660B32900C66811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580185D22660B32900C66811 /* LaunchScreen.storyboard */; };
 		58262B522660EA3300F4F773 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58262B512660EA3300F4F773 /* SearchBar.swift */; };
 		58262B532660EA3300F4F773 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58262B512660EA3300F4F773 /* SearchBar.swift */; };
+		582C7A2E268B5D3F002C1267 /* 61237-website-design-lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */; };
+		582C7A2F268B5D3F002C1267 /* 61237-website-design-lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */; };
 		5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
 		5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832E786265A68D400799249 /* RecipesDetailedView.swift */; };
 		583B6084267B19A50065D082 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B6083267B19A50065D082 /* RecipeStore.swift */; };
@@ -59,8 +61,6 @@
 		58892E582688A71A004AE401 /* lf30_editor_6ffxqo4j.json in Resources */ = {isa = PBXBuildFile; fileRef = 58892E562688A71A004AE401 /* lf30_editor_6ffxqo4j.json */; };
 		58892E5A2688A94C004AE401 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58892E592688A94C004AE401 /* SuccessView.swift */; };
 		58892E5B2688A94C004AE401 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58892E592688A94C004AE401 /* SuccessView.swift */; };
-		58892E5D2688ABB3004AE401 /* 66392-infinity-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 58892E5C2688ABB2004AE401 /* 66392-infinity-loading.json */; };
-		58892E5E2688ABB3004AE401 /* 66392-infinity-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 58892E5C2688ABB2004AE401 /* 66392-infinity-loading.json */; };
 		588BB7B9267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		588BB7BA267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
@@ -131,6 +131,7 @@
 /* Begin PBXFileReference section */
 		580185D22660B32900C66811 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58262B512660EA3300F4F773 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "61237-website-design-lottie-animation.json"; sourceTree = "<group>"; };
 		5832E786265A68D400799249 /* RecipesDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailedView.swift; sourceTree = "<group>"; };
 		583B6083267B19A50065D082 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
 		5854C61626875C570034103F /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		58892E4D2688A39D004AE401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		58892E562688A71A004AE401 /* lf30_editor_6ffxqo4j.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_6ffxqo4j.json; sourceTree = "<group>"; };
 		58892E592688A94C004AE401 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
-		58892E5C2688ABB2004AE401 /* 66392-infinity-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "66392-infinity-loading.json"; sourceTree = "<group>"; };
 		588BB7B8267F580D0035090E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNutrientsView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				58892E4A2688A204004AE401 /* LottieView.swift */,
 				58892E4D2688A39D004AE401 /* LoadingView.swift */,
 				58892E592688A94C004AE401 /* SuccessView.swift */,
-				58892E5C2688ABB2004AE401 /* 66392-infinity-loading.json */,
+				582C7A2D268B5D3F002C1267 /* 61237-website-design-lottie-animation.json */,
 				58892E562688A71A004AE401 /* lf30_editor_6ffxqo4j.json */,
 			);
 			path = Lottie;
@@ -564,9 +564,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				714C70FF2656336600989406 /* Assets.xcassets in Resources */,
-				58892E5D2688ABB3004AE401 /* 66392-infinity-loading.json in Resources */,
 				58892E44268895BC004AE401 /* GoogleService-Info.plist in Resources */,
 				580185D32660B32900C66811 /* LaunchScreen.storyboard in Resources */,
+				582C7A2E268B5D3F002C1267 /* 61237-website-design-lottie-animation.json in Resources */,
 				58892E572688A71A004AE401 /* lf30_editor_6ffxqo4j.json in Resources */,
 				5854C61A26875CCB0034103F /* faqData.json in Resources */,
 			);
@@ -577,9 +577,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				714C71002656336600989406 /* Assets.xcassets in Resources */,
-				58892E5E2688ABB3004AE401 /* 66392-infinity-loading.json in Resources */,
 				58892E45268895BC004AE401 /* GoogleService-Info.plist in Resources */,
 				580185D42660B32900C66811 /* LaunchScreen.storyboard in Resources */,
+				582C7A2F268B5D3F002C1267 /* 61237-website-design-lottie-animation.json in Resources */,
 				58892E582688A71A004AE401 /* lf30_editor_6ffxqo4j.json in Resources */,
 				5854C61B26875CCB0034103F /* faqData.json in Resources */,
 			);
