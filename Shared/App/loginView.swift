@@ -20,6 +20,8 @@ struct loginView: View {
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
     //    @State private var signupToggle: Bool = true
+    @State private var alertTitle = ""
+    @State private var showAlertToggle = false
     @State private var showProfileView: Bool = false
     @State private var rotationAngle = 0.0
     @State private var fadeToggle: Bool = true
@@ -27,6 +29,7 @@ struct loginView: View {
     @State private var alertMessage = "Something Went Wrong!"
     @State private var isLoading = false
     @State private var isSuccessfull = false
+    @State private var signInWithAppleObject = SignInWithAppleButtonCoordinator()
     @EnvironmentObject var user: UserStore
     
     private let generator = UISelectionFeedbackGenerator()
@@ -60,6 +63,20 @@ struct loginView: View {
         }
     }
     
+    func sendPasswordResetEmail() {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+                alertTitle = "Email Sent!"
+                alertMessage = "A password reset email has been sent to \(email)."
+                showAlertToggle.toggle()
+            } else {
+                alertTitle = "Uh-Oh!"
+                alertMessage = "The password reset email could not be send. \(error!.localizedDescription)"
+                showAlertToggle.toggle()
+            }
+        }
+    }
+    
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
@@ -68,13 +85,12 @@ struct loginView: View {
     var body: some View {
         ZStack {
             
-            Image("background-1")
+            Image("bg3")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 1.0 : 0.0)
-            
-            
+        
             Color("secondaryBackground")
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 0.0 : 1.0)
@@ -83,6 +99,7 @@ struct loginView: View {
                 
                 VStack(alignment: .leading, spacing: 16) {
                     
+                    // Components above the textfields
                     Text("Sign In")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
@@ -100,9 +117,10 @@ struct loginView: View {
                             
                             editingEmailTextField = isEditing
                             editingPasswordTextField = false
-                            generator.selectionChanged()
                             
-                            if isEditing{
+                            
+                            if isEditing {
+                                generator.selectionChanged()
                                 withAnimation(.spring(response: 0.3, dampingFraction: 0.4, blendDuration: 0.5)) {
                                     emailIconBounce.toggle()
                                 }
@@ -125,9 +143,9 @@ struct loginView: View {
                             .blendMode(.overlay)
                         
                     )
-                    .background(Color("secondaryBackground")
+                    .background(Color("textField")
                                     .cornerRadius(16.0)
-                                    .opacity(0.8)
+                                    .opacity(0.15)
                     )
                     
                     //Password Text Field
@@ -148,15 +166,14 @@ struct loginView: View {
                         
                     )
                     .background(
-                        Color("secondaryBackground")
+                        Color("textField")
                             .cornerRadius(16.0)
-                            .opacity(0.8)
+                            .opacity(0.15)
                     )
                     .onTapGesture {
-                        editingPasswordTextField = true
-                        editingEmailTextField = false
-                        
                         generator.selectionChanged()
+                        editingPasswordTextField = true
+//                        editingEmailTextField = false
                         
                         if editingPasswordTextField {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.4, blendDuration: 0.5)) {
@@ -194,9 +211,6 @@ struct loginView: View {
                     //                    }
                     
                     //                    Divider()
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color.white.opacity(0.1))
                     
                     // Stack containing the last two buttons
                     VStack(alignment: .leading, spacing: 16, content: {
@@ -230,7 +244,7 @@ struct loginView: View {
                         // Forgot Password Button
                         //                        if !signupToggle {
                         Button(action: {
-                            print("Send Reset password email")
+                            self.sendPasswordResetEmail()
                         }, label: {
                             HStack(spacing: 4){
                                 Text("Forgot Password?")
@@ -242,6 +256,19 @@ struct loginView: View {
                             }
                         })
                         //                        }
+                    })
+                    
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.white.opacity(0.1))
+                    
+                    Button(action: {
+                        signInWithAppleObject.signInWithApple()
+                        print("Sign in with Apple")
+                    }, label: {
+                        SignInWithAppleButton()
+                            .frame(height: 50)
+                            .cornerRadius(16)
                     })
                 }
                 .padding(20)

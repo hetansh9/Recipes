@@ -93,7 +93,6 @@ struct ProfileView: View {
         
         VStack {
             ProfileRow()
-                .foregroundColor(.black)
             VStack{
                 NavigationLink(destination: FAQView()) {
                     MenuRow()

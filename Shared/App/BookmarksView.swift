@@ -8,42 +8,78 @@
 import SwiftUI
 
 struct BookmarksView: View {
-    
+    //MARK: - PROPERTIES
     @State var variety: [String] = ["Italian" , "Indian", "Mexican" , "Chinese", "American" , "Greek", "Thai"]
+    @EnvironmentObject var user: UserStore
+    
+    //MARK: - VIEW
     var body: some View {
-        NavigationView {
-        
-            VStack {
+        if user.isLogged {
+            NavigationView {
                 
-                HStack {
+                VStack {
                     
-                    
-                    List {
-                        // uncomment , if we decide on putting in sections
-    //                    Section (
-    //                        header: Text("Saved Items"))
-    //                    {
+                    HStack {
                         
-                        ForEach(variety, id:\.self) { i in
-                            Text(i.capitalized)
-                                .padding(10)
-                        }
                         
-                        .onDelete(perform: delete)
-                        .onMove(perform: move)
+                        List {
+                            // uncomment , if we decide on putting in sections
+                            //                    Section (
+                            //                        header: Text("Saved Items"))
+                            //                    {
                             
-                        
-                   // }
-                }
-                .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle("Bookmarks 🔖 ")
-                .navigationBarItems(leading: EditButton())
+                            ForEach(variety, id:\.self) { i in
+                                Text(i.capitalized)
+                                    .padding(10)
+                            }
+                            
+                            .onDelete(perform: delete)
+                            .onMove(perform: move)
+                            
+                            
+                            // }
+                        }
+                        .listStyle(InsetGroupedListStyle())
+                        .navigationBarTitle("Bookmarks 🔖 ")
+                        .navigationBarItems(leading: EditButton())
                     }
+                }
+                
             }
-       
+            .accentColor(.blue)
+        } else {
+            NavigationView {
+                ZStack {
+                    
+                    Image("bg4")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Sign In to use Bookmarks!")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.leading)
+                        }
+                        .padding(20)
+                    }
+                    .background(RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.white.opacity(0.2))
+//                                    .background(Color("secondaryBackground").opacity(0.5))
+                                    .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialDark))
+                                    .shadow(color: Color("shadowColor").opacity(0.5), radius: 60, x: 0, y: 30)
+                    )
+                    .cornerRadius(30.0)
+                    .padding(.horizontal)
+                }
+            }
+        }
+        
     }
-        .accentColor(.blue)
-}
     func delete(indexSet: IndexSet) {
         variety.remove(atOffsets: indexSet)
     }
@@ -56,7 +92,7 @@ struct BookmarksView: View {
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        BookmarksView().environmentObject(UserStore())
     }
 }
 

@@ -14,10 +14,15 @@ struct GradientButton: View {
     @State private var angle = 0.0
     
     var gradient1: [Color] = [
-        Color.init(red: 101/255, green: 134/255, blue: 1),
-        Color.init(red: 1, green: 64/255, blue: 80/255),
-        Color.init(red: 109/255, green: 1, blue: 185/255),
-        Color.init(red: 39/255, green: 232/255, blue: 1)
+        Color.init(red: 8/255, green: 1/255, blue: 1),
+        Color.init(red: 1, green: 21/255, blue: 238/255),
+        Color.init(red: 125/255, green: 1, blue: 227/255),
+        Color.init(red: 178/255, green: 1/255, blue: 1)
+//        Color.hexStringToColor(hex: "080194"),
+//        Color.hexStringToColor(hex: "8B15EE"),
+//        Color.hexStringToColor(hex: "7D87E3"),
+//        Color.hexStringToColor(hex: "B2015F")
+        
     ]
     
     var buttonTitle: String
@@ -43,6 +48,7 @@ struct GradientButton: View {
                                 self.angle += 350
                             }
                         }
+                    
                     GradientText(text: buttonTitle)
                         .font(.headline)
                         .frame(width: geometry.size.width - 16)
@@ -65,4 +71,5 @@ struct GradientButton: View {
         })
     }
 }
+
 
