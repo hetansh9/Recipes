@@ -12,7 +12,7 @@ import FirebaseAuth
 struct SignInWithAppleButton: UIViewRepresentable {
     typealias UIViewType = ASAuthorizationAppleIDButton
     func makeUIView(context: Context) -> UIViewType {
-        return ASAuthorizationAppleIDButton(type: .continue, style: .black)
+        return ASAuthorizationAppleIDButton(type: .signIn, style: .black)
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
