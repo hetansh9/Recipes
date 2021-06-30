@@ -10,6 +10,9 @@ import SwiftUI
 struct BookmarksView: View {
     //MARK: - PROPERTIES
     @State var variety: [String] = ["Italian" , "Indian", "Mexican" , "Chinese", "American" , "Greek", "Thai"]
+    
+    var foodTypes: [Food] = foodsData
+    
     @EnvironmentObject var user: UserStore
     
     //MARK: - VIEW
@@ -20,28 +23,23 @@ struct BookmarksView: View {
                 VStack {
                     
                     HStack {
-                        
-                        
+
                         List {
-                            // uncomment , if we decide on putting in sections
-                            //                    Section (
-                            //                        header: Text("Saved Items"))
-                            //                    {
-                            
-                            ForEach(variety, id:\.self) { i in
-                                Text(i.capitalized)
-                                    .padding(10)
+                            ForEach(foodTypes) { item in
+                                BookView(typeData: item)
+                                    .padding(.vertical, 4)
+                                
+                                    
                             }
                             
                             .onDelete(perform: delete)
                             .onMove(perform: move)
                             
-                            
-                            // }
                         }
                         .listStyle(InsetGroupedListStyle())
-                        .navigationBarTitle("Bookmarks 🔖 ")
+                        .navigationBarTitle("Bookmarks")
                         .navigationBarItems(leading: EditButton())
+                        
                     }
                 }
                 
@@ -92,7 +90,6 @@ struct BookmarksView: View {
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView().environmentObject(UserStore())
+        BookmarksView(foodTypes: foodsData)
     }
 }
-
