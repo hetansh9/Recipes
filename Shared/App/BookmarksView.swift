@@ -54,16 +54,16 @@ struct BookmarksView: View {
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                     
-                    VStack {
-                        
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text("Sign In to use Bookmarks!")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .multilineTextAlignment(.leading)
-                        }
-                        .padding(20)
+                        VStack {
+                            
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("Sign In to use Bookmarks!")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(20)
                     }
                     .background(RoundedRectangle(cornerRadius: 30)
                                     .stroke(Color.white.opacity(0.2))
