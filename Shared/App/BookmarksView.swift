@@ -10,44 +10,57 @@ import SwiftUI
 struct BookmarksView: View {
     //MARK: - PROPERTIES
     @State var variety: [String] = ["Italian" , "Indian", "Mexican" , "Chinese", "American" , "Greek", "Thai"]
+    
+    var foodTypes: [Food] = foodsData
+    
     @EnvironmentObject var user: UserStore
     
     //MARK: - VIEW
     var body: some View {
-        if user.isLogged {
+//        if user.isLogged {
             NavigationView {
                 
                 VStack {
                     
                     HStack {
                         
-                        
+//                        Image(typeData.image)
+//                            .renderingMode(.original)
+//                            .r
+//
                         List {
-                            // uncomment , if we decide on putting in sections
-                            //                    Section (
-                            //                        header: Text("Saved Items"))
-                            //                    {
-                            
-                            ForEach(variety, id:\.self) { i in
-                                Text(i.capitalized)
-                                    .padding(10)
+                            ForEach(foodTypes) { item in
+                                BookView(typeData: item)
+                                    .padding(.vertical, 4)
+                                
+                                    
                             }
                             
                             .onDelete(perform: delete)
                             .onMove(perform: move)
                             
+                         
+                            
+//                            ForEach(variety, id:\.self) { i in
+//                                Text(i.capitalized)
+//                                    .padding(10)
+//                            }
+                            
+//
+                            
                             
                             // }
                         }
                         .listStyle(InsetGroupedListStyle())
-                        .navigationBarTitle("Bookmarks 🔖 ")
+                        .navigationBarTitle("Bookmarks")
                         .navigationBarItems(leading: EditButton())
+                        
                     }
                 }
                 
             }
             .accentColor(.blue)
-        } else {
+//        } else {
             NavigationView {
                 ZStack {
                     
@@ -77,7 +90,7 @@ struct BookmarksView: View {
                     .padding(.horizontal)
                 }
             }
-        }
+//        }
         
     }
     func delete(indexSet: IndexSet) {
@@ -86,13 +99,13 @@ struct BookmarksView: View {
     
     func move(indices: IndexSet, newOffset: Int) {
         variety.move(fromOffsets: indices, toOffset: newOffset)
-    }
+    } 
     
 }
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView().environmentObject(UserStore())
+        BookmarksView(foodTypes: foodsData)
     }
 }
 

@@ -14,7 +14,7 @@ let foodsData: [Food] = [
     
     // Het
 
-    Food(title: "Explore", headline: "Foods", image: "fruitsandvegetables_Phone", gradientColors: [Color("ColorPlumLight"), Color("ColorGrapefruitLight")], description: "Breakfast Recipes", nutrition: ["akjcs"]),
+    Food(title: "Italian", headline: "Italian food is not healthy", image: "fruitsandvegetables_Phone", gradientColors: [Color("ColorPlumLight"), Color("ColorGrapefruitLight")], description: "If If you want to explore italian options then i will suggest you nothing", nutrition: ["akjcs"]),
 
     Food(title: "Search", headline: "Recipes", image: "fruitsandvegetables_Search", gradientColors: [Color("ColorMangoLight"), Color("ColorPlumLight")], description: "This App is for cooking freaks", nutrition: ["kjasbckjbc"]),
     

@@ -113,6 +113,8 @@
 		714C7133265638B400989406 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7131265638B400989406 /* FoodApp.swift */; };
 		714C71382657484600989406 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C71372657484600989406 /* ServerModel.swift */; };
 		714C713C26574B9500989406 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C713B26574B9500989406 /* ServerRequest.swift */; };
+		7195C351268CE26B00401630 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195C350268CE26B00401630 /* BookView.swift */; };
+		7195C352268CE26B00401630 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195C350268CE26B00401630 /* BookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,7 @@
 		714C7131265638B400989406 /* FoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodApp.swift; sourceTree = "<group>"; };
 		714C71372657484600989406 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		714C713B26574B9500989406 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		7195C350268CE26B00401630 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +392,7 @@
 				5854C622268768E20034103F /* PrimaryButton.swift */,
 				5854C62526876FA30034103F /* ProfileRow.swift */,
 				5819FDD4268B9FF000D3ADC7 /* SignInWithAppleButton.swift */,
+				7195C350268CE26B00401630 /* BookView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -631,6 +635,7 @@
 				58BED7042666AB2B00DB34C4 /* GradientButton.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
 				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
+				7195C351268CE26B00401630 /* BookView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
 				5854C6202687603B0034103F /* FAQRow.swift in Sources */,
 				714C713C26574B9500989406 /* ServerRequest.swift in Sources */,
@@ -688,6 +693,7 @@
 				5854C61826875C570034103F /* FAQ.swift in Sources */,
 				5867383226826BB4008F69E3 /* FAQView.swift in Sources */,
 				5854C624268768E20034103F /* PrimaryButton.swift in Sources */,
+				7195C352268CE26B00401630 /* BookView.swift in Sources */,
 				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
 				58892E4F2688A39D004AE401 /* LoadingView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
