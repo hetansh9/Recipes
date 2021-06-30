@@ -1,16 +1,15 @@
 //
-//  loginView.swift
+//  SignUpView.swift
 //  Recipes
 //
-//  Created by Het Prajapati on 6/22/21.
+//  Created by Het Prajapati on 6/30/21.
 //
 
-import UIKit
 import SwiftUI
-import AudioToolbox
-import Firebase
+import FirebaseAuth
 
-struct loginView: View {
+struct SignUpView: View {
+    
     //MARK: - PROPERTIES
     
     @State private var email: String = ""
@@ -22,61 +21,17 @@ struct loginView: View {
     //    @State private var signupToggle: Bool = true
     @State private var alertTitle = ""
     @State private var showAlertToggle = false
-    @State private var showSignUpView = false
-    @State private var rotationAngle = 0.0
     @State private var fadeToggle: Bool = true
     @State private var showAlert = false
     @State private var alertMessage = "Something Went Wrong!"
     @State private var isLoading = false
     @State private var isSuccessfull = false
-    @State private var signInWithAppleObject = SignInWithAppleButtonCoordinator()
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user: UserStore
     
     private let generator = UISelectionFeedbackGenerator()
     
-    
-    func login() {
-        self.isLoading = true
-        generator.selectionChanged()
-        
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            self.isLoading = false
-            
-            if error != nil {
-                self.alertMessage = error?.localizedDescription ?? ""
-                self.showAlert = true
-            } else {
-                
-                self.isSuccessfull = true
-                self.user.isLogged = true
-                UserDefaults.standard.set(true, forKey: "isLogged")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.email = ""
-                    self.password = ""
-                    self.isSuccessfull = false
-                    withAnimation(.easeOut) {
-                        self.user.showLogin = false
-                    }
-                }
-            }
-        }
-    }
-    
-    func sendPasswordResetEmail() {
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            if error == nil {
-                alertTitle = "Email Sent!"
-                alertMessage = "A password reset email has been sent to \(email)."
-                showAlertToggle.toggle()
-            } else {
-                alertTitle = "Uh-Oh!"
-                alertMessage = "The password reset email could not be send. \(error!.localizedDescription)"
-                showAlertToggle.toggle()
-            }
-        }
-    }
-    
+    // HIDE KEYBOARD ON BUTTON PRESS
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
@@ -85,12 +40,12 @@ struct loginView: View {
     var body: some View {
         ZStack {
             
-            Image("bg3")
+            Image("bg1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 1.0 : 0.0)
-        
+            
             Color("secondaryBackground")
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 0.0 : 1.0)
@@ -100,10 +55,10 @@ struct loginView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     
                     // Components above the textfields
-                    Text("Sign In")
+                    Text("Sign Up")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
-                    Text("Access all the amazing recipes by signing in")
+                    Text("Get access to all the premium content by signing up")
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.7))
                     
@@ -173,7 +128,7 @@ struct loginView: View {
                     .onTapGesture {
                         generator.selectionChanged()
                         editingPasswordTextField = true
-//                        editingEmailTextField = false
+                        //                        editingEmailTextField = false
                         
                         if editingPasswordTextField {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.4, blendDuration: 0.5)) {
@@ -189,68 +144,42 @@ struct loginView: View {
                     
                     /*
                      Past the text fields
-                     Sign In Button
+                     Sign Up Button
                      */
                     
-                    GradientButton(buttonTitle: "Sign in") {
+                    GradientButton(buttonTitle: "Create Account") {
+                        generator.selectionChanged()
                         self.hideKeyboard()
-                        self.login()
+                        self.signUp()
                     }
+                    //                    .onAppear {
+                    //                        Auth.auth().addStateDidChangeListener { auth, user in
+                    //                            if user != nil {
+                    //                                withAnimation(.easeOut) {
+                    //
+                    //                                }
+                    //                            }
+                    //                        }
+                    //                    }
                     .alert(isPresented: $showAlert){
                         Alert(title: Text("Error!"), message: Text(self.alertMessage), dismissButton: .default(Text("OK")))
                     }
                     
-                    // Stack containing the last two buttons
-                    VStack(alignment: .leading, spacing: 16, content: {
-                        
-                        // Sign Up Button
-                        Button(action: {
-                            self.showSignUpView.toggle()
-                        }, label: {
-                            HStack(spacing: 4){
-                                Text("Need an account?")
-                                    .font(.footnote)
-                                    .foregroundColor(Color.white.opacity(0.7))
-                                GradientText(text:"Sign up")
-                                    .font(Font.footnote.bold())
-                                
-                            }
-                        })
-                        
-                        // Forgot Password Button
-                        Button(action: {
-                            self.sendPasswordResetEmail()
-                        }, label: {
-                            HStack(spacing: 4){
-                                Text("Forgot Password?")
-                                    .font(.footnote)
-                                    .foregroundColor(.white.opacity(0.7))
-                                
-                                GradientText(text: "Reset password")
-                                    .font(.footnote.bold())
-                            }
-                        })
-                    })
+                    // Only Show Disclaimer if signupToggle = true
+                    //                    if signupToggle {
+                    Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
+                        .font(.footnote)
+                        .foregroundColor(Color.white.opacity(0.7))
                     
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color.white.opacity(0.1))
-                    
-                    Button(action: {
-                        signInWithAppleObject.signInWithApple()
-                        print("Sign in with Apple")
-                    }, label: {
-                        SignInWithAppleButton()
-                            .frame(height: 50)
-                            .cornerRadius(16)
-                    })
                 }
-                .padding(20)
+                
+                //
+                //                Rectangle()
+                //                    .frame(height: 1)
+                //                    .foregroundColor(Color.white.opacity(0.1))
+                
             }
-            .rotation3DEffect(
-                Angle(degrees: self.rotationAngle),
-                axis: (x: 0.0, y: 1.0, z: 0.0)
-            )
+            .padding(20)
             .background(RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.white.opacity(0.2))
                             .background(Color("secondaryBackground").opacity(0.5))
@@ -259,10 +188,6 @@ struct loginView: View {
             )
             .cornerRadius(30.0)
             .padding(.horizontal)
-            .rotation3DEffect(
-                Angle(degrees: self.rotationAngle),
-                axis: (x: 0.0, y: 1.0, z: 0.0)
-            )
             .onTapGesture {
                 self.hideKeyboard()
             }
@@ -273,19 +198,77 @@ struct loginView: View {
             
             if isSuccessfull {
                 SuccessView()
+                //Signed Up View
+            }
+            
+            //Custom Dismiss Button
+            VStack {
+                
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+
+                        print("Dismissed!")
+                    }, label: {
+                        Circle()
+                            .strokeBorder(Color.white.opacity(0.3), lineWidth: 1)
+                            .background(
+                                Image(systemName: "xmark")
+                                    .foregroundColor(Color.white.opacity(1))
+                            )
+                    })
+                    .frame(width: 36, height: 36, alignment: .center)
+                    .padding(.top, 70)
+                    .padding(.trailing, 22.5)
+                }
+                Spacer()
             }
         }
         .onTapGesture {
             self.hideKeyboard()
         }
-        .fullScreenCover(isPresented: $showSignUpView, content: {
-            SignUpView()
-        })
+        //        .fullScreenCover(isPresented: $showProfileView) {
+        //            ProfileView()
+        //        }
+    }
+    
+    func signUp() {
+        
+        self.isLoading = true
+        generator.selectionChanged()
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            self.isLoading = false
+            
+            if error != nil {
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+                print(error!.localizedDescription)
+                return
+            } else {
+                self.isSuccessfull = true
+                self.user.isLogged = true
+                UserDefaults.standard.set(true, forKey: "isLogged")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.email = ""
+                    self.password = ""
+                    self.isSuccessfull = false
+                    withAnimation(.easeOut) {
+//                        self.user.showSignUp = false
+                        self.user.showLogin = false
+                    }
+                }
+                print("User Signed Up!")
+            }
+        }
     }
 }
 
-struct loginView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        loginView()
+        SignUpView().environmentObject(UserStore())
     }
 }

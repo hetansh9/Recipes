@@ -89,6 +89,8 @@
 		58BED7052666AB2B00DB34C4 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7032666AB2B00DB34C4 /* GradientButton.swift */; };
 		58BED7072666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */; };
 		58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */; };
+		58CDA782268CCAA60041FC4A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDA781268CCAA60041FC4A /* SignUpView.swift */; };
+		58CDA783268CCAA60041FC4A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDA781268CCAA60041FC4A /* SignUpView.swift */; };
 		58DB04E32681B0000032B61A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB04E22681B0000032B61A /* loginView.swift */; };
 		58DB04E42681B0000032B61A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB04E22681B0000032B61A /* loginView.swift */; };
 		58F862D826654E5400257342 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D626654E5400257342 /* ImagePicker.swift */; };
@@ -173,6 +175,7 @@
 		58BED7002666AADC00DB34C4 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		58BED7032666AB2B00DB34C4 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldIcon.swift; sourceTree = "<group>"; };
+		58CDA781268CCAA60041FC4A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		58DB04E22681B0000032B61A /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		58F862D626654E5400257342 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		58F862D726654E5400257342 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 				58262B512660EA3300F4F773 /* SearchBar.swift */,
 				58DB04E22681B0000032B61A /* loginView.swift */,
 				5867383026826BB4008F69E3 /* FAQView.swift */,
+				58CDA781268CCAA60041FC4A /* SignUpView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -644,6 +648,7 @@
 				5819FDD2268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
 				588760662689FBC000DFC246 /* EmailAction.swift in Sources */,
+				58CDA782268CCAA60041FC4A /* SignUpView.swift in Sources */,
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
 				5867382B268259DD008F69E3 /* MenuRow.swift in Sources */,
@@ -688,6 +693,7 @@
 				5854C61826875C570034103F /* FAQ.swift in Sources */,
 				5867383226826BB4008F69E3 /* FAQView.swift in Sources */,
 				5854C624268768E20034103F /* PrimaryButton.swift in Sources */,
+				58CDA783268CCAA60041FC4A /* SignUpView.swift in Sources */,
 				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
 				58892E4F2688A39D004AE401 /* LoadingView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
