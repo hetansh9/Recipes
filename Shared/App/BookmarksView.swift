@@ -39,17 +39,6 @@ struct BookmarksView: View {
                             .onDelete(perform: delete)
                             .onMove(perform: move)
                             
-                         
-                            
-//                            ForEach(variety, id:\.self) { i in
-//                                Text(i.capitalized)
-//                                    .padding(10)
-//                            }
-                            
-//
-                            
-                            
-                            // }
                         }
                         .listStyle(InsetGroupedListStyle())
                         .navigationBarTitle("Bookmarks")
