@@ -115,6 +115,8 @@
 		714C7133265638B400989406 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7131265638B400989406 /* FoodApp.swift */; };
 		714C71382657484600989406 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C71372657484600989406 /* ServerModel.swift */; };
 		714C713C26574B9500989406 /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C713B26574B9500989406 /* ServerRequest.swift */; };
+		7195C354268D1E5C00401630 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195C353268D1E5C00401630 /* BookView.swift */; };
+		7195C355268D1E5C00401630 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195C353268D1E5C00401630 /* BookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,7 @@
 		714C7131265638B400989406 /* FoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodApp.swift; sourceTree = "<group>"; };
 		714C71372657484600989406 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		714C713B26574B9500989406 /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		7195C353268D1E5C00401630 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +395,7 @@
 				5854C622268768E20034103F /* PrimaryButton.swift */,
 				5854C62526876FA30034103F /* ProfileRow.swift */,
 				5819FDD4268B9FF000D3ADC7 /* SignInWithAppleButton.swift */,
+				7195C353268D1E5C00401630 /* BookView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -667,6 +671,7 @@
 				58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */,
 				5867382E26825C08008F69E3 /* GradientIcon.swift in Sources */,
 				58673828268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
+				7195C354268D1E5C00401630 /* BookView.swift in Sources */,
 				58B4E9DB2656F128001D3EE6 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +713,7 @@
 				5854C6212687603B0034103F /* FAQRow.swift in Sources */,
 				58B4E9DF2656F160001D3EE6 /* BookmarksView.swift in Sources */,
 				5867382F26825C08008F69E3 /* GradientIcon.swift in Sources */,
+				7195C355268D1E5C00401630 /* BookView.swift in Sources */,
 				58262B532660EA3300F4F773 /* SearchBar.swift in Sources */,
 				58673829268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
