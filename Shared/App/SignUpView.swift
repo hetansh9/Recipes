@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseDatabase
 
 struct SignUpView: View {
     
@@ -349,7 +350,7 @@ struct SignUpView: View {
                 self.user.isLogged = true
                 UserDefaults.standard.set(true, forKey: "isLogged")
                 
-                // Adding User to the database
+                // Adding User to the Firestore database
                 let db = Firestore.firestore()
                 
                 db.collection("users").document(Auth.auth().currentUser!.uid).setData([
@@ -367,6 +368,26 @@ struct SignUpView: View {
                     
                     print("User Created")
                 }
+                
+                //Adding user to realtime database in the correct format
+                
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                
+                let databaseRef = Database.database().reference().child("users/\(uid)")
+                
+                let userObject = [
+                    
+                    "emailID": email,
+                    "firstName": firstName,
+                    "lastName": lastName
+                
+                ] as [String: Any]
+                
+                databaseRef.setValue(userObject) { error, ref in
+                    
+                }
+                
+                
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.email = ""

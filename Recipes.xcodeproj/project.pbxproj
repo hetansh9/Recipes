@@ -91,6 +91,10 @@
 		58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */; };
 		58CDA782268CCAA60041FC4A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDA781268CCAA60041FC4A /* SignUpView.swift */; };
 		58CDA783268CCAA60041FC4A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDA781268CCAA60041FC4A /* SignUpView.swift */; };
+		58D8C892268DE8AA009691AB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 58D8C891268DE8AA009691AB /* FirebaseDatabase */; };
+		58D8C894268DE8AA009691AB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 58D8C893268DE8AA009691AB /* FirebaseStorage */; };
+		58D8C896268DEA5B009691AB /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8C895268DEA5B009691AB /* CurrentUser.swift */; };
+		58D8C897268DEA5B009691AB /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8C895268DEA5B009691AB /* CurrentUser.swift */; };
 		58DB04E32681B0000032B61A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB04E22681B0000032B61A /* loginView.swift */; };
 		58DB04E42681B0000032B61A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB04E22681B0000032B61A /* loginView.swift */; };
 		58F862D826654E5400257342 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F862D626654E5400257342 /* ImagePicker.swift */; };
@@ -178,6 +182,7 @@
 		58BED7032666AB2B00DB34C4 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldIcon.swift; sourceTree = "<group>"; };
 		58CDA781268CCAA60041FC4A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		58D8C895268DEA5B009691AB /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		58DB04E22681B0000032B61A /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		58F862D626654E5400257342 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		58F862D726654E5400257342 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
@@ -211,9 +216,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D8C892268DE8AA009691AB /* FirebaseDatabase in Frameworks */,
 				58892E482688A1BA004AE401 /* Lottie in Frameworks */,
 				583B608B267B43000065D082 /* SDWebImageSwiftUI in Frameworks */,
 				58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */,
+				58D8C894268DE8AA009691AB /* FirebaseStorage in Frameworks */,
 				58892E402688955C004AE401 /* FirebaseAuth in Frameworks */,
 				583B6088267B1A170065D082 /* Contentful in Frameworks */,
 			);
@@ -280,6 +287,13 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		58D8C890268DE8AA009691AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58F862D126654DF500257342 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +315,7 @@
 				714C70EC2656336600989406 /* Tests iOS */,
 				714C70F72656336600989406 /* Tests macOS */,
 				714C70DA2656336600989406 /* Products */,
+				58D8C890268DE8AA009691AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +388,7 @@
 			children = (
 				714C711C2656353900989406 /* FoodsModel.swift */,
 				5854C61626875C570034103F /* FAQ.swift */,
+				58D8C895268DEA5B009691AB /* CurrentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,6 +482,8 @@
 				58892E3F2688955C004AE401 /* FirebaseAuth */,
 				58892E412688955C004AE401 /* FirebaseFirestore */,
 				58892E472688A1BA004AE401 /* Lottie */,
+				58D8C891268DE8AA009691AB /* FirebaseDatabase */,
+				58D8C893268DE8AA009691AB /* FirebaseStorage */,
 			);
 			productName = "Recipes (iOS)";
 			productReference = 714C70D92656336600989406 /* Recipes.app */;
@@ -654,6 +672,7 @@
 				588760662689FBC000DFC246 /* EmailAction.swift in Sources */,
 				58CDA782268CCAA60041FC4A /* SignUpView.swift in Sources */,
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
+				58D8C896268DEA5B009691AB /* CurrentUser.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
 				5867382B268259DD008F69E3 /* MenuRow.swift in Sources */,
 				58892E4B2688A204004AE401 /* LottieView.swift in Sources */,
@@ -689,6 +708,7 @@
 				5854C62726876FA40034103F /* ProfileRow.swift in Sources */,
 				714C7133265638B400989406 /* FoodApp.swift in Sources */,
 				5854C61E26875FF40034103F /* faqModelData.swift in Sources */,
+				58D8C897268DEA5B009691AB /* CurrentUser.swift in Sources */,
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58892E5B2688A94C004AE401 /* SuccessView.swift in Sources */,
@@ -1164,6 +1184,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 58892E462688A1B9004AE401 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		58D8C891268DE8AA009691AB /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		58D8C893268DE8AA009691AB /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,7 +12,7 @@ struct FAQView: View {
     
     @State private var contentOffset = CGFloat(0)
     @Environment(\.colorScheme) var colorScheme
-    let randomTicketNumber = CGFloat.random(in: 1...1000)
+    let randomTicketNumber = Int.random(in: 1...1000)
     
     //MARK: - VIEW
     var body: some View {
