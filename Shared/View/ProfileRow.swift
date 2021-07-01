@@ -5,36 +5,75 @@
 //  Created by Het Prajapati on 6/26/21.
 //
 
+import UIKit
+import Foundation
 import SwiftUI
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 
 struct ProfileRow: View {
     //MARK - PROPERTIES
     @EnvironmentObject var user: UserStore
+    @State var FirstName: String = ""
+    @State var LastName: String = ""
+    
     //MARK - VIEW
+    func fetchUser() {
+        if Auth.auth().currentUser != nil {
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            
+            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+                guard let dict = snapshot.value as? [String: Any] else { return }
+                
+                let userCurrent = CurrentUser(uid: uid, dictionary: dict)
+                
+                FirstName = userCurrent.firstName
+                LastName = userCurrent.lastName
+                print("fetchedUser")
+                print(uid)
+            } withCancel: { (err) in
+                print(err)
+                print("Error retrieving user")
+            }
+
+        }
+    }
+    
     var body: some View {
         
         if user.isLogged {
-            
             HStack(alignment: .center, spacing: 16.0) {
                 profilePicture
                 
                 VStack(alignment: .leading, spacing: 2){
-                    Text("No Name")
+                            
+                            Text("\(FirstName) " + "\(LastName)")
                             .font(.title2)
                             .fontWeight(.bold)
                             .lineLimit(1)
                             .foregroundColor(.white)
+                    
+                    
 
                     Text("View Profile")
                         .font(.footnote)
                         .foregroundColor(Color.white.opacity(0.7))
+                }
+                .onAppear(){
+                    self.fetchUser()
                 }
                 
                 Spacer()
                 
                 glowIcon
             }
+//            .onAppear(){
+//                self.fetchUser()
+//            }
             .blurBackground()
             
             
