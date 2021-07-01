@@ -7,10 +7,10 @@
 
 import SwiftUI
 
+
 struct ProfileRow: View {
     //MARK - PROPERTIES
     @EnvironmentObject var user: UserStore
-    
     //MARK - VIEW
     var body: some View {
         
@@ -20,12 +20,12 @@ struct ProfileRow: View {
                 profilePicture
                 
                 VStack(alignment: .leading, spacing: 2){
-                    Text("Het Prajapati")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .lineLimit(1)
-                        .foregroundColor(.white)
-                    
+                    Text("No Name")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                            .foregroundColor(.white)
+
                     Text("View Profile")
                         .font(.footnote)
                         .foregroundColor(Color.white.opacity(0.7))

@@ -7,18 +7,23 @@
 
 import SwiftUI
 import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 struct SignUpView: View {
     
     //MARK: - PROPERTIES
     
+    @State private var firstNameTextField: String = ""
+    @State private var lastNameTextField: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var editingFirstNameTextField: Bool = false
+    @State private var editingLastNameTextField: Bool = false
     @State private var editingEmailTextField: Bool = false
     @State private var editingPasswordTextField: Bool = false
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
-    //    @State private var signupToggle: Bool = true
     @State private var alertTitle = ""
     @State private var showAlertToggle = false
     @State private var fadeToggle: Bool = true
@@ -30,11 +35,6 @@ struct SignUpView: View {
     @EnvironmentObject var user: UserStore
     
     private let generator = UISelectionFeedbackGenerator()
-    
-    // HIDE KEYBOARD ON BUTTON PRESS
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
     
     //MARK: - VIEW
     var body: some View {
@@ -61,6 +61,70 @@ struct SignUpView: View {
                     Text("Get access to all the premium content by signing up")
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.7))
+                    
+                    // First Name Text Field
+                    HStack(spacing: 12.0) {
+                        
+                        TextField("First Name", text: $firstNameTextField) { isEditing in
+                            
+                            editingFirstNameTextField = isEditing
+                            editingPasswordTextField = false
+                            
+                            
+                            if isEditing {
+                                generator.selectionChanged()
+                            }
+                        }
+                        .padding(.leading, 15)
+                        .colorScheme(.dark)
+                        .foregroundColor(Color.white.opacity(0.7))
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .textContentType(.givenName)
+                    }
+                    .frame(height: 52)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.white, lineWidth: 1.0)
+                            .blendMode(.overlay)
+                        
+                    )
+                    .background(Color("textField")
+                                    .cornerRadius(16.0)
+                                    .opacity(0.15)
+                    )
+                    
+                    // Last Name Text Field
+                    HStack(spacing: 12.0) {
+                        
+                        TextField("Last Name", text: $lastNameTextField) { isEditing in
+                            
+                            editingLastNameTextField = isEditing
+                            editingPasswordTextField = false
+                            
+                            
+                            if isEditing {
+                                generator.selectionChanged()
+                            }
+                        }
+                        .padding(.leading, 15)
+                        .colorScheme(.dark)
+                        .foregroundColor(Color.white.opacity(0.7))
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .textContentType(.familyName)
+                    }
+                    .frame(height: 52)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.white, lineWidth: 1.0)
+                            .blendMode(.overlay)
+                        
+                    )
+                    .background(Color("textField")
+                                    .cornerRadius(16.0)
+                                    .opacity(0.15)
+                    )
                     
                     // Email Text Field
                     HStack(spacing: 12.0) {
@@ -208,8 +272,8 @@ struct SignUpView: View {
                     Spacer()
                     
                     Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-
+                        presentationMode.wrappedValue.dismiss()
+                        
                         print("Dismissed!")
                     }, label: {
                         Circle()
@@ -234,11 +298,39 @@ struct SignUpView: View {
         //        }
     }
     
+    // HIDE KEYBOARD ON BUTTON PRESS
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    
+    // Check the fields and validate the data
+    func validateFields() -> String? {
+        
+        // Check that all fields are filled in
+        if firstNameTextField.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.trimmingCharacters(in: .whitespacesAndNewlines) == "" || email.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            password.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            
+            return "Please Fill in all the Fields."
+        }
+        
+        
+        return nil
+    }
+    
+    // Sign Up
     func signUp() {
+        
+        
+        // Validate fields
+        
+        //        let error = validateFields()
         
         self.isLoading = true
         generator.selectionChanged()
         
+        // Create the User
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             self.isLoading = false
             
@@ -248,16 +340,42 @@ struct SignUpView: View {
                 print(error!.localizedDescription)
                 return
             } else {
+                
+                let firstName = firstNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                let lastName = lastNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
+                
                 self.isSuccessfull = true
                 self.user.isLogged = true
                 UserDefaults.standard.set(true, forKey: "isLogged")
                 
+                // Adding User to the database
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(Auth.auth().currentUser!.uid).setData([
+                
+                    "firstName": firstName,
+                    
+                    "lastName": lastName,
+                
+                    "uid": Auth.auth().currentUser!.uid
+                ]) { error in
+                    if error != nil {
+                        //Show error message
+                        print("User created but Failed to add data!")
+                    }
+                    
+                    print("User Created")
+                }
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.email = ""
                     self.password = ""
+                    self.firstNameTextField = ""
+                    self.lastNameTextField = ""
                     self.isSuccessfull = false
                     withAnimation(.easeOut) {
-//                        self.user.showSignUp = false
+                        //                        self.user.showSignUp = false
                         self.user.showLogin = false
                     }
                 }
