@@ -28,6 +28,12 @@ extension View {
                         .stroke(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), lineWidth: 1).blendMode(.overlay))
             .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
+    
+    public func gradientForeground(colors: [Color]) -> some View {
+        self
+            .overlay(LinearGradient(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .mask(self)
+    }
 }
 
 

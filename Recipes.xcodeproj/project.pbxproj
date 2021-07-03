@@ -67,6 +67,14 @@
 		58892E5B2688A94C004AE401 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58892E592688A94C004AE401 /* SuccessView.swift */; };
 		588BB7B9267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
 		588BB7BA267F580D0035090E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB7B8267F580D0035090E /* LaunchView.swift */; };
+		588C15BE269030BE009BC2AF /* SignUpGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15BD269030BE009BC2AF /* SignUpGradientButton.swift */; };
+		588C15BF269030BE009BC2AF /* SignUpGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15BD269030BE009BC2AF /* SignUpGradientButton.swift */; };
+		588C15C1269038A8009BC2AF /* SignUpGradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C0269038A8009BC2AF /* SignUpGradientText.swift */; };
+		588C15C2269038A8009BC2AF /* SignUpGradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C0269038A8009BC2AF /* SignUpGradientText.swift */; };
+		588C15C426904154009BC2AF /* SignUpGradientIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C326904154009BC2AF /* SignUpGradientIcon.swift */; };
+		588C15C526904154009BC2AF /* SignUpGradientIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C326904154009BC2AF /* SignUpGradientIcon.swift */; };
+		588C15C726904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C626904813009BC2AF /* SignUpTextFieldIcon.swift */; };
+		588C15C826904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C15C626904813009BC2AF /* SignUpTextFieldIcon.swift */; };
 		58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
 		58AF020C267A2300008EADEB /* RecipeNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */; };
 		58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */; };
@@ -170,6 +178,10 @@
 		58892E562688A71A004AE401 /* lf30_editor_6ffxqo4j.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_6ffxqo4j.json; sourceTree = "<group>"; };
 		58892E592688A94C004AE401 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		588BB7B8267F580D0035090E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		588C15BD269030BE009BC2AF /* SignUpGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGradientButton.swift; sourceTree = "<group>"; };
+		588C15C0269038A8009BC2AF /* SignUpGradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGradientText.swift; sourceTree = "<group>"; };
+		588C15C326904154009BC2AF /* SignUpGradientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGradientIcon.swift; sourceTree = "<group>"; };
+		588C15C626904813009BC2AF /* SignUpTextFieldIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldIcon.swift; sourceTree = "<group>"; };
 		58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNutrientsView.swift; sourceTree = "<group>"; };
 		58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
@@ -401,12 +413,16 @@
 				58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */,
 				58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */,
 				58BED7002666AADC00DB34C4 /* GradientText.swift */,
+				588C15C0269038A8009BC2AF /* SignUpGradientText.swift */,
 				58BED7032666AB2B00DB34C4 /* GradientButton.swift */,
+				588C15BD269030BE009BC2AF /* SignUpGradientButton.swift */,
 				58BED7062666AB4E00DB34C4 /* TextfieldIcon.swift */,
+				588C15C626904813009BC2AF /* SignUpTextFieldIcon.swift */,
 				58AF020A267A2300008EADEB /* RecipeNutrientsView.swift */,
 				58673827268254DB008F69E3 /* TrackableScrollView.swift */,
 				5867382A268259DD008F69E3 /* MenuRow.swift */,
 				5867382D26825C08008F69E3 /* GradientIcon.swift */,
+				588C15C326904154009BC2AF /* SignUpGradientIcon.swift */,
 				5854C61F2687603B0034103F /* FAQRow.swift */,
 				5854C622268768E20034103F /* PrimaryButton.swift */,
 				5854C62526876FA30034103F /* ProfileRow.swift */,
@@ -644,6 +660,7 @@
 			files = (
 				5854C61D26875FF40034103F /* faqModelData.swift in Sources */,
 				58BED7072666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
+				588C15C726904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */,
 				58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */,
 				58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */,
 				714C71382657484600989406 /* ServerModel.swift in Sources */,
@@ -674,8 +691,10 @@
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58D8C896268DEA5B009691AB /* CurrentUser.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
+				588C15C1269038A8009BC2AF /* SignUpGradientText.swift in Sources */,
 				5867382B268259DD008F69E3 /* MenuRow.swift in Sources */,
 				58892E4B2688A204004AE401 /* LottieView.swift in Sources */,
+				588C15BE269030BE009BC2AF /* SignUpGradientButton.swift in Sources */,
 				5819FDD5268B9FF000D3ADC7 /* SignInWithAppleButton.swift in Sources */,
 				710524B92668312400DAC35A /* AutoComplete.swift in Sources */,
 				5867383126826BB4008F69E3 /* FAQView.swift in Sources */,
@@ -688,6 +707,7 @@
 				583B6084267B19A50065D082 /* RecipeStore.swift in Sources */,
 				5854C62B268771AE0034103F /* Extensions.swift in Sources */,
 				58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */,
+				588C15C426904154009BC2AF /* SignUpGradientIcon.swift in Sources */,
 				5867382E26825C08008F69E3 /* GradientIcon.swift in Sources */,
 				58673828268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
 				7195C354268D1E5C00401630 /* BookView.swift in Sources */,
@@ -700,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5819FDD6268B9FF000D3ADC7 /* SignInWithAppleButton.swift in Sources */,
+				588C15BF269030BE009BC2AF /* SignUpGradientButton.swift in Sources */,
 				5874162326563E83003A3880 /* StartButtonView.swift in Sources */,
 				58B4E9E52656F33B001D3EE6 /* MainView.swift in Sources */,
 				58AF020C267A2300008EADEB /* RecipeNutrientsView.swift in Sources */,
@@ -711,6 +732,7 @@
 				58D8C897268DEA5B009691AB /* CurrentUser.swift in Sources */,
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */,
+				588C15C826904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */,
 				58892E5B2688A94C004AE401 /* SuccessView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
 				58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
@@ -720,6 +742,7 @@
 				5854C624268768E20034103F /* PrimaryButton.swift in Sources */,
 				58CDA783268CCAA60041FC4A /* SignUpView.swift in Sources */,
 				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
+				588C15C526904154009BC2AF /* SignUpGradientIcon.swift in Sources */,
 				58892E4F2688A39D004AE401 /* LoadingView.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5887606426899E5800DFC246 /* UserStore.swift in Sources */,
@@ -738,6 +761,7 @@
 				58673829268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
 				5819FDD3268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
+				588C15C2269038A8009BC2AF /* SignUpGradientText.swift in Sources */,
 				5854C62C268771AE0034103F /* Extensions.swift in Sources */,
 				58892E4C2688A204004AE401 /* LottieView.swift in Sources */,
 				58DB04E42681B0000032B61A /* loginView.swift in Sources */,

@@ -41,13 +41,13 @@ struct SignUpView: View {
     var body: some View {
         ZStack {
             
-            Image("bg1")
+            Image("bg5")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 1.0 : 0.0)
             
-            Color("secondaryBackground")
+            Color("textField")
                 .edgesIgnoringSafeArea(.all)
                 .opacity(fadeToggle ? 0.0 : 1.0)
             
@@ -130,7 +130,7 @@ struct SignUpView: View {
                     // Email Text Field
                     HStack(spacing: 12.0) {
                         
-                        TextfieldIcon(iconName: "envelope.open.fill", currentlyEditing: $editingEmailTextField)
+                        SignUpTextFieldIcon(iconName: "envelope.open.fill", currentlyEditing: $editingEmailTextField)
                             .scaleEffect(emailIconBounce ? 1.2 : 1.0)
                         
                         TextField("Email", text: $email) { isEditing in
@@ -170,7 +170,8 @@ struct SignUpView: View {
                     
                     //Password Text Field
                     HStack(spacing: 12.0) {
-                        TextfieldIcon(iconName: "key.fill", currentlyEditing: $editingPasswordTextField)
+                        
+                        SignUpTextFieldIcon(iconName: "key.fill", currentlyEditing: $editingPasswordTextField)
                             .scaleEffect(passwordIconBounce ? 1.2 : 1.0)
                         SecureField("Password", text: $password)
                             .colorScheme(.dark)
@@ -212,7 +213,7 @@ struct SignUpView: View {
                      Sign Up Button
                      */
                     
-                    GradientButton(buttonTitle: "Create Account") {
+                    SignUpGradientButton(buttonTitle: "Create Account") {
                         generator.selectionChanged()
                         self.hideKeyboard()
                         self.signUp()
