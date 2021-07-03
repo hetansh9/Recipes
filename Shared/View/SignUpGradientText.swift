@@ -1,13 +1,13 @@
 //
-//  GradientText.swift
+//  SignUpGradientText.swift
 //  Recipes
 //
-//  Created by Het Prajapati on 6/1/21.
+//  Created by Het Prajapati on 7/3/21.
 //
 
 import SwiftUI
 
-struct GradientText: View {
+struct SignUpGradientText: View {
     
     //MARK: - PROPERTIES
     var text: String = "Text here"
@@ -15,11 +15,11 @@ struct GradientText: View {
     //MARK: - VIEW
     var body: some View {
         Text(text)
-            .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+            .gradientForeground(colors: [ Color("signupGradientText-1")])
     }
 }
 
-struct GradientText_Previews: PreviewProvider {
+struct SignUpGradientText_Previews: PreviewProvider {
     static var previews: some View {
         SignUpGradientText()
     }
