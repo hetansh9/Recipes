@@ -55,7 +55,9 @@ struct LaunchView: View {
             .offset(y: 70)
         }
         .onAppear(){
-            showLoadingText.toggle()
+            withAnimation(){
+                showLoadingText.toggle()
+            }
         }
         .onReceive(timer, perform: { _ in
             withAnimation(.spring()){
@@ -64,7 +66,9 @@ struct LaunchView: View {
                     counter = 0
                     loops += 1
                     if loops >= 2 {
-                        showLaunchView = false
+                        withAnimation() {
+                            showLaunchView = false
+                        }   
                     }
                 } else {
                     counter += 1
