@@ -32,6 +32,7 @@ struct OnboardingCardView2: View {
                 Text("Learn new premium recipes taught by professional chefs along with videos for proper understanding.")
                     .font(.subheadline)
                     .foregroundColor(Color.white.opacity(0.7))
+
             }
             .padding(30)
             .background(LinearGradient(
@@ -67,6 +68,8 @@ struct OnboardingCardView2: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.red,  Color.blue.opacity(0)]), startPoint: .top, endPoint: .bottom)))
             )
             .padding(20)
+            
+            StartButtonView()
         }
         .padding(.bottom, 60)
         .background(LinearGradient(
