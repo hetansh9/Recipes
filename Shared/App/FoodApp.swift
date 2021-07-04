@@ -21,7 +21,7 @@ struct FoodApp: App {
             ZStack{
                 if isOnboarding {
                     OnboardingView()
-                }else{
+                } else {
                     MainView().environmentObject(UserStore())
                     
                     ZStack{

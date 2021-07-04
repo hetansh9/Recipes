@@ -47,6 +47,71 @@
 		5867382F26825C08008F69E3 /* GradientIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867382D26825C08008F69E3 /* GradientIcon.swift */; };
 		5867383126826BB4008F69E3 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867383026826BB4008F69E3 /* FAQView.swift */; };
 		5867383226826BB4008F69E3 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867383026826BB4008F69E3 /* FAQView.swift */; };
+		586EBC232691928600B599EA /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 586EBC222691928600B599EA /* SwiftUIX */; };
+		586EBC432691929D00B599EA /* BlobShapeTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC252691929D00B599EA /* BlobShapeTop.swift */; };
+		586EBC442691929D00B599EA /* BlobShapeTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC252691929D00B599EA /* BlobShapeTop.swift */; };
+		586EBC452691929D00B599EA /* BackG3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC262691929D00B599EA /* BackG3.swift */; };
+		586EBC462691929D00B599EA /* BackG3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC262691929D00B599EA /* BackG3.swift */; };
+		586EBC472691929D00B599EA /* Line2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC272691929D00B599EA /* Line2.swift */; };
+		586EBC482691929E00B599EA /* Line2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC272691929D00B599EA /* Line2.swift */; };
+		586EBC492691929E00B599EA /* BackG1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC282691929D00B599EA /* BackG1.swift */; };
+		586EBC4A2691929E00B599EA /* BackG1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC282691929D00B599EA /* BackG1.swift */; };
+		586EBC4B2691929E00B599EA /* BoomerangRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC292691929D00B599EA /* BoomerangRight.swift */; };
+		586EBC4C2691929E00B599EA /* BoomerangRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC292691929D00B599EA /* BoomerangRight.swift */; };
+		586EBC4D2691929E00B599EA /* BG4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2A2691929D00B599EA /* BG4.swift */; };
+		586EBC4E2691929E00B599EA /* BG4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2A2691929D00B599EA /* BG4.swift */; };
+		586EBC4F2691929E00B599EA /* AccountBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2B2691929D00B599EA /* AccountBackground.swift */; };
+		586EBC502691929E00B599EA /* AccountBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2B2691929D00B599EA /* AccountBackground.swift */; };
+		586EBC512691929E00B599EA /* Blob1Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2C2691929D00B599EA /* Blob1Graphic.swift */; };
+		586EBC522691929E00B599EA /* Blob1Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2C2691929D00B599EA /* Blob1Graphic.swift */; };
+		586EBC532691929E00B599EA /* BackG2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2D2691929D00B599EA /* BackG2.swift */; };
+		586EBC542691929E00B599EA /* BackG2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2D2691929D00B599EA /* BackG2.swift */; };
+		586EBC552691929E00B599EA /* Line1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2E2691929D00B599EA /* Line1.swift */; };
+		586EBC562691929E00B599EA /* Line1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2E2691929D00B599EA /* Line1.swift */; };
+		586EBC572691929E00B599EA /* YellowPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2F2691929D00B599EA /* YellowPlanet.swift */; };
+		586EBC582691929E00B599EA /* YellowPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC2F2691929D00B599EA /* YellowPlanet.swift */; };
+		586EBC592691929E00B599EA /* MaskBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC302691929D00B599EA /* MaskBlur.swift */; };
+		586EBC5A2691929E00B599EA /* MaskBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC302691929D00B599EA /* MaskBlur.swift */; };
+		586EBC5B2691929E00B599EA /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC312691929D00B599EA /* Wave.swift */; };
+		586EBC5C2691929E00B599EA /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC312691929D00B599EA /* Wave.swift */; };
+		586EBC5D2691929E00B599EA /* RedPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC322691929D00B599EA /* RedPlanet.swift */; };
+		586EBC5E2691929E00B599EA /* RedPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC322691929D00B599EA /* RedPlanet.swift */; };
+		586EBC5F2691929E00B599EA /* BoomerangBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC332691929D00B599EA /* BoomerangBG.swift */; };
+		586EBC602691929E00B599EA /* BoomerangBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC332691929D00B599EA /* BoomerangBG.swift */; };
+		586EBC612691929E00B599EA /* BoomerangLeftTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC342691929D00B599EA /* BoomerangLeftTop.swift */; };
+		586EBC622691929E00B599EA /* BoomerangLeftTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC342691929D00B599EA /* BoomerangLeftTop.swift */; };
+		586EBC632691929E00B599EA /* InsideFace5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC352691929D00B599EA /* InsideFace5.swift */; };
+		586EBC642691929E00B599EA /* InsideFace5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC352691929D00B599EA /* InsideFace5.swift */; };
+		586EBC652691929E00B599EA /* PurplePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC362691929D00B599EA /* PurplePlanet.swift */; };
+		586EBC662691929E00B599EA /* PurplePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC362691929D00B599EA /* PurplePlanet.swift */; };
+		586EBC672691929E00B599EA /* Blob2Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC372691929D00B599EA /* Blob2Graphic.swift */; };
+		586EBC682691929E00B599EA /* Blob2Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC372691929D00B599EA /* Blob2Graphic.swift */; };
+		586EBC692691929E00B599EA /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC382691929D00B599EA /* Stars.swift */; };
+		586EBC6A2691929E00B599EA /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC382691929D00B599EA /* Stars.swift */; };
+		586EBC6B2691929E00B599EA /* BoomerangLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC392691929D00B599EA /* BoomerangLeft.swift */; };
+		586EBC6C2691929E00B599EA /* BoomerangLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC392691929D00B599EA /* BoomerangLeft.swift */; };
+		586EBC6D2691929E00B599EA /* InsideFace1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3A2691929D00B599EA /* InsideFace1.swift */; };
+		586EBC6E2691929E00B599EA /* InsideFace1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3A2691929D00B599EA /* InsideFace1.swift */; };
+		586EBC6F2691929E00B599EA /* BackgroundShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3B2691929D00B599EA /* BackgroundShapes.swift */; };
+		586EBC702691929E00B599EA /* BackgroundShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3B2691929D00B599EA /* BackgroundShapes.swift */; };
+		586EBC712691929E00B599EA /* InsideFace3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3C2691929D00B599EA /* InsideFace3.swift */; };
+		586EBC722691929E00B599EA /* InsideFace3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3C2691929D00B599EA /* InsideFace3.swift */; };
+		586EBC732691929E00B599EA /* FaceGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3D2691929D00B599EA /* FaceGraphic.swift */; };
+		586EBC742691929E00B599EA /* FaceGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3D2691929D00B599EA /* FaceGraphic.swift */; };
+		586EBC752691929E00B599EA /* Blob3Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3E2691929D00B599EA /* Blob3Graphic.swift */; };
+		586EBC762691929E00B599EA /* Blob3Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3E2691929D00B599EA /* Blob3Graphic.swift */; };
+		586EBC772691929E00B599EA /* InsideFace4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3F2691929D00B599EA /* InsideFace4.swift */; };
+		586EBC782691929E00B599EA /* InsideFace4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC3F2691929D00B599EA /* InsideFace4.swift */; };
+		586EBC792691929E00B599EA /* InsideFace2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC402691929D00B599EA /* InsideFace2.swift */; };
+		586EBC7A2691929E00B599EA /* InsideFace2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC402691929D00B599EA /* InsideFace2.swift */; };
+		586EBC7B2691929E00B599EA /* BigShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC412691929D00B599EA /* BigShape.swift */; };
+		586EBC7C2691929E00B599EA /* BigShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC412691929D00B599EA /* BigShape.swift */; };
+		586EBC7D2691929E00B599EA /* Wave1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC422691929D00B599EA /* Wave1.swift */; };
+		586EBC7E2691929E00B599EA /* Wave1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC422691929D00B599EA /* Wave1.swift */; };
+		586EBC812691A11E00B599EA /* OnboardingCardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC802691A11E00B599EA /* OnboardingCardView1.swift */; };
+		586EBC822691A11E00B599EA /* OnboardingCardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC802691A11E00B599EA /* OnboardingCardView1.swift */; };
+		586EBC842691A1F400B599EA /* OnboardingCardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC832691A1F400B599EA /* OnboardingCardView2.swift */; };
+		586EBC852691A1F400B599EA /* OnboardingCardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586EBC832691A1F400B599EA /* OnboardingCardView2.swift */; };
 		5874162226563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5874162326563E83003A3880 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5874162126563E83003A3880 /* StartButtonView.swift */; };
 		5887606326899E5800DFC246 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887606226899E5800DFC246 /* UserStore.swift */; };
@@ -117,8 +182,8 @@
 		714C71002656336600989406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714C70D42656336600989406 /* Assets.xcassets */; };
 		714C711D2656353900989406 /* FoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C711C2656353900989406 /* FoodsModel.swift */; };
 		714C711E2656353900989406 /* FoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C711C2656353900989406 /* FoodsModel.swift */; };
-		714C7121265635A800989406 /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7120265635A800989406 /* FoodCardView.swift */; };
-		714C7122265635A800989406 /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7120265635A800989406 /* FoodCardView.swift */; };
+		714C7121265635A800989406 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7120265635A800989406 /* OnboardingCardView.swift */; };
+		714C7122265635A800989406 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7120265635A800989406 /* OnboardingCardView.swift */; };
 		714C7125265635E300989406 /* FoodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7124265635E300989406 /* FoodsData.swift */; };
 		714C7126265635E300989406 /* FoodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C7124265635E300989406 /* FoodsData.swift */; };
 		714C712F265637C700989406 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C712E265637C700989406 /* OnboardingView.swift */; };
@@ -169,6 +234,38 @@
 		5867382A268259DD008F69E3 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
 		5867382D26825C08008F69E3 /* GradientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientIcon.swift; sourceTree = "<group>"; };
 		5867383026826BB4008F69E3 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		586EBC252691929D00B599EA /* BlobShapeTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobShapeTop.swift; sourceTree = "<group>"; };
+		586EBC262691929D00B599EA /* BackG3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG3.swift; sourceTree = "<group>"; };
+		586EBC272691929D00B599EA /* Line2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2.swift; sourceTree = "<group>"; };
+		586EBC282691929D00B599EA /* BackG1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG1.swift; sourceTree = "<group>"; };
+		586EBC292691929D00B599EA /* BoomerangRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangRight.swift; sourceTree = "<group>"; };
+		586EBC2A2691929D00B599EA /* BG4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BG4.swift; sourceTree = "<group>"; };
+		586EBC2B2691929D00B599EA /* AccountBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBackground.swift; sourceTree = "<group>"; };
+		586EBC2C2691929D00B599EA /* Blob1Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob1Graphic.swift; sourceTree = "<group>"; };
+		586EBC2D2691929D00B599EA /* BackG2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG2.swift; sourceTree = "<group>"; };
+		586EBC2E2691929D00B599EA /* Line1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line1.swift; sourceTree = "<group>"; };
+		586EBC2F2691929D00B599EA /* YellowPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPlanet.swift; sourceTree = "<group>"; };
+		586EBC302691929D00B599EA /* MaskBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskBlur.swift; sourceTree = "<group>"; };
+		586EBC312691929D00B599EA /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		586EBC322691929D00B599EA /* RedPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedPlanet.swift; sourceTree = "<group>"; };
+		586EBC332691929D00B599EA /* BoomerangBG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangBG.swift; sourceTree = "<group>"; };
+		586EBC342691929D00B599EA /* BoomerangLeftTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangLeftTop.swift; sourceTree = "<group>"; };
+		586EBC352691929D00B599EA /* InsideFace5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace5.swift; sourceTree = "<group>"; };
+		586EBC362691929D00B599EA /* PurplePlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurplePlanet.swift; sourceTree = "<group>"; };
+		586EBC372691929D00B599EA /* Blob2Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob2Graphic.swift; sourceTree = "<group>"; };
+		586EBC382691929D00B599EA /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
+		586EBC392691929D00B599EA /* BoomerangLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangLeft.swift; sourceTree = "<group>"; };
+		586EBC3A2691929D00B599EA /* InsideFace1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace1.swift; sourceTree = "<group>"; };
+		586EBC3B2691929D00B599EA /* BackgroundShapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundShapes.swift; sourceTree = "<group>"; };
+		586EBC3C2691929D00B599EA /* InsideFace3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace3.swift; sourceTree = "<group>"; };
+		586EBC3D2691929D00B599EA /* FaceGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGraphic.swift; sourceTree = "<group>"; };
+		586EBC3E2691929D00B599EA /* Blob3Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob3Graphic.swift; sourceTree = "<group>"; };
+		586EBC3F2691929D00B599EA /* InsideFace4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace4.swift; sourceTree = "<group>"; };
+		586EBC402691929D00B599EA /* InsideFace2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace2.swift; sourceTree = "<group>"; };
+		586EBC412691929D00B599EA /* BigShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigShape.swift; sourceTree = "<group>"; };
+		586EBC422691929D00B599EA /* Wave1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave1.swift; sourceTree = "<group>"; };
+		586EBC802691A11E00B599EA /* OnboardingCardView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView1.swift; sourceTree = "<group>"; };
+		586EBC832691A1F400B599EA /* OnboardingCardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView2.swift; sourceTree = "<group>"; };
 		5874162126563E83003A3880 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		5887606226899E5800DFC246 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		588760652689FBC000DFC246 /* EmailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAction.swift; sourceTree = "<group>"; };
@@ -214,7 +311,7 @@
 		714C70F82656336600989406 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		714C70FA2656336600989406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		714C711C2656353900989406 /* FoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsModel.swift; sourceTree = "<group>"; };
-		714C7120265635A800989406 /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
+		714C7120265635A800989406 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		714C7124265635E300989406 /* FoodsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsData.swift; sourceTree = "<group>"; };
 		714C712E265637C700989406 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		714C7131265638B400989406 /* FoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodApp.swift; sourceTree = "<group>"; };
@@ -231,6 +328,7 @@
 				58D8C892268DE8AA009691AB /* FirebaseDatabase in Frameworks */,
 				58892E482688A1BA004AE401 /* Lottie in Frameworks */,
 				583B608B267B43000065D082 /* SDWebImageSwiftUI in Frameworks */,
+				586EBC232691928600B599EA /* SwiftUIX in Frameworks */,
 				58892E422688955C004AE401 /* FirebaseFirestore in Frameworks */,
 				58D8C894268DE8AA009691AB /* FirebaseStorage in Frameworks */,
 				58892E402688955C004AE401 /* FirebaseAuth in Frameworks */,
@@ -287,6 +385,54 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		586EBC242691929D00B599EA /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				586EBC252691929D00B599EA /* BlobShapeTop.swift */,
+				586EBC262691929D00B599EA /* BackG3.swift */,
+				586EBC272691929D00B599EA /* Line2.swift */,
+				586EBC282691929D00B599EA /* BackG1.swift */,
+				586EBC292691929D00B599EA /* BoomerangRight.swift */,
+				586EBC2A2691929D00B599EA /* BG4.swift */,
+				586EBC2B2691929D00B599EA /* AccountBackground.swift */,
+				586EBC2C2691929D00B599EA /* Blob1Graphic.swift */,
+				586EBC2D2691929D00B599EA /* BackG2.swift */,
+				586EBC2E2691929D00B599EA /* Line1.swift */,
+				586EBC2F2691929D00B599EA /* YellowPlanet.swift */,
+				586EBC302691929D00B599EA /* MaskBlur.swift */,
+				586EBC312691929D00B599EA /* Wave.swift */,
+				586EBC322691929D00B599EA /* RedPlanet.swift */,
+				586EBC332691929D00B599EA /* BoomerangBG.swift */,
+				586EBC342691929D00B599EA /* BoomerangLeftTop.swift */,
+				586EBC352691929D00B599EA /* InsideFace5.swift */,
+				586EBC362691929D00B599EA /* PurplePlanet.swift */,
+				586EBC372691929D00B599EA /* Blob2Graphic.swift */,
+				586EBC382691929D00B599EA /* Stars.swift */,
+				586EBC392691929D00B599EA /* BoomerangLeft.swift */,
+				586EBC3A2691929D00B599EA /* InsideFace1.swift */,
+				586EBC3B2691929D00B599EA /* BackgroundShapes.swift */,
+				586EBC3C2691929D00B599EA /* InsideFace3.swift */,
+				586EBC3D2691929D00B599EA /* FaceGraphic.swift */,
+				586EBC3E2691929D00B599EA /* Blob3Graphic.swift */,
+				586EBC3F2691929D00B599EA /* InsideFace4.swift */,
+				586EBC402691929D00B599EA /* InsideFace2.swift */,
+				586EBC412691929D00B599EA /* BigShape.swift */,
+				586EBC422691929D00B599EA /* Wave1.swift */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		586EBC7F269192B200B599EA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				714C712E265637C700989406 /* OnboardingView.swift */,
+				714C7120265635A800989406 /* OnboardingCardView.swift */,
+				586EBC802691A11E00B599EA /* OnboardingCardView1.swift */,
+				586EBC832691A1F400B599EA /* OnboardingCardView2.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		58892E492688A1F9004AE401 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,11 +482,13 @@
 			children = (
 				58892E492688A1F9004AE401 /* Lottie */,
 				5854C629268771A20034103F /* Extensions */,
+				586EBC242691929D00B599EA /* Graphics */,
 				5810132A267F4F3A0095BF85 /* Launch */,
 				58F862D126654DF500257342 /* Helpers */,
 				714C71342657415900989406 /* Server */,
 				714C7123265635BC00989406 /* Data */,
 				714C711B2656351C00989406 /* Model */,
+				586EBC7F269192B200B599EA /* Onboarding */,
 				714C711F2656354200989406 /* View */,
 				714C71272656363200989406 /* App */,
 				714C70D42656336600989406 /* Assets.xcassets */,
@@ -408,7 +556,6 @@
 		714C711F2656354200989406 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				714C7120265635A800989406 /* FoodCardView.swift */,
 				5874162126563E83003A3880 /* StartButtonView.swift */,
 				58B4E9D12656E4AC001D3EE6 /* SettingsRowView.swift */,
 				58B4E9D42656E5AB001D3EE6 /* SettingsLabelView.swift */,
@@ -449,7 +596,6 @@
 			isa = PBXGroup;
 			children = (
 				714C70D32656336500989406 /* ContentView.swift */,
-				714C712E265637C700989406 /* OnboardingView.swift */,
 				714C7131265638B400989406 /* FoodApp.swift */,
 				58B4E9D72656E6B9001D3EE6 /* SettingsView.swift */,
 				58B4E9DA2656F128001D3EE6 /* SearchView.swift */,
@@ -500,6 +646,7 @@
 				58892E472688A1BA004AE401 /* Lottie */,
 				58D8C891268DE8AA009691AB /* FirebaseDatabase */,
 				58D8C893268DE8AA009691AB /* FirebaseStorage */,
+				586EBC222691928600B599EA /* SwiftUIX */,
 			);
 			productName = "Recipes (iOS)";
 			productReference = 714C70D92656336600989406 /* Recipes.app */;
@@ -597,6 +744,7 @@
 				583B6089267B43000065D082 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				58892E462688A1B9004AE401 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				586EBC212691928600B599EA /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 714C70DA2656336600989406 /* Products */;
 			projectDirPath = "";
@@ -658,52 +806,84 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586EBC532691929E00B599EA /* BackG2.swift in Sources */,
+				586EBC652691929E00B599EA /* PurplePlanet.swift in Sources */,
+				586EBC812691A11E00B599EA /* OnboardingCardView1.swift in Sources */,
 				5854C61D26875FF40034103F /* faqModelData.swift in Sources */,
+				586EBC842691A1F400B599EA /* OnboardingCardView2.swift in Sources */,
 				58BED7072666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
+				586EBC732691929E00B599EA /* FaceGraphic.swift in Sources */,
+				586EBC792691929E00B599EA /* InsideFace2.swift in Sources */,
 				588C15C726904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */,
+				586EBC432691929D00B599EA /* BlobShapeTop.swift in Sources */,
 				58F862D926654E5400257342 /* VisualEffectBlur.swift in Sources */,
 				58AF020B267A2300008EADEB /* RecipeNutrientsView.swift in Sources */,
+				586EBC572691929E00B599EA /* YellowPlanet.swift in Sources */,
 				714C71382657484600989406 /* ServerModel.swift in Sources */,
+				586EBC512691929E00B599EA /* Blob1Graphic.swift in Sources */,
 				58892E5A2688A94C004AE401 /* SuccessView.swift in Sources */,
 				58892E4E2688A39D004AE401 /* LoadingView.swift in Sources */,
+				586EBC692691929E00B599EA /* Stars.swift in Sources */,
 				5854C62626876FA40034103F /* ProfileRow.swift in Sources */,
 				5874162226563E83003A3880 /* StartButtonView.swift in Sources */,
 				58B4E9E42656F33A001D3EE6 /* MainView.swift in Sources */,
 				58B4E9E12656F18C001D3EE6 /* ProfileView.swift in Sources */,
 				714C711D2656353900989406 /* FoodsModel.swift in Sources */,
+				586EBC6B2691929E00B599EA /* BoomerangLeft.swift in Sources */,
+				586EBC7B2691929E00B599EA /* BigShape.swift in Sources */,
 				58BED7042666AB2B00DB34C4 /* GradientButton.swift in Sources */,
+				586EBC6F2691929E00B599EA /* BackgroundShapes.swift in Sources */,
 				714C7132265638B400989406 /* FoodApp.swift in Sources */,
+				586EBC4F2691929E00B599EA /* AccountBackground.swift in Sources */,
 				58B4E9D52656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				714C70FD2656336600989406 /* ContentView.swift in Sources */,
 				5854C6202687603B0034103F /* FAQRow.swift in Sources */,
 				714C713C26574B9500989406 /* ServerRequest.swift in Sources */,
+				586EBC752691929E00B599EA /* Blob3Graphic.swift in Sources */,
 				58B4E9D82656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5854C623268768E20034103F /* PrimaryButton.swift in Sources */,
 				588BB7B9267F580D0035090E /* LaunchView.swift in Sources */,
 				5865E8A626578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
+				586EBC492691929E00B599EA /* BackG1.swift in Sources */,
 				58B4E9D22656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
-				714C7121265635A800989406 /* FoodCardView.swift in Sources */,
+				714C7121265635A800989406 /* OnboardingCardView.swift in Sources */,
+				586EBC452691929D00B599EA /* BackG3.swift in Sources */,
+				586EBC552691929E00B599EA /* Line1.swift in Sources */,
+				586EBC5F2691929E00B599EA /* BoomerangBG.swift in Sources */,
+				586EBC5D2691929E00B599EA /* RedPlanet.swift in Sources */,
 				5854C61726875C570034103F /* FAQ.swift in Sources */,
 				5819FDD2268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				714C712F265637C700989406 /* OnboardingView.swift in Sources */,
 				588760662689FBC000DFC246 /* EmailAction.swift in Sources */,
+				586EBC5B2691929E00B599EA /* Wave.swift in Sources */,
+				586EBC712691929E00B599EA /* InsideFace3.swift in Sources */,
 				58CDA782268CCAA60041FC4A /* SignUpView.swift in Sources */,
 				5832E787265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				58D8C896268DEA5B009691AB /* CurrentUser.swift in Sources */,
 				58262B522660EA3300F4F773 /* SearchBar.swift in Sources */,
 				588C15C1269038A8009BC2AF /* SignUpGradientText.swift in Sources */,
+				586EBC7D2691929E00B599EA /* Wave1.swift in Sources */,
 				5867382B268259DD008F69E3 /* MenuRow.swift in Sources */,
 				58892E4B2688A204004AE401 /* LottieView.swift in Sources */,
 				588C15BE269030BE009BC2AF /* SignUpGradientButton.swift in Sources */,
 				5819FDD5268B9FF000D3ADC7 /* SignInWithAppleButton.swift in Sources */,
+				586EBC772691929E00B599EA /* InsideFace4.swift in Sources */,
+				586EBC6D2691929E00B599EA /* InsideFace1.swift in Sources */,
+				586EBC4D2691929E00B599EA /* BG4.swift in Sources */,
+				586EBC4B2691929E00B599EA /* BoomerangRight.swift in Sources */,
 				710524B92668312400DAC35A /* AutoComplete.swift in Sources */,
 				5867383126826BB4008F69E3 /* FAQView.swift in Sources */,
+				586EBC672691929E00B599EA /* Blob2Graphic.swift in Sources */,
+				586EBC632691929E00B599EA /* InsideFace5.swift in Sources */,
 				58DB04E32681B0000032B61A /* loginView.swift in Sources */,
 				714C7125265635E300989406 /* FoodsData.swift in Sources */,
+				586EBC592691929E00B599EA /* MaskBlur.swift in Sources */,
 				5887606326899E5800DFC246 /* UserStore.swift in Sources */,
 				58F862D826654E5400257342 /* ImagePicker.swift in Sources */,
+				586EBC472691929D00B599EA /* Line2.swift in Sources */,
 				710524B7266830FE00DAC35A /* RecipeInfo.swift in Sources */,
 				58B4E9DE2656F160001D3EE6 /* BookmarksView.swift in Sources */,
+				586EBC612691929E00B599EA /* BoomerangLeftTop.swift in Sources */,
 				583B6084267B19A50065D082 /* RecipeStore.swift in Sources */,
 				5854C62B268771AE0034103F /* Extensions.swift in Sources */,
 				58BED7012666AADC00DB34C4 /* GradientText.swift in Sources */,
@@ -724,8 +904,10 @@
 				5874162326563E83003A3880 /* StartButtonView.swift in Sources */,
 				58B4E9E52656F33B001D3EE6 /* MainView.swift in Sources */,
 				58AF020C267A2300008EADEB /* RecipeNutrientsView.swift in Sources */,
+				586EBC622691929E00B599EA /* BoomerangLeftTop.swift in Sources */,
 				58B4E9E22656F18C001D3EE6 /* ProfileView.swift in Sources */,
 				714C711E2656353900989406 /* FoodsModel.swift in Sources */,
+				586EBC7A2691929E00B599EA /* InsideFace2.swift in Sources */,
 				5854C62726876FA40034103F /* ProfileRow.swift in Sources */,
 				714C7133265638B400989406 /* FoodApp.swift in Sources */,
 				5854C61E26875FF40034103F /* faqModelData.swift in Sources */,
@@ -733,39 +915,69 @@
 				58B4E9D62656E5AB001D3EE6 /* SettingsLabelView.swift in Sources */,
 				5832E788265A68D400799249 /* RecipesDetailedView.swift in Sources */,
 				588C15C826904813009BC2AF /* SignUpTextFieldIcon.swift in Sources */,
+				586EBC6C2691929E00B599EA /* BoomerangLeft.swift in Sources */,
+				586EBC5E2691929E00B599EA /* RedPlanet.swift in Sources */,
 				58892E5B2688A94C004AE401 /* SuccessView.swift in Sources */,
 				714C70FE2656336600989406 /* ContentView.swift in Sources */,
+				586EBC6A2691929E00B599EA /* Stars.swift in Sources */,
+				586EBC442691929D00B599EA /* BlobShapeTop.swift in Sources */,
 				58BED7082666AB4E00DB34C4 /* TextfieldIcon.swift in Sources */,
 				58BED7022666AADC00DB34C4 /* GradientText.swift in Sources */,
+				586EBC462691929D00B599EA /* BackG3.swift in Sources */,
 				5854C61826875C570034103F /* FAQ.swift in Sources */,
 				5867383226826BB4008F69E3 /* FAQView.swift in Sources */,
+				586EBC562691929E00B599EA /* Line1.swift in Sources */,
 				5854C624268768E20034103F /* PrimaryButton.swift in Sources */,
+				586EBC682691929E00B599EA /* Blob2Graphic.swift in Sources */,
 				58CDA783268CCAA60041FC4A /* SignUpView.swift in Sources */,
+				586EBC582691929E00B599EA /* YellowPlanet.swift in Sources */,
+				586EBC852691A1F400B599EA /* OnboardingCardView2.swift in Sources */,
 				588BB7BA267F580D0035090E /* LaunchView.swift in Sources */,
+				586EBC662691929E00B599EA /* PurplePlanet.swift in Sources */,
 				588C15C526904154009BC2AF /* SignUpGradientIcon.swift in Sources */,
 				58892E4F2688A39D004AE401 /* LoadingView.swift in Sources */,
+				586EBC4C2691929E00B599EA /* BoomerangRight.swift in Sources */,
 				58B4E9D92656E6B9001D3EE6 /* SettingsView.swift in Sources */,
 				5887606426899E5800DFC246 /* UserStore.swift in Sources */,
 				5865E8A726578EDC00DFC683 /* RecipesStaticData.swift in Sources */,
+				586EBC7C2691929E00B599EA /* BigShape.swift in Sources */,
+				586EBC822691A11E00B599EA /* OnboardingCardView1.swift in Sources */,
+				586EBC4A2691929E00B599EA /* BackG1.swift in Sources */,
+				586EBC602691929E00B599EA /* BoomerangBG.swift in Sources */,
+				586EBC782691929E00B599EA /* InsideFace4.swift in Sources */,
+				586EBC522691929E00B599EA /* Blob1Graphic.swift in Sources */,
+				586EBC4E2691929E00B599EA /* BG4.swift in Sources */,
+				586EBC5C2691929E00B599EA /* Wave.swift in Sources */,
+				586EBC762691929E00B599EA /* Blob3Graphic.swift in Sources */,
+				586EBC6E2691929E00B599EA /* InsideFace1.swift in Sources */,
 				58B4E9D32656E4AC001D3EE6 /* SettingsRowView.swift in Sources */,
-				714C7122265635A800989406 /* FoodCardView.swift in Sources */,
+				714C7122265635A800989406 /* OnboardingCardView.swift in Sources */,
 				714C7130265637C700989406 /* OnboardingView.swift in Sources */,
 				714C7126265635E300989406 /* FoodsData.swift in Sources */,
+				586EBC642691929E00B599EA /* InsideFace5.swift in Sources */,
 				583B6085267B19A50065D082 /* RecipeStore.swift in Sources */,
 				5867382C268259DD008F69E3 /* MenuRow.swift in Sources */,
 				5854C6212687603B0034103F /* FAQRow.swift in Sources */,
 				58B4E9DF2656F160001D3EE6 /* BookmarksView.swift in Sources */,
+				586EBC482691929E00B599EA /* Line2.swift in Sources */,
+				586EBC5A2691929E00B599EA /* MaskBlur.swift in Sources */,
 				5867382F26825C08008F69E3 /* GradientIcon.swift in Sources */,
+				586EBC7E2691929E00B599EA /* Wave1.swift in Sources */,
+				586EBC502691929E00B599EA /* AccountBackground.swift in Sources */,
 				7195C355268D1E5C00401630 /* BookView.swift in Sources */,
 				58262B532660EA3300F4F773 /* SearchBar.swift in Sources */,
 				58673829268254DB008F69E3 /* TrackableScrollView.swift in Sources */,
 				58B4E9DC2656F128001D3EE6 /* SearchView.swift in Sources */,
+				586EBC542691929E00B599EA /* BackG2.swift in Sources */,
+				586EBC702691929E00B599EA /* BackgroundShapes.swift in Sources */,
 				5819FDD3268B9B8A00D3ADC7 /* SignInWithAppleButtonCoordinator.swift in Sources */,
+				586EBC742691929E00B599EA /* FaceGraphic.swift in Sources */,
 				588C15C2269038A8009BC2AF /* SignUpGradientText.swift in Sources */,
 				5854C62C268771AE0034103F /* Extensions.swift in Sources */,
 				58892E4C2688A204004AE401 /* LottieView.swift in Sources */,
 				58DB04E42681B0000032B61A /* loginView.swift in Sources */,
 				58BED7052666AB2B00DB34C4 /* GradientButton.swift in Sources */,
+				586EBC722691929E00B599EA /* InsideFace3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1165,6 +1377,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		586EBC212691928600B599EA /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
 		58892E3E2688955C004AE401 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1193,6 +1413,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 583B6089267B43000065D082 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		586EBC222691928600B599EA /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 586EBC212691928600B599EA /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
 		};
 		58892E3F2688955C004AE401 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
