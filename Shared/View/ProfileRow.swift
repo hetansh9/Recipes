@@ -12,6 +12,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import SDWebImageSwiftUI
 
 
 struct ProfileRow: View {
@@ -19,6 +20,7 @@ struct ProfileRow: View {
     @EnvironmentObject var user: UserStore
     @State var FirstName: String = ""
     @State var LastName: String = ""
+    @State var profilePic: String = ""
     
     //MARK - VIEW
     func fetchUser() {
@@ -33,13 +35,16 @@ struct ProfileRow: View {
                 
                 FirstName = userCurrent.firstName
                 LastName = userCurrent.lastName
+                
+                profilePic = userCurrent.profileImageURL
+                
                 print("fetchedUser")
                 print(uid)
             } withCancel: { (err) in
                 print(err)
                 print("Error retrieving user")
             }
-
+            
         }
     }
     
@@ -50,15 +55,15 @@ struct ProfileRow: View {
                 profilePicture
                 
                 VStack(alignment: .leading, spacing: 2){
-                            
-                            Text("\(FirstName) " + "\(LastName)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .lineLimit(1)
-                            .foregroundColor(.white)
+                    
+                    Text("\(FirstName) " + "\(LastName)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                        .foregroundColor(.white)
                     
                     
-
+                    
                     Text("View Profile")
                         .font(.footnote)
                         .foregroundColor(Color.white.opacity(0.7))
@@ -66,7 +71,7 @@ struct ProfileRow: View {
                 .onAppear(){
                     self.fetchUser()
                 }
-                
+                //
                 Spacer()
                 
                 glowIcon
@@ -80,9 +85,9 @@ struct ProfileRow: View {
         } else {
             
             HStack(alignment: .center, spacing: 16.0) {
-//                profilePicture
+                //                profilePicture
                 
-//                Spacer()
+                //                Spacer()
                 
                 VStack(alignment: .leading, spacing: 2){
                     
@@ -98,15 +103,15 @@ struct ProfileRow: View {
                             .foregroundColor(.white)
                             .padding(.horizontal, 40)
                     }
-                   
-//                    Text("")
-//                        .font(.footnote)
-//                        .foregroundColor(Color.white.opacity(0.7))
+                    
+                    //                    Text("")
+                    //                        .font(.footnote)
+                    //                        .foregroundColor(Color.white.opacity(0.7))
                 }
                 
-//                Spacer()
+                //                Spacer()
                 
-//                glowIcon
+                //                glowIcon
             }
             .blurBackground()
             
@@ -126,7 +131,7 @@ struct ProfileRow: View {
             
             VStack {
                 if user.isLogged {
-                    Image("bg1")
+                    WebImage(url: URL(string: "\(profilePic)"))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 56, height: 56, alignment: .center)

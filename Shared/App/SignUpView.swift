@@ -44,6 +44,11 @@ struct SignUpView: View {
     @State private var showImagePicker = false
     @State private var inputImage: UIImage?
     
+    // For Fetch User 
+    @State var FirstName: String = ""
+    @State var LastName: String = ""
+    @State var profilePic: String = ""
+    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user: UserStore
     
@@ -463,9 +468,6 @@ struct SignUpView: View {
                 }
                 
                 //Adding user to realtime database in the correct format
-               
-               
-                
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.email = ""
@@ -476,10 +478,36 @@ struct SignUpView: View {
                     withAnimation(.easeOut) {
                         //                        self.user.showSignUp = false
                         self.user.showLogin = false
+                        
                     }
                 }
                 print("User Signed Up!")
             }
+        }
+    }
+    
+    func fetchUser() {
+        if Auth.auth().currentUser != nil {
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            
+            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+                guard let dict = snapshot.value as? [String: Any] else { return }
+                
+                let userCurrent = CurrentUser(uid: uid, dictionary: dict)
+                
+                FirstName = userCurrent.firstName
+                LastName = userCurrent.lastName
+                
+                profilePic = userCurrent.profileImageURL
+                
+                print("fetchedUser")
+                print(uid)
+            } withCancel: { (err) in
+                print(err)
+                print("Error retrieving user")
+            }
+            
         }
     }
     
@@ -509,7 +537,7 @@ struct SignUpView: View {
             }
         }
     }
-    
+        
     func saveProfile(email: String, firstName: String, lastName: String, password: String, profileImageURL: URL, completion: @escaping ((_ success: Bool) ->())) {
         
         guard let uid = Auth.auth().currentUser?.uid else {return}
