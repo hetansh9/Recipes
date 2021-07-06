@@ -10,28 +10,40 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
+import FirebaseStorage
 
 struct SignUpView: View {
     
     //MARK: - PROPERTIES
-    
     @State private var firstNameTextField: String = ""
     @State private var lastNameTextField: String = ""
+    
     @State private var email: String = ""
     @State private var password: String = ""
+    
     @State private var editingFirstNameTextField: Bool = false
     @State private var editingLastNameTextField: Bool = false
     @State private var editingEmailTextField: Bool = false
     @State private var editingPasswordTextField: Bool = false
+    
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
+    @State private var photoIconBounce: Bool = false
+    @State private var firstNameIconBounce: Bool = false
+    @State private var lastNameIconBounce: Bool = false
+    
     @State private var alertTitle = ""
     @State private var showAlertToggle = false
     @State private var fadeToggle: Bool = true
     @State private var showAlert = false
     @State private var alertMessage = "Something Went Wrong!"
+    
     @State private var isLoading = false
     @State private var isSuccessfull = false
+    
+    @State private var showImagePicker = false
+    @State private var inputImage: UIImage?
+    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user: UserStore
     
@@ -63,8 +75,41 @@ struct SignUpView: View {
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.7))
                     
+                    
+                    // Choose Photo Text Field
+                    
+                    Button(action: {
+                        self.showImagePicker = true
+                    }) {
+                        HStack(spacing: 12.0) {
+                            
+                            SignUpTextFieldIcon(iconName: "person.crop.circle", currentlyEditing: .constant(false), passedImage: $inputImage)
+                                .scaleEffect(photoIconBounce ? 1.2 : 1.0)
+                            
+                            SignUpGradientText(text: "Choose Photo")
+                            
+                            Spacer()
+                            
+                        }
+                        .frame(height: 52)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.white, lineWidth: 1.0)
+                                .blendMode(.overlay)
+                            
+                        )
+                        .background(Color("textField")
+                                        .cornerRadius(16.0)
+                                        .opacity(0.15)
+                        )
+                        
+                    }
+                    
                     // First Name Text Field
                     HStack(spacing: 12.0) {
+                        
+                        SignUpTextFieldIcon(iconName: "textformat.alt", currentlyEditing: $editingFirstNameTextField, passedImage: .constant(nil))
+                            .scaleEffect(firstNameIconBounce ? 1.2 : 1.0)
                         
                         TextField("First Name", text: $firstNameTextField) { isEditing in
                             
@@ -76,7 +121,7 @@ struct SignUpView: View {
                                 generator.selectionChanged()
                             }
                         }
-                        .padding(.leading, 15)
+                        //                        .padding(.leading, 15)
                         .colorScheme(.dark)
                         .foregroundColor(Color.white.opacity(0.7))
                         .autocapitalization(.none)
@@ -98,6 +143,9 @@ struct SignUpView: View {
                     // Last Name Text Field
                     HStack(spacing: 12.0) {
                         
+                        SignUpTextFieldIcon(iconName: "textformat.alt", currentlyEditing: $editingLastNameTextField, passedImage: .constant(nil))
+                            .scaleEffect(lastNameIconBounce ? 1.2 : 1.0)
+                        
                         TextField("Last Name", text: $lastNameTextField) { isEditing in
                             
                             editingLastNameTextField = isEditing
@@ -108,7 +156,6 @@ struct SignUpView: View {
                                 generator.selectionChanged()
                             }
                         }
-                        .padding(.leading, 15)
                         .colorScheme(.dark)
                         .foregroundColor(Color.white.opacity(0.7))
                         .autocapitalization(.none)
@@ -130,7 +177,7 @@ struct SignUpView: View {
                     // Email Text Field
                     HStack(spacing: 12.0) {
                         
-                        SignUpTextFieldIcon(iconName: "envelope.open.fill", currentlyEditing: $editingEmailTextField)
+                        SignUpTextFieldIcon(iconName: "envelope.open.fill", currentlyEditing: $editingEmailTextField, passedImage: .constant(nil))
                             .scaleEffect(emailIconBounce ? 1.2 : 1.0)
                         
                         TextField("Email", text: $email) { isEditing in
@@ -171,11 +218,12 @@ struct SignUpView: View {
                     //Password Text Field
                     HStack(spacing: 12.0) {
                         
-                        SignUpTextFieldIcon(iconName: "key.fill", currentlyEditing: $editingPasswordTextField)
+                        SignUpTextFieldIcon(iconName: "key.fill", currentlyEditing: $editingPasswordTextField, passedImage: .constant(nil))
                             .scaleEffect(passwordIconBounce ? 1.2 : 1.0)
                         SecureField("Password", text: $password)
                             .colorScheme(.dark)
                             .foregroundColor(Color.white.opacity(0.7))
+                            .disableAutocorrection(true)
                             .autocapitalization(.none)
                             .textContentType(.password)
                     }
@@ -295,9 +343,10 @@ struct SignUpView: View {
         .onTapGesture {
             self.hideKeyboard()
         }
-        //        .fullScreenCover(isPresented: $showProfileView) {
-        //            ProfileView()
-        //        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$inputImage)
+        }
+        
     }
     
     // HIDE KEYBOARD ON BUTTON PRESS
@@ -323,11 +372,7 @@ struct SignUpView: View {
     
     // Sign Up
     func signUp() {
-        
-        
         // Validate fields
-        
-        //        let error = validateFields()
         
         self.isLoading = true
         generator.selectionChanged()
@@ -343,24 +388,71 @@ struct SignUpView: View {
                 return
             } else {
                 
+                let email = email
+                
+                let password = password
+                
                 let firstName = firstNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let lastName = lastNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
+
+                guard let image = SignUpTextFieldIcon(iconName: "person.crop.circle", currentlyEditing: .constant(false), passedImage: $inputImage).passedImage else {return}
                 
                 self.isSuccessfull = true
                 self.user.isLogged = true
                 UserDefaults.standard.set(true, forKey: "isLogged")
                 
+//                 Upload the profile Image to storage
+                
+                self.uploadProfileImage(image) { url in
+
+                    if url != nil {
+                       
+//                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                        changeRequest?.photoURL = url
+//                        changeRequest?.displayName = firstName
+//                        changeRequest?.displayName = lastName
+
+//                        changeRequest?.commitChanges(completion: { error in
+                            if error == nil {
+                                print("User photo changed successfully")
+
+                                self.saveProfile(email: email, firstName: firstName, lastName: lastName, password: password, profileImageURL: url!) { success in
+
+                                    if success {
+
+                                    }
+                                }
+
+
+                            } else {
+                                print("Error : \(error!.localizedDescription)")
+                            }
+//                        })
+                    } else {
+                        print("URL is nil")
+                        // Error unable to save upload profile image
+                    }
+
+
+
+                }
+                
                 // Adding User to the Firestore database
                 let db = Firestore.firestore()
                 
                 db.collection("users").document(Auth.auth().currentUser!.uid).setData([
-                
+                    
+                    "emailId": email,
+                    
                     "firstName": firstName,
                     
                     "lastName": lastName,
-                
+                    
+                    "password": password,
+                    
                     "uid": Auth.auth().currentUser!.uid
+                    
                 ]) { error in
                     if error != nil {
                         //Show error message
@@ -371,23 +463,8 @@ struct SignUpView: View {
                 }
                 
                 //Adding user to realtime database in the correct format
-                
-                guard let uid = Auth.auth().currentUser?.uid else {return}
-                
-                let databaseRef = Database.database().reference().child("users/\(uid)")
-                
-                let userObject = [
-                    
-                    "emailID": email,
-                    "firstName": firstName,
-                    "lastName": lastName
-                
-                ] as [String: Any]
-                
-                databaseRef.setValue(userObject) { error, ref in
-                    
-                }
-                
+               
+               
                 
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -403,6 +480,54 @@ struct SignUpView: View {
                 }
                 print("User Signed Up!")
             }
+        }
+    }
+    
+    func uploadProfileImage(_ image: UIImage, completion: @escaping ((_ url: URL?)->())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let storageRef = Storage.storage().reference().child("users/\(uid)")
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else {return}
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                //success!
+                
+                storageRef.downloadURL { url, error in
+//                    guard let downloadURL = url?.absoluteString else { return }
+                    completion(url)
+                    // success!
+                }
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveProfile(email: String, firstName: String, lastName: String, password: String, profileImageURL: URL, completion: @escaping ((_ success: Bool) ->())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let databaseRef = Database.database().reference().child("users/\(uid)")
+        
+        let userObject = [
+            
+            "emailId": email,
+            "firstName": firstName,
+            "lastName": lastName,
+            "password": password,
+            "photoURL": profileImageURL.absoluteString
+            
+        ] as [String: Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            
         }
     }
 }

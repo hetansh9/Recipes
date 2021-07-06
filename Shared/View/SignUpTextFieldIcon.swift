@@ -12,6 +12,7 @@ struct SignUpTextFieldIcon: View {
     
     var iconName: String
     @Binding var currentlyEditing: Bool
+    @Binding var passedImage: UIImage?
     @State private var colorAngle: Double = 0.0
     
     var gradient: [Color] = [
@@ -56,9 +57,18 @@ struct SignUpTextFieldIcon: View {
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.white, lineWidth: 1)
                     .blendMode(.overlay)
-                Image(systemName: iconName)
-                    .gradientForeground(colors: [Color("signupGradientText-1"), Color("signupGradientText-1")])
-                    .font(.system(size: 17, weight: .medium))
+                if passedImage != nil {
+                    Image(uiImage: passedImage!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 28, height: 28, alignment: .center)
+                        .cornerRadius(8)
+                } else {
+                    Image(systemName: iconName)
+                        .gradientForeground(colors: [Color("signupGradientText-1"), Color("signupGradientText-1")])
+                        .font(.system(size: 17, weight: .medium))
+                }
+               
             }
         )
         .frame(width: 36, height: 36, alignment: .center)
@@ -68,6 +78,6 @@ struct SignUpTextFieldIcon: View {
 
 struct SignUpTextFieldIcon_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpTextFieldIcon(iconName: "key.fill", currentlyEditing: .constant(true))
+        SignUpTextFieldIcon(iconName: "key.fill", currentlyEditing: .constant(true), passedImage: .constant(nil))
     }
 }
