@@ -10,11 +10,11 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
+import FirebaseStorage
 
 struct SignUpView: View {
     
     //MARK: - PROPERTIES
-    
     @State private var firstNameTextField: String = ""
     @State private var lastNameTextField: String = ""
     
@@ -104,7 +104,7 @@ struct SignUpView: View {
                         )
                         
                     }
-
+                    
                     // First Name Text Field
                     HStack(spacing: 12.0) {
                         
@@ -121,7 +121,7 @@ struct SignUpView: View {
                                 generator.selectionChanged()
                             }
                         }
-//                        .padding(.leading, 15)
+                        //                        .padding(.leading, 15)
                         .colorScheme(.dark)
                         .foregroundColor(Color.white.opacity(0.7))
                         .autocapitalization(.none)
@@ -346,7 +346,7 @@ struct SignUpView: View {
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: self.$inputImage)
         }
-
+        
     }
     
     // HIDE KEYBOARD ON BUTTON PRESS
@@ -372,11 +372,7 @@ struct SignUpView: View {
     
     // Sign Up
     func signUp() {
-        
-        
         // Validate fields
-        
-        //        let error = validateFields()
         
         self.isLoading = true
         generator.selectionChanged()
@@ -392,24 +388,71 @@ struct SignUpView: View {
                 return
             } else {
                 
+                let email = email
+                
+                let password = password
+                
                 let firstName = firstNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let lastName = lastNameTextField.trimmingCharacters(in: .whitespacesAndNewlines)
+
+                guard let image = SignUpTextFieldIcon(iconName: "person.crop.circle", currentlyEditing: .constant(false), passedImage: $inputImage).passedImage else {return}
                 
                 self.isSuccessfull = true
                 self.user.isLogged = true
                 UserDefaults.standard.set(true, forKey: "isLogged")
                 
+//                 Upload the profile Image to storage
+                
+                self.uploadProfileImage(image) { url in
+
+                    if url != nil {
+                       
+//                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                        changeRequest?.photoURL = url
+//                        changeRequest?.displayName = firstName
+//                        changeRequest?.displayName = lastName
+
+//                        changeRequest?.commitChanges(completion: { error in
+                            if error == nil {
+                                print("User photo changed successfully")
+
+                                self.saveProfile(email: email, firstName: firstName, lastName: lastName, password: password, profileImageURL: url!) { success in
+
+                                    if success {
+
+                                    }
+                                }
+
+
+                            } else {
+                                print("Error : \(error!.localizedDescription)")
+                            }
+//                        })
+                    } else {
+                        print("URL is nil")
+                        // Error unable to save upload profile image
+                    }
+
+
+
+                }
+                
                 // Adding User to the Firestore database
                 let db = Firestore.firestore()
                 
                 db.collection("users").document(Auth.auth().currentUser!.uid).setData([
-                
+                    
+                    "emailId": email,
+                    
                     "firstName": firstName,
                     
                     "lastName": lastName,
-                
+                    
+                    "password": password,
+                    
                     "uid": Auth.auth().currentUser!.uid
+                    
                 ]) { error in
                     if error != nil {
                         //Show error message
@@ -420,23 +463,8 @@ struct SignUpView: View {
                 }
                 
                 //Adding user to realtime database in the correct format
-                
-                guard let uid = Auth.auth().currentUser?.uid else {return}
-                
-                let databaseRef = Database.database().reference().child("users/\(uid)")
-                
-                let userObject = [
-                    
-                    "emailID": email,
-                    "firstName": firstName,
-                    "lastName": lastName
-                
-                ] as [String: Any]
-                
-                databaseRef.setValue(userObject) { error, ref in
-                    
-                }
-                
+               
+               
                 
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -452,6 +480,54 @@ struct SignUpView: View {
                 }
                 print("User Signed Up!")
             }
+        }
+    }
+    
+    func uploadProfileImage(_ image: UIImage, completion: @escaping ((_ url: URL?)->())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let storageRef = Storage.storage().reference().child("users/\(uid)")
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else {return}
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                //success!
+                
+                storageRef.downloadURL { url, error in
+//                    guard let downloadURL = url?.absoluteString else { return }
+                    completion(url)
+                    // success!
+                }
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveProfile(email: String, firstName: String, lastName: String, password: String, profileImageURL: URL, completion: @escaping ((_ success: Bool) ->())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let databaseRef = Database.database().reference().child("users/\(uid)")
+        
+        let userObject = [
+            
+            "emailId": email,
+            "firstName": firstName,
+            "lastName": lastName,
+            "password": password,
+            "photoURL": profileImageURL.absoluteString
+            
+        ] as [String: Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            
         }
     }
 }
