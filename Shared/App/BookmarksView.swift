@@ -19,37 +19,44 @@ struct BookmarksView: View {
     var body: some View {
         if user.isLogged {
             NavigationView {
-                
-                VStack {
+//                ZStack{
                     
-                    HStack {
+//                    Image("bg6")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .edgesIgnoringSafeArea(.all)
+//
+                    
+                    VStack {
+                        
+                        HStack {
 
-                        List {
-                            ForEach(foodTypes) { item in
-                                BookView(typeData: item)
-                                    .padding(.vertical, 4)
-                                
+                            List {
+                                ForEach(foodTypes) { item in
+                                    BookView(typeData: item)
+                                        .padding(.vertical, 4)
                                     
+                                        
+                                }
+                                .onDelete(perform: delete)
+                                .onMove(perform: move)
+                                
+                                
                             }
-                            
-                            .onDelete(perform: delete)
-                            .onMove(perform: move)
+                            .listStyle(InsetGroupedListStyle())
+                            .navigationBarTitle("Bookmarks")
+                            .navigationBarItems(leading: EditButton())
                             
                         }
-                        .listStyle(InsetGroupedListStyle())
-                        .navigationBarTitle("Bookmarks")
-                        .navigationBarItems(leading: EditButton())
-                        
                     }
-                }
-                
+//                }
             }
             .accentColor(.blue)
         } else {
             NavigationView {
                 ZStack {
                     
-                    Image("bg4")
+                    Image("bg6")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)

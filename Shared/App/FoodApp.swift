@@ -21,9 +21,15 @@ struct FoodApp: App {
             ZStack{
                 if isOnboarding {
                     OnboardingView()
+                    ZStack{
+                        if showLaunchView {
+                            LaunchView(showLaunchView: $showLaunchView)
+                                .transition(.move(edge: .bottom))
+                        }
+                    }
+                    .zIndex(2.0)
                 } else {
                     MainView().environmentObject(UserStore())
-                    
                     ZStack{
                         if showLaunchView {
                             LaunchView(showLaunchView: $showLaunchView)
