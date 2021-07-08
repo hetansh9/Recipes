@@ -30,8 +30,8 @@ struct RecipeNutrientsView: View {
                 
                 Spacer(minLength: 25)
                 
-//                Text(recipe.nutrition[item])
-//                  .multilineTextAlignment(.trailing)
+                Text(recipe.nutrition[item])
+                  .multilineTextAlignment(.trailing)
               }
             }
           }

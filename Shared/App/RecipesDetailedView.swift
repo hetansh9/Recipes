@@ -18,62 +18,10 @@ struct RecipesDetailedView: View {
         // Container containing the Card
         ScrollView(.vertical, showsIndicators: false) {
             // CARD ITSELF
-            ZStack {
-                VStack(spacing: 0) {
-                    Spacer()
-                    
-                    /* Dismiss Button
-                     Have to Add CONSTRAINTS TO FIX POSITION ON SCROLL
-                     */
-                    //
-                    //                        Button(action: {
-                    //                            self.presentationMode.wrappedValue.dismiss()
-                    //                            print("Dismissed!")
-                    //                        }, label: {
-                    //                            Circle()
-                    //                                .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
-                    //                                .background(
-                    //                                    Image(systemName: "xmark")
-                    //                                        .foregroundColor(Color.black.opacity(1))
-                    //                                )
-                    //                        })
-                    //                        .frame(width: 36, height: 36, alignment: .center)
-                    //                        .background(Color.blue)
-                    //                        //Fixed Position for now with no constraints
-                    //                        .position(x: 388, y: 70)
-                    //
-                    
-                    // Lower Banner
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4){
-                            Text(recipe.title.uppercased())
-                                .font(.title).bold()
-                                .offset(x: 5)
-                        }
-                        .foregroundColor(Color.white)
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(12)
-                    .background(
-                        VisualEffectBlur(blurStyle: .systemMaterialDark)
-                    )
-                }
-                .frame(height: 455)
-                .background(
-                    GeometryReader { g in
-                        WebImage(url: recipe.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .offset(y: g.frame(in: .global).minY > 0 ? -g.frame(in: .global).minY : 0)
-                            .frame(height: g.frame(in: .global).minY > 0 ? UIScreen.main.bounds.height / 2.2 + g.frame(in: .global).minY : UIScreen.main.bounds.height / 2.2)
-                    }
-                    .frame(height: UIScreen.main.bounds.height / 2.2)
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 0, style: .continuous))
-                .shadow(color: colorScheme == .dark ? recipe.color.opacity(0.3) : Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            //            ZStack {
+            VStack(spacing: 0) {
+                Spacer()
                 
-                // Custom Dismiss Button
                 VStack {
                     
                     HStack {
@@ -93,13 +41,63 @@ struct RecipesDetailedView: View {
                         .frame(width: 36, height: 36, alignment: .center)
                         .padding(.top, 52)
                         .padding(.trailing, 22.5)
-                        //                            .background(Color.red)
+                        //.background(Color.red)
                     }
                     Spacer()
                 }
                 
+                /* Dismiss Button
+                 Have to Add CONSTRAINTS TO FIX POSITION ON SCROLL
+                 */
+                //
+                //                        Button(action: {
+                //                            self.presentationMode.wrappedValue.dismiss()
+                //                            print("Dismissed!")
+                //                        }, label: {
+                //                            Circle()
+                //                                .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
+                //                                .background(
+                //                                    Image(systemName: "xmark")
+                //                                        .foregroundColor(Color.black.opacity(1))
+                //                                )
+                //                        })
+                //                        .frame(width: 36, height: 36, alignment: .center)
+                //                        .background(Color.blue)
+                //                        //Fixed Position for now with no constraints
+                //                        .position(x: 388, y: 70)
+                //
                 
+                // Lower Banner
+                HStack {
+                    VStack(alignment: .leading, spacing: 4){
+                        Text(recipe.title.uppercased())
+                            .font(.title).bold()
+                            .offset(x: 5)
+                    }
+                    .foregroundColor(Color.white)
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding(12)
+                .background(
+                    VisualEffectBlur(blurStyle: .systemMaterialDark)
+                )
             }
+            .frame(height: 455)
+            .background(
+                GeometryReader { g in
+                    WebImage(url: recipe.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .offset(y: g.frame(in: .global).minY > 0 ? -g.frame(in: .global).minY : 0)
+                        .frame(height: g.frame(in: .global).minY > 0 ? UIScreen.main.bounds.height / 2.2 + g.frame(in: .global).minY : UIScreen.main.bounds.height / 2.2)
+                }
+                .frame(height: UIScreen.main.bounds.height / 2.2)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 0, style: .continuous))
+            .shadow(color: colorScheme == .dark ? recipe.color.opacity(0.3) : Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            
+            
             
             
             // Post the Image Part with Description and multiple views
@@ -111,6 +109,13 @@ struct RecipesDetailedView: View {
                 //                    .fontWeight(.heavy)
                 //                    .multilineTextAlignment(.leading)
                 //                    .padding(.top)
+                //
+                //                Text("Nutrients").uppercased()
+                //                    .font(.title)
+                //                    .fontWeight(.bold)
+                //                    .foregroundColor(recipe.color)
+                
+                
                 
                 // SUBHEADLINE
                 Text("Recipe".uppercased())
@@ -124,7 +129,8 @@ struct RecipesDetailedView: View {
                     .padding(.trailing)
                 
                 // NUTRIENTS
-                // RecipeNutrientsView(recipe: recipe)
+                RecipeNutrientsView(recipe: recipe)
+                
                 
                 // SUBHEADLINE
                 Text("Learn more about \(recipe.title)".uppercased())
@@ -145,6 +151,32 @@ struct RecipesDetailedView: View {
             .navigationBarTitle(recipe.title, displayMode: .inline)
             .navigationBarHidden(true)
             .ignoresSafeArea()
+            //            }
+            
+            // Custom Dismiss Button
+            //                VStack {
+            //
+            //                    HStack {
+            //                        Spacer()
+            //
+            //                        Button(action: {
+            //                            self.presentationMode.wrappedValue.dismiss()
+            //                            print("Dismissed!")
+            //                        }, label: {
+            //                            Circle()
+            //                                .strokeBorder(Color.black.opacity(0.3), lineWidth: 1)
+            //                                .background(
+            //                                    Image(systemName: "xmark")
+            //                                        .foregroundColor(Color.black.opacity(1))
+            //                                )
+            //                        })
+            //                        .frame(width: 36, height: 36, alignment: .center)
+            //                        .padding(.top, 52)
+            //                        .padding(.trailing, 22.5)
+            //                        //.background(Color.red)
+            //                    }
+            //                    Spacer()
+            //                }
             
         }
         .edgesIgnoringSafeArea(.top)
